@@ -1,0 +1,603 @@
+<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>商店合成與市長選舉遊戲企畫書 規則定案版</title>
+<style>body{margin:0;background:#f3f5f7;color:#20242b;font-family:"Microsoft JhengHei",sans-serif;line-height:1.85}main{max-width:1120px;margin:28px auto;padding:36px;background:white;border-radius:12px}h1{font-size:28px}h2{margin-top:36px;font-size:22px}p{margin:14px 0}.notice{padding:18px 22px;background:#edf5ff;border-left:4px solid #2968ad}.table-wrap{overflow-x:auto;margin:22px 0}table{border-collapse:collapse;width:100%;font-size:15px}th,td{border:1px solid #d5dbe2;padding:12px;vertical-align:top;min-width:60px}th{background:#e9eef4;text-align:left}tr:nth-child(even){background:#f8fafc}@media(max-width:650px){main{padding:18px;margin:8px}h1{font-size:23px}}@media print{body{background:white}main{margin:0;padding:0}thead{display:table-header-group}tr{break-inside:avoid}}</style><style>h2{margin-top:42px;padding-top:8px}h3{font-size:21px;margin:30px 0 12px;color:#233c55}h4{font-size:17px;margin:16px 0 6px;color:#334155}ul{padding-left:1.55em;margin:8px 0 20px}li{padding-left:4px;margin:7px 0;line-height:1.8}li::marker{color:#47698b}table{font-size:14px}@media print{h2,h3,h4{break-after:avoid}li{break-inside:avoid}}</style><style>main{max-width:1400px}h2{font-size:27px;margin-top:48px;padding:12px 16px;background:#e7eef6;border-left:5px solid #365c83;border-radius:4px}h3{font-size:22px;margin-top:30px;padding-bottom:7px;border-bottom:1px solid #dbe4ee;color:#1d3852}h4{font-size:19px;margin:26px 0 10px;color:#1d3852}h5{font-size:16px;margin:14px 0 5px;color:#526477}ul{margin:6px 0 18px;padding-left:1.6em}li{margin:6px 0;line-height:1.8}table{min-width:700px;table-layout:auto;font-size:14px}th{background:#dce6f1;position:sticky;top:0}td,th{padding:11px 13px;line-height:1.65}td:first-child,th:first-child{font-weight:600;min-width:90px}.table-wrap{border-radius:6px;overflow:auto}.outline{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 20px;margin:24px 0;padding:20px;background:#f3f6fa;border-radius:8px}.outline strong{grid-column:1/-1}.outline a{color:#315a81;text-decoration:none}.outline .depth-1{font-weight:bold;margin-top:8px}.outline .depth-2{padding-left:16px;font-size:14px}@media(max-width:650px){main{padding:16px}.outline{grid-template-columns:1fr}h2{font-size:23px}h3{font-size:20px}}@media print{.outline{display:none}table{min-width:0}h2,h3,h4,h5{break-after:avoid}}</style><style>table:has(th:nth-child(10)){min-width:1150px}table:has(th:nth-child(10)) td,table:has(th:nth-child(10)) th{white-space:nowrap}</style><style>table:has(th:nth-child(11)){min-width:1300px}table:has(th:nth-child(11)) td,table:has(th:nth-child(11)) th{white-space:nowrap}</style><style>.todo-item{list-style:none;margin-left:-1.2em}</style><style>td a{color:#315a81;overflow-wrap:anywhere}td{max-width:420px}#art-needs{scroll-margin-top:16px}</style>
+<style id="toc-sidebar-style">
+:root{--toc-width:300px;--toc-gap:24px}
+body{padding:0 calc(var(--toc-width) + var(--toc-gap)*2) 0 var(--toc-gap)}
+main{box-sizing:border-box;width:100%;max-width:1400px;margin:24px auto}
+main [id]{scroll-margin-top:20px}
+.toc-sidebar{position:fixed;top:24px;right:24px;bottom:24px;width:var(--toc-width);box-sizing:border-box;display:flex;flex-direction:column;overflow:hidden;background:#fff;border:1px solid #dce4ed;border-radius:12px;box-shadow:0 5px 22px #2032470a;z-index:30}
+.toc-header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:17px 18px 13px;border-bottom:1px solid #e4eaf0;color:#233c55}
+.toc-header strong{font-size:17px}
+.toc-sidebar .outline{position:relative;display:flex;flex-direction:column;gap:2px;flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;scrollbar-gutter:stable;margin:0;padding:10px 10px 18px;background:#fff;border-radius:0}
+.toc-sidebar .outline a{display:block;flex-shrink:0;padding:7px 10px;border-radius:6px;line-height:1.55;color:#506278;text-decoration:none;overflow-wrap:anywhere}
+.toc-sidebar .outline .depth-1{margin-top:8px;font-size:15px;font-weight:700;color:#294866}
+.toc-sidebar .outline .depth-2{padding-left:22px;font-size:13px;font-weight:400}
+.toc-sidebar .outline a:hover{background:#f1f5fa;color:#254f78}
+.toc-sidebar .outline a[aria-current="location"]{background:#e5effa;color:#204e7c;box-shadow:inset 3px 0 #4676a6}
+.toc-sidebar a:focus-visible,.toc-toggle:focus-visible,.toc-close:focus-visible{outline:3px solid #5a86b3;outline-offset:2px}
+.toc-toggle,.toc-close{font:inherit;cursor:pointer;border:1px solid #b8cadd;background:#fff;color:#284e74;border-radius:7px;padding:7px 12px;line-height:1.6}
+.toc-toggle,.toc-close,.toc-backdrop{display:none}
+@media(max-width:1100px){
+ body{padding:0 16px}
+ main{margin:16px auto;padding:24px}
+ main>h1{padding-right:105px}
+ .toc-toggle{display:block;position:fixed;top:18px;right:18px;z-index:20;background:#f7faff;box-shadow:0 2px 10px #20324715}
+ .toc-sidebar{display:none;top:16px;right:16px;bottom:16px;width:min(320px,calc(100vw - 32px))}
+ .toc-close{display:block;font-size:13px}
+ .toc-open .toc-sidebar{display:flex}
+ .toc-open .toc-backdrop{display:block;position:fixed;inset:0;z-index:25;border:0;padding:0;background:#172d4345;cursor:pointer}
+}
+@media(max-width:650px){
+ body{padding:0 8px}
+ main{margin:8px auto;padding:18px}
+ .toc-toggle{top:14px;right:14px;font-size:14px}
+ main>h1{font-size:23px}
+}
+@media print{
+ body{padding:0}
+ main{max-width:none;margin:0;padding:0;width:100%}
+ main>h1{padding-right:0}
+ .toc-sidebar,.toc-toggle,.toc-backdrop{display:none!important}
+}
+</style>
+<meta name="description" content="商店合成與市長選舉遊戲企劃，包含規則、地圖、商店、卡片與美術規劃。"><link rel="icon" href="data:,"></head><body><main>
+<h1>商店合成與市長選舉遊戲企畫書</h1>
+
+<h2 id="section-1">1 共通規則</h2>
+<h3 id="section-2">1.1 遊戲目標與基礎數值</h3>
+<ul>
+<li>聲望僅設一個數值</li>
+<li>聲望最低為0，不會變成負數</li>
+<li>勝利條件：選舉勝出，或成為唯一未破產玩家並立即提前獲勝；聲望提供競選優勢</li>
+</ul>
+<div class="table-wrap"><table><tr><th>項目</th><th>數值</th></tr><tr><td>初始資金</td><td>300,000</td></tr><tr><td>初階商店建造費</td><td>12,000</td></tr><tr><td>建成等級</td><td>1</td></tr><tr><td>各階商店每次升級費</td><td>3,000</td></tr></table></div>
+<h3 id="section-3">1.2 收費原則</h3>
+<ul>
+<li>自有設施免服務費</li>
+<li>他人設施先收費給店主，再執行效果</li>
+<li>另行購車、升級等費用照付</li>
+<li>例外：加油站對無載具者不收費（見3.2）</li>
+<li>使用商圈招待券時，免付該次民營服務費，依6.11取得設施效果</li>
+</ul>
+<h3 id="section-4">1.3 交通移動</h3>
+<ul>
+<li>交通移動一律可選擇放棄</li>
+<li>停在他人民營設施時，先強制支付服務費，再選擇是否移動</li>
+<li>自有設施依原規則免服務費</li>
+<li>官方交通設施可選擇是否付費移動，不移動則不收費</li>
+<li>官方火車站票價固定1,200，可直接移動到任一其他官方火車站</li>
+<li>機場可移動到任一其他機場（含官方機場與民營三階機場），抵達後立即獲得1個額外回合；官方機場票價提案6,000，民營機場依等級收服務費</li>
+<li>交通直接移動（搭乘火車站、機場）不視為經過起點，不領取起點獎金</li>
+<li>搭乘火車站或機場抵達目的地後，不再觸發目的地的落點效果，因此不會連續轉乘，也不會在目的地再次收費</li>
+<li>卡片或事件造成的前進視為一般移動：照常經過起點並觸發落點</li>
+<li>額外回合可連續觸發並疊加，次數不設上限；額外回合中再次搭機抵達，仍立即獲得1個額外回合。速食店依該店的重複觸發規則執行</li>
+</ul>
+<div class="table-wrap"><table><tr><th>官方交通</th><th>票價</th><th>目的地</th><th>抵達後額外回合</th></tr><tr><td>火車站</td><td>1,200</td><td>任一其他官方火車站</td><td>0（無額外回合）</td></tr><tr><td>機場</td><td>6,000（提案）</td><td>任一其他機場</td><td>＋1</td></tr></table></div>
+<h3 id="section-5">1.4 商店升級與落點流程</h3>
+<ul>
+<li>再次走到自有商店：升級判斷 → 合成判斷 → 按處理後設施觸發效果</li>
+<li>滿級略過升級</li>
+<li>「再次走到」指移動結束時停在自有商店上，經過不算</li>
+<li>停在自有商店時的一般升級，付升級費即成功，不需擲骰；只有小吃攤系列的遠端升級需擲骰判定</li>
+<li>無合併對象略過合併</li>
+<li>拒絕升級仍檢查合併</li>
+<li>一般升級在再次走到自有商店時進行；合成可在新開店完成後，或再次走到自有商店時進行</li>
+<li>首次開店：完成建造 → 檢查相鄰自有商店是否可合成 → 結束本次落點；建造當下不觸發商店效果，下次停留才觸發</li>
+<li>小吃攤提供遠端升級例外</li>
+</ul>
+<div class="table-wrap"><table><tr><th>階段</th><th>等級上限</th><th>每次升級費</th><th>效果強化</th><th>消費費成長</th></tr><tr><td>初階</td><td>3</td><td>3,000</td><td>依商店表</td><td>1／3／6倍</td></tr><tr><td>二階</td><td>6</td><td>3,000</td><td>第3、5級</td><td>每級提高，見二階表</td></tr><tr><td>三階</td><td>9</td><td>3,000</td><td>第4、7級</td><td>每級提高，見三階總表</td></tr></table></div>
+<h3 id="section-6">1.5 商店合成</h3>
+<ul>
+<li>二階：相鄰2格初階商店合成</li>
+<li>三階：相鄰3格初階商店直接合成，或相鄰的二階商店＋初階商店合成</li>
+<li>異類合成後，依新商店的功能執行效果</li>
+<li>合成為可選擇，玩家可以放棄合成</li>
+<li>同時有多組可合成的組合時，由玩家自選一組</li>
+<li>二階商店不可與二階商店合成</li>
+<li>以「每間商店」計算的效果（如颱風、違建罰款），合成商店算1間</li>
+<li>合成後等級為所有參與商店等級相加：兩店相加、三店亦相加；二階最高6級、三階最高9級</li>
+<li>合成材料為同一地理區內相鄰的自有商店，依商店合成表配對</li>
+<li>合成後涵蓋原有地格：二階占2格，三階占3格；停在涵蓋的任一格，皆觸發同一間商店，單次落點收取1次服務費</li>
+<li>合成後投資額為參與商店的投資額總和，區域係數使用該區繁華度</li>
+<li>等級範例：初階2級＋初階3級 → 二階5級；初階3級＋3級＋2級 → 三階8級；二階5級＋初階3級 → 三階8級</li>
+</ul>
+<h3 id="section-7">1.6 支付不足與破產</h3>
+<ul>
+<li>資產不足支付應付費用：進入破產流程</li>
+<li>商店變現估值為建造費與升級投入合計的50%；得標空地的估值仍待定</li>
+<li>資金不足時，由玩家自選變賣哪些地產，依估值變現給銀行</li>
+<li>全部變賣仍不足時，剩餘資金全數交給債主；該玩家所有地產變為無主，合成商店不拆分，建築與等級維持原狀</li>
+<li>破產玩家退出選舉，聲望不另行結算</li>
+<li>停在無主但有建築的商店時，可支付該店投資額向銀行購買，取得經營權並沿用原等級；購買當下不觸發商店效果，下次停留才觸發；不購買則不收費、不觸發任何效果</li>
+</ul>
+<h3 id="section-8">1.7 扣費與退款</h3>
+<ul>
+<li>已收取的民營服務費，不因玩家放棄後續操作、操作無法執行或判定失敗而退還</li>
+<li>小吃攤系列的遠端付費升級，先扣升級費再擲骰；判定失敗不退已扣升級費</li>
+<li>沒有可升級目標或升級費不足時，不扣升級費、不擲骰；已收餐費不退</li>
+<li>未選擇官方交通移動時不收費；此規則不受民營服務費不退規則影響</li>
+</ul>
+<h2 id="section-9">2 地圖配置</h2>
+<h3 id="section-10">2.1 格數與區段</h3>
+<div class="table-wrap"><table><tr><th>地格類型</th><th>格數</th></tr><tr><td>可建設地</td><td>50</td></tr><tr><td>效果格</td><td>11</td></tr><tr><td>官方火車站</td><td>5</td></tr><tr><td>國家公園</td><td>5</td></tr><tr><td>主線小計</td><td>71</td></tr><tr><td>綠島監獄</td><td>1</td></tr><tr><td>出獄通道無效果格</td><td>5</td></tr><tr><td>全圖合計</td><td>77</td></tr></table></div>
+<ul>
+<li>棋盤採方形環狀路線</li>
+<li>11個地理區各為1個建設區段，每段連續3～6格</li>
+<li>官方車站與效果格只放在段間</li>
+<li>台東3格</li>
+<li>花蓮為池上、玉里、花蓮 → E11機會 → 宜蘭為太魯閣、蘇澳、宜蘭</li>
+<li>台東與花蓮之間保留5格連續國家公園，無功能、不可建設，每格正常計算移動</li>
+</ul>
+<h3 id="section-11">2.2 地格與交通設施配置</h3>
+<ul>
+<li>主線編號：T01～T50建設地、E01～E11效果格、R01～R05官方火車站、N01～N05國家公園；監獄支線為J01綠島監獄、P01～P05出獄通道</li>
+<li>R01台北、R02台中、R03高雄、R04台東、R05花蓮</li>
+<li>各站位於所屬區域建設地格後、區末效果格前</li>
+<li>E02、E09為機場</li>
+<li>E04、E06、E11為機會</li>
+<li>E01、E05、E08為新聞</li>
+<li>E03、E07為國稅局</li>
+<li>E10為起點</li>
+<li>建設地T01～T50提供商店建造與同區合成；其他地格依各自功能使用</li>
+<li>官方火車站固定票價1,200，可選擇移動到任一其他官方火車站</li>
+<li>官方機場E02、E09可移動到任一其他機場（含民營三階機場），抵達後立即獲得1個額外回合</li>
+<li>官方機場票價提案6,000，高於官方火車站1,200；選擇不搭乘則不收費</li>
+<li>官方交通不搭乘不收費</li>
+<li>官方地格與民營合成商店分開</li>
+</ul>
+<h3 id="section-12">2.3 方形環狀地圖</h3>
+<section id="board-map" style="margin:28px 0"><p>71格：建設地50、效果格11、官方火車站5、國家公園5。每段建設地連續3～6格。</p><div style="overflow:auto;border:1px solid #dce5ec;border-radius:16px"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1900 1900" role="img" aria-labelledby="route-title route-desc" style="display:block;width:100%;min-width:1000px;font-family:Microsoft JhengHei,sans-serif"><title id="route-title">71格方形環狀棋盤</title><desc id="route-desc">11區以顏色區分，每區建設地連續排列，官方車站及效果格僅位於區段之間。沿箭頭順時針環行。</desc><defs><marker id="square-arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7" fill="#516378"/></marker></defs><rect width="1900" height="1900" rx="32" fill="#f1f5f9"/><rect x="225" y="240" width="1450" height="1420" rx="35" fill="white" stroke="#dbe3ec" stroke-width="3"/><path d="M190 150 L270 150" fill="none" stroke="#6b7d91" stroke-width="4"/><path d="M270 150 L350 150" fill="none" stroke="#6b7d91" stroke-width="4"/><path d="M350 150 L430 150" fill="none" stroke="#6b7d91" stroke-width="4"/><path d="M430 150 L510 150" fill="none" stroke="#6b7d91" stroke-width="4"/><path d="M510 150 L590 150" fill="none" stroke="#6b7d91" stroke-width="4"/><path d="M590 150 L670 150" fill="none" stroke="#6b7d91" stroke-width="4"/><path d="M670 150 L750 150" fill="none" stroke="#6b7d91" stroke-width="4"/><path d="M750 150 L830 150" fill="none" stroke="#6b7d91" stroke-width="4"/><path d="M830 150 L910 150" fill="none" stroke="#6b7d91" stroke-width="4"/><path d="M910 150 L990 150" fill="none" stroke="#6b7d91" stroke-width="4"/><path d="M990 150 L1070 150" fill="none" stroke="#6b7d91" stroke-width="4"/><path d="M1070 150 L1150 150" fill="none" stroke="#6b7d91" stroke-width="4"/><path d="M1150 150 L1230 150" fill="none" stroke="#6b7d91" stroke-width="4"/><path d="M1230 150 L1310 150" fill="none" stroke="#6b7d91" stroke-width="4"/><path d="M1310 150 L1390 150" fill="none" stroke="#6b7d91" stroke-width="4"/><path d="M1390 150 L1470 150" fill="none" stroke="#6b7d91" stroke-width="4"/><path d="M1470 150 L1550 150" fill="none" stroke="#6b7d91" stroke-width="4"/><path d="M1550 150 L1630 150" fill="none" stroke="#6b7d91" stroke-width="4"/><path d="M1630 150 L1710 150" fill="none" stroke="#6b7d91" stroke-width="4"/><path d="M1710 150 L1750 150 L1750 230" fill="none" stroke="#6b7d91" stroke-width="4"/><path d="M1750 230 L1750 310" fill="none" stroke="#6b7d91" stroke-width="4"/><path d="M1750 310 L1750 390" fill="none" stroke="#6b7d91" stroke-width="4"/><path d="M1750 390 L1750 470" fill="none" stroke="#6b7d91" stroke-width="4"/><path d="M1750 470 L1750 550" fill="none" stroke="#6b7d91" stroke-width="4"/><path d="M1750 550 L1750 630" fill="none" stroke="#6b7d91" stroke-width="4"/><path d="M1750 630 L1750 710" fill="none" stroke="#6b7d91" stroke-width="4"/><path d="M1750 710 L1750 790" fill="none" stroke="#6b7d91" stroke-width="4"/><path d="M1750 790 L1750 870" fill="none" stroke="#6b7d91" stroke-width="4"/><path d="M1750 870 L1750 950" fill="none" stroke="#6b7d91" stroke-width="4"/><path d="M1750 950 L1750 1030" fill="none" stroke="#6b7d91" stroke-width="4"/><path d="M1750 1030 L1750 1110" fill="none" stroke="#6b7d91" stroke-width="4"/><path d="M1750 1110 L1750 1190" fill="none" stroke="#6b7d91" stroke-width="4"/><path d="M1750 1190 L1750 1270" fill="none" stroke="#6b7d91" stroke-width="4"/><path d="M1750 1270 L1750 1350" fill="none" stroke="#6b7d91" stroke-width="4"/><path d="M1750 1350 L1750 1430" fill="none" stroke="#6b7d91" stroke-width="4"/><path d="M1750 1430 L1750 1510" fill="none" stroke="#6b7d91" stroke-width="4"/><path d="M1750 1510 L1750 1590" fill="none" stroke="#6b7d91" stroke-width="4"/><path d="M1750 1590 L1750 1670" fill="none" stroke="#6b7d91" stroke-width="4"/><path d="M1750 1670 L1750 1750 L1690 1750" fill="none" stroke="#6b7d91" stroke-width="4"/><path d="M1690 1750 L1570 1750" fill="none" stroke="#6b7d91" stroke-width="4"/><path d="M1637.0 1750.0 L1623.0 1750.0" stroke="#516378" stroke-width="3" marker-end="url(#square-arrow)"/><path d="M1570 1750 L1450 1750" fill="none" stroke="#6b7d91" stroke-width="4"/><path d="M1517.0 1750.0 L1503.0 1750.0" stroke="#516378" stroke-width="3" marker-end="url(#square-arrow)"/><path d="M1450 1750 L1330 1750" fill="none" stroke="#6b7d91" stroke-width="4"/><path d="M1397.0 1750.0 L1383.0 1750.0" stroke="#516378" stroke-width="3" marker-end="url(#square-arrow)"/><path d="M1330 1750 L1210 1750" fill="none" stroke="#6b7d91" stroke-width="4"/><path d="M1277.0 1750.0 L1263.0 1750.0" stroke="#516378" stroke-width="3" marker-end="url(#square-arrow)"/><path d="M1210 1750 L1090 1750" fill="none" stroke="#6b7d91" stroke-width="4"/><path d="M1157.0 1750.0 L1143.0 1750.0" stroke="#516378" stroke-width="3" marker-end="url(#square-arrow)"/><path d="M1090 1750 L970 1750" fill="none" stroke="#6b7d91" stroke-width="4"/><path d="M1037.0 1750.0 L1023.0 1750.0" stroke="#516378" stroke-width="3" marker-end="url(#square-arrow)"/><path d="M970 1750 L850 1750" fill="none" stroke="#6b7d91" stroke-width="4"/><path d="M917.0 1750.0 L903.0 1750.0" stroke="#516378" stroke-width="3" marker-end="url(#square-arrow)"/><path d="M850 1750 L730 1750" fill="none" stroke="#6b7d91" stroke-width="4"/><path d="M797.0 1750.0 L783.0 1750.0" stroke="#516378" stroke-width="3" marker-end="url(#square-arrow)"/><path d="M730 1750 L610 1750" fill="none" stroke="#6b7d91" stroke-width="4"/><path d="M677.0 1750.0 L663.0 1750.0" stroke="#516378" stroke-width="3" marker-end="url(#square-arrow)"/><path d="M610 1750 L490 1750" fill="none" stroke="#6b7d91" stroke-width="4"/><path d="M557.0 1750.0 L543.0 1750.0" stroke="#516378" stroke-width="3" marker-end="url(#square-arrow)"/><path d="M490 1750 L370 1750" fill="none" stroke="#6b7d91" stroke-width="4"/><path d="M437.0 1750.0 L423.0 1750.0" stroke="#516378" stroke-width="3" marker-end="url(#square-arrow)"/><path d="M370 1750 L250 1750" fill="none" stroke="#6b7d91" stroke-width="4"/><path d="M317.0 1750.0 L303.0 1750.0" stroke="#516378" stroke-width="3" marker-end="url(#square-arrow)"/><path d="M250 1750 L150 1750 L150 1630" fill="none" stroke="#6b7d91" stroke-width="4"/><path d="M150 1630 L150 1552" fill="none" stroke="#6b7d91" stroke-width="4"/><path d="M150 1552 L150 1474" fill="none" stroke="#6b7d91" stroke-width="4"/><path d="M150 1474 L150 1396" fill="none" stroke="#6b7d91" stroke-width="4"/><path d="M150 1396 L150 1318" fill="none" stroke="#6b7d91" stroke-width="4"/><path d="M150 1318 L150 1240" fill="none" stroke="#6b7d91" stroke-width="4"/><path d="M150 1240 L150 1162" fill="none" stroke="#6b7d91" stroke-width="4"/><path d="M150 1162 L150 1084" fill="none" stroke="#6b7d91" stroke-width="4"/><path d="M150 1084 L150 1006" fill="none" stroke="#6b7d91" stroke-width="4"/><path d="M150 1006 L150 928" fill="none" stroke="#6b7d91" stroke-width="4"/><path d="M150 928 L150 850" fill="none" stroke="#6b7d91" stroke-width="4"/><path d="M150 850 L150 772" fill="none" stroke="#6b7d91" stroke-width="4"/><path d="M150 772 L150 694" fill="none" stroke="#6b7d91" stroke-width="4"/><path d="M150 694 L150 616" fill="none" stroke="#6b7d91" stroke-width="4"/><path d="M150 616 L150 538" fill="none" stroke="#6b7d91" stroke-width="4"/><path d="M150 538 L150 460" fill="none" stroke="#6b7d91" stroke-width="4"/><path d="M150 460 L150 382" fill="none" stroke="#6b7d91" stroke-width="4"/><path d="M150 382 L150 304" fill="none" stroke="#6b7d91" stroke-width="4"/><path d="M150 304 L150 226" fill="none" stroke="#6b7d91" stroke-width="4"/><path d="M150 226 L150 150 L190 150" fill="none" stroke="#6b7d91" stroke-width="4"/><g data-tile="T01" data-kind="land" data-region="01"><title>T01 基隆：大台北／01區</title><rect x="154.0" y="112.0" width="72" height="76" rx="9" fill="#2563eb" stroke="#2563eb" stroke-width="3"/><text x="190.0" y="131.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">01區</text><text x="190.0" y="155.0" text-anchor="middle" font-size="20" font-weight="bold" fill="#ffffff">基隆</text><text x="190.0" y="176.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">T01</text></g><g data-tile="T02" data-kind="land" data-region="01"><title>T02 汐止：大台北／01區</title><rect x="234.0" y="112.0" width="72" height="76" rx="9" fill="#2563eb" stroke="#2563eb" stroke-width="3"/><text x="270.0" y="131.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">01區</text><text x="270.0" y="155.0" text-anchor="middle" font-size="20" font-weight="bold" fill="#ffffff">汐止</text><text x="270.0" y="176.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">T02</text></g><g data-tile="T03" data-kind="land" data-region="01"><title>T03 台北：大台北／01區</title><rect x="314.0" y="112.0" width="72" height="76" rx="9" fill="#2563eb" stroke="#2563eb" stroke-width="3"/><text x="350.0" y="131.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">01區</text><text x="350.0" y="155.0" text-anchor="middle" font-size="20" font-weight="bold" fill="#ffffff">台北</text><text x="350.0" y="176.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">T03</text></g><g data-tile="T04" data-kind="land" data-region="01"><title>T04 信義：大台北／01區</title><rect x="394.0" y="112.0" width="72" height="76" rx="9" fill="#2563eb" stroke="#2563eb" stroke-width="3"/><text x="430.0" y="131.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">01區</text><text x="430.0" y="155.0" text-anchor="middle" font-size="20" font-weight="bold" fill="#ffffff">信義</text><text x="430.0" y="176.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">T04</text></g><g data-tile="T05" data-kind="land" data-region="01"><title>T05 板橋：大台北／01區</title><rect x="474.0" y="112.0" width="72" height="76" rx="9" fill="#2563eb" stroke="#2563eb" stroke-width="3"/><text x="510.0" y="131.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">01區</text><text x="510.0" y="155.0" text-anchor="middle" font-size="20" font-weight="bold" fill="#ffffff">板橋</text><text x="510.0" y="176.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">T05</text></g><g data-tile="T06" data-kind="land" data-region="01"><title>T06 淡水：大台北／01區</title><rect x="554.0" y="112.0" width="72" height="76" rx="9" fill="#2563eb" stroke="#2563eb" stroke-width="3"/><text x="590.0" y="131.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">01區</text><text x="590.0" y="155.0" text-anchor="middle" font-size="20" font-weight="bold" fill="#ffffff">淡水</text><text x="590.0" y="176.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">T06</text></g><g data-tile="R01" data-kind="station" data-region="01"><title>R01 台北站：可選支付1,200，移動至任一其他官方火車站</title><rect x="634.0" y="112.0" width="72" height="76" rx="9" fill="#facc15" stroke="#a16207" stroke-width="3"/><text x="670.0" y="131.0" text-anchor="middle" font-size="13" fill="#172033" opacity="0.9">官方車站</text><text x="670.0" y="155.0" text-anchor="middle" font-size="20" font-weight="bold" fill="#172033">台北站</text><text x="670.0" y="176.0" text-anchor="middle" font-size="13" fill="#172033" opacity="0.9">R01</text></g><g data-tile="E01" data-kind="effect" data-region="01"><title>E01 新聞</title><rect x="714.0" y="112.0" width="72" height="76" rx="9" fill="#334155" stroke="#334155" stroke-width="3"/><text x="750.0" y="131.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">效果格</text><text x="750.0" y="155.0" text-anchor="middle" font-size="20" font-weight="bold" fill="#ffffff">新聞</text><text x="750.0" y="176.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">E01</text></g><g data-tile="T07" data-kind="land" data-region="02"><title>T07 林口：桃園／02區</title><rect x="794.0" y="112.0" width="72" height="76" rx="9" fill="#c2410c" stroke="#c2410c" stroke-width="3"/><text x="830.0" y="131.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">02區</text><text x="830.0" y="155.0" text-anchor="middle" font-size="20" font-weight="bold" fill="#ffffff">林口</text><text x="830.0" y="176.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">T07</text></g><g data-tile="T08" data-kind="land" data-region="02"><title>T08 桃園：桃園／02區</title><rect x="874.0" y="112.0" width="72" height="76" rx="9" fill="#c2410c" stroke="#c2410c" stroke-width="3"/><text x="910.0" y="131.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">02區</text><text x="910.0" y="155.0" text-anchor="middle" font-size="20" font-weight="bold" fill="#ffffff">桃園</text><text x="910.0" y="176.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">T08</text></g><g data-tile="T09" data-kind="land" data-region="02"><title>T09 中壢：桃園／02區</title><rect x="954.0" y="112.0" width="72" height="76" rx="9" fill="#c2410c" stroke="#c2410c" stroke-width="3"/><text x="990.0" y="131.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">02區</text><text x="990.0" y="155.0" text-anchor="middle" font-size="20" font-weight="bold" fill="#ffffff">中壢</text><text x="990.0" y="176.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">T09</text></g><g data-tile="T10" data-kind="land" data-region="02"><title>T10 大溪：桃園／02區</title><rect x="1034.0" y="112.0" width="72" height="76" rx="9" fill="#c2410c" stroke="#c2410c" stroke-width="3"/><text x="1070.0" y="131.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">02區</text><text x="1070.0" y="155.0" text-anchor="middle" font-size="20" font-weight="bold" fill="#ffffff">大溪</text><text x="1070.0" y="176.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">T10</text></g><g data-tile="T11" data-kind="land" data-region="02"><title>T11 楊梅：桃園／02區</title><rect x="1114.0" y="112.0" width="72" height="76" rx="9" fill="#c2410c" stroke="#c2410c" stroke-width="3"/><text x="1150.0" y="131.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">02區</text><text x="1150.0" y="155.0" text-anchor="middle" font-size="20" font-weight="bold" fill="#ffffff">楊梅</text><text x="1150.0" y="176.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">T11</text></g><g data-tile="E02" data-kind="effect" data-region="02"><title>E02 機場：可選支付6,000（票價提案），移動至其他機場並立即獲得額外回合</title><rect x="1194.0" y="112.0" width="72" height="76" rx="9" fill="#0891b2" stroke="#0891b2" stroke-width="3"/><text x="1230.0" y="131.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">官方機場</text><text x="1230.0" y="155.0" text-anchor="middle" font-size="20" font-weight="bold" fill="#ffffff">機場</text><text x="1230.0" y="176.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">E02</text></g><g data-tile="T12" data-kind="land" data-region="03"><title>T12 新竹：竹苗／03區</title><rect x="1274.0" y="112.0" width="72" height="76" rx="9" fill="#0f766e" stroke="#0f766e" stroke-width="3"/><text x="1310.0" y="131.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">03區</text><text x="1310.0" y="155.0" text-anchor="middle" font-size="20" font-weight="bold" fill="#ffffff">新竹</text><text x="1310.0" y="176.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">T12</text></g><g data-tile="T13" data-kind="land" data-region="03"><title>T13 竹北：竹苗／03區</title><rect x="1354.0" y="112.0" width="72" height="76" rx="9" fill="#0f766e" stroke="#0f766e" stroke-width="3"/><text x="1390.0" y="131.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">03區</text><text x="1390.0" y="155.0" text-anchor="middle" font-size="20" font-weight="bold" fill="#ffffff">竹北</text><text x="1390.0" y="176.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">T13</text></g><g data-tile="T14" data-kind="land" data-region="03"><title>T14 頭份：竹苗／03區</title><rect x="1434.0" y="112.0" width="72" height="76" rx="9" fill="#0f766e" stroke="#0f766e" stroke-width="3"/><text x="1470.0" y="131.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">03區</text><text x="1470.0" y="155.0" text-anchor="middle" font-size="20" font-weight="bold" fill="#ffffff">頭份</text><text x="1470.0" y="176.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">T14</text></g><g data-tile="T15" data-kind="land" data-region="03"><title>T15 苗栗：竹苗／03區</title><rect x="1514.0" y="112.0" width="72" height="76" rx="9" fill="#0f766e" stroke="#0f766e" stroke-width="3"/><text x="1550.0" y="131.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">03區</text><text x="1550.0" y="155.0" text-anchor="middle" font-size="20" font-weight="bold" fill="#ffffff">苗栗</text><text x="1550.0" y="176.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">T15</text></g><g data-tile="T16" data-kind="land" data-region="03"><title>T16 通霄：竹苗／03區</title><rect x="1594.0" y="112.0" width="72" height="76" rx="9" fill="#0f766e" stroke="#0f766e" stroke-width="3"/><text x="1630.0" y="131.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">03區</text><text x="1630.0" y="155.0" text-anchor="middle" font-size="20" font-weight="bold" fill="#ffffff">通霄</text><text x="1630.0" y="176.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">T16</text></g><g data-tile="E03" data-kind="effect" data-region="03"><title>E03 國稅局</title><rect x="1674.0" y="112.0" width="72" height="76" rx="9" fill="#7f1d1d" stroke="#7f1d1d" stroke-width="3"/><text x="1710.0" y="131.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">效果格</text><text x="1710.0" y="155.0" text-anchor="middle" font-size="20" font-weight="bold" fill="#ffffff">國稅局</text><text x="1710.0" y="176.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">E03</text></g><g data-tile="T17" data-kind="land" data-region="04"><title>T17 大甲：台中／04區</title><rect x="1714.0" y="192.0" width="72" height="76" rx="9" fill="#7c3aed" stroke="#7c3aed" stroke-width="3"/><text x="1750.0" y="211.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">04區</text><text x="1750.0" y="235.0" text-anchor="middle" font-size="20" font-weight="bold" fill="#ffffff">大甲</text><text x="1750.0" y="256.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">T17</text></g><g data-tile="T18" data-kind="land" data-region="04"><title>T18 清水：台中／04區</title><rect x="1714.0" y="272.0" width="72" height="76" rx="9" fill="#7c3aed" stroke="#7c3aed" stroke-width="3"/><text x="1750.0" y="291.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">04區</text><text x="1750.0" y="315.0" text-anchor="middle" font-size="20" font-weight="bold" fill="#ffffff">清水</text><text x="1750.0" y="336.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">T18</text></g><g data-tile="T19" data-kind="land" data-region="04"><title>T19 豐原：台中／04區</title><rect x="1714.0" y="352.0" width="72" height="76" rx="9" fill="#7c3aed" stroke="#7c3aed" stroke-width="3"/><text x="1750.0" y="371.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">04區</text><text x="1750.0" y="395.0" text-anchor="middle" font-size="20" font-weight="bold" fill="#ffffff">豐原</text><text x="1750.0" y="416.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">T19</text></g><g data-tile="T20" data-kind="land" data-region="04"><title>T20 台中：台中／04區</title><rect x="1714.0" y="432.0" width="72" height="76" rx="9" fill="#7c3aed" stroke="#7c3aed" stroke-width="3"/><text x="1750.0" y="451.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">04區</text><text x="1750.0" y="475.0" text-anchor="middle" font-size="20" font-weight="bold" fill="#ffffff">台中</text><text x="1750.0" y="496.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">T20</text></g><g data-tile="T21" data-kind="land" data-region="04"><title>T21 逢甲：台中／04區</title><rect x="1714.0" y="512.0" width="72" height="76" rx="9" fill="#7c3aed" stroke="#7c3aed" stroke-width="3"/><text x="1750.0" y="531.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">04區</text><text x="1750.0" y="555.0" text-anchor="middle" font-size="20" font-weight="bold" fill="#ffffff">逢甲</text><text x="1750.0" y="576.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">T21</text></g><g data-tile="T22" data-kind="land" data-region="04"><title>T22 大里：台中／04區</title><rect x="1714.0" y="592.0" width="72" height="76" rx="9" fill="#7c3aed" stroke="#7c3aed" stroke-width="3"/><text x="1750.0" y="611.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">04區</text><text x="1750.0" y="635.0" text-anchor="middle" font-size="20" font-weight="bold" fill="#ffffff">大里</text><text x="1750.0" y="656.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">T22</text></g><g data-tile="R02" data-kind="station" data-region="04"><title>R02 台中站：可選支付1,200，移動至任一其他官方火車站</title><rect x="1714.0" y="672.0" width="72" height="76" rx="9" fill="#facc15" stroke="#a16207" stroke-width="3"/><text x="1750.0" y="691.0" text-anchor="middle" font-size="13" fill="#172033" opacity="0.9">官方車站</text><text x="1750.0" y="715.0" text-anchor="middle" font-size="20" font-weight="bold" fill="#172033">台中站</text><text x="1750.0" y="736.0" text-anchor="middle" font-size="13" fill="#172033" opacity="0.9">R02</text></g><g data-tile="E04" data-kind="effect" data-region="04"><title>E04 機會</title><rect x="1714.0" y="752.0" width="72" height="76" rx="9" fill="#334155" stroke="#334155" stroke-width="3"/><text x="1750.0" y="771.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">效果格</text><text x="1750.0" y="795.0" text-anchor="middle" font-size="20" font-weight="bold" fill="#ffffff">機會</text><text x="1750.0" y="816.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">E04</text></g><g data-tile="T23" data-kind="land" data-region="05"><title>T23 彰化：彰雲／05區</title><rect x="1714.0" y="832.0" width="72" height="76" rx="9" fill="#be123c" stroke="#be123c" stroke-width="3"/><text x="1750.0" y="851.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">05區</text><text x="1750.0" y="875.0" text-anchor="middle" font-size="20" font-weight="bold" fill="#ffffff">彰化</text><text x="1750.0" y="896.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">T23</text></g><g data-tile="T24" data-kind="land" data-region="05"><title>T24 鹿港：彰雲／05區</title><rect x="1714.0" y="912.0" width="72" height="76" rx="9" fill="#be123c" stroke="#be123c" stroke-width="3"/><text x="1750.0" y="931.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">05區</text><text x="1750.0" y="955.0" text-anchor="middle" font-size="20" font-weight="bold" fill="#ffffff">鹿港</text><text x="1750.0" y="976.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">T24</text></g><g data-tile="T25" data-kind="land" data-region="05"><title>T25 員林：彰雲／05區</title><rect x="1714.0" y="992.0" width="72" height="76" rx="9" fill="#be123c" stroke="#be123c" stroke-width="3"/><text x="1750.0" y="1011.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">05區</text><text x="1750.0" y="1035.0" text-anchor="middle" font-size="20" font-weight="bold" fill="#ffffff">員林</text><text x="1750.0" y="1056.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">T25</text></g><g data-tile="T26" data-kind="land" data-region="05"><title>T26 斗六：彰雲／05區</title><rect x="1714.0" y="1072.0" width="72" height="76" rx="9" fill="#be123c" stroke="#be123c" stroke-width="3"/><text x="1750.0" y="1091.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">05區</text><text x="1750.0" y="1115.0" text-anchor="middle" font-size="20" font-weight="bold" fill="#ffffff">斗六</text><text x="1750.0" y="1136.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">T26</text></g><g data-tile="E05" data-kind="effect" data-region="05"><title>E05 新聞</title><rect x="1714.0" y="1152.0" width="72" height="76" rx="9" fill="#334155" stroke="#334155" stroke-width="3"/><text x="1750.0" y="1171.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">效果格</text><text x="1750.0" y="1195.0" text-anchor="middle" font-size="20" font-weight="bold" fill="#ffffff">新聞</text><text x="1750.0" y="1216.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">E05</text></g><g data-tile="T27" data-kind="land" data-region="06"><title>T27 嘉義：嘉南／06區</title><rect x="1714.0" y="1232.0" width="72" height="76" rx="9" fill="#4d7c0f" stroke="#4d7c0f" stroke-width="3"/><text x="1750.0" y="1251.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">06區</text><text x="1750.0" y="1275.0" text-anchor="middle" font-size="20" font-weight="bold" fill="#ffffff">嘉義</text><text x="1750.0" y="1296.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">T27</text></g><g data-tile="T28" data-kind="land" data-region="06"><title>T28 新營：嘉南／06區</title><rect x="1714.0" y="1312.0" width="72" height="76" rx="9" fill="#4d7c0f" stroke="#4d7c0f" stroke-width="3"/><text x="1750.0" y="1331.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">06區</text><text x="1750.0" y="1355.0" text-anchor="middle" font-size="20" font-weight="bold" fill="#ffffff">新營</text><text x="1750.0" y="1376.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">T28</text></g><g data-tile="T29" data-kind="land" data-region="06"><title>T29 麻豆：嘉南／06區</title><rect x="1714.0" y="1392.0" width="72" height="76" rx="9" fill="#4d7c0f" stroke="#4d7c0f" stroke-width="3"/><text x="1750.0" y="1411.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">06區</text><text x="1750.0" y="1435.0" text-anchor="middle" font-size="20" font-weight="bold" fill="#ffffff">麻豆</text><text x="1750.0" y="1456.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">T29</text></g><g data-tile="T30" data-kind="land" data-region="06"><title>T30 台南：嘉南／06區</title><rect x="1714.0" y="1472.0" width="72" height="76" rx="9" fill="#4d7c0f" stroke="#4d7c0f" stroke-width="3"/><text x="1750.0" y="1491.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">06區</text><text x="1750.0" y="1515.0" text-anchor="middle" font-size="20" font-weight="bold" fill="#ffffff">台南</text><text x="1750.0" y="1536.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">T30</text></g><g data-tile="T31" data-kind="land" data-region="06"><title>T31 安平：嘉南／06區</title><rect x="1714.0" y="1552.0" width="72" height="76" rx="9" fill="#4d7c0f" stroke="#4d7c0f" stroke-width="3"/><text x="1750.0" y="1571.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">06區</text><text x="1750.0" y="1595.0" text-anchor="middle" font-size="20" font-weight="bold" fill="#ffffff">安平</text><text x="1750.0" y="1616.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">T31</text></g><g data-tile="E06" data-kind="effect" data-region="06"><title>E06 機會</title><rect x="1714.0" y="1632.0" width="72" height="76" rx="9" fill="#334155" stroke="#334155" stroke-width="3"/><text x="1750.0" y="1651.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">效果格</text><text x="1750.0" y="1675.0" text-anchor="middle" font-size="20" font-weight="bold" fill="#ffffff">機會</text><text x="1750.0" y="1696.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">E06</text></g><g data-tile="T32" data-kind="land" data-region="07"><title>T32 岡山：高雄／07區</title><rect x="1654.0" y="1712.0" width="72" height="76" rx="9" fill="#a16207" stroke="#a16207" stroke-width="3"/><text x="1690.0" y="1731.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">07區</text><text x="1690.0" y="1755.0" text-anchor="middle" font-size="20" font-weight="bold" fill="#ffffff">岡山</text><text x="1690.0" y="1776.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">T32</text></g><g data-tile="T33" data-kind="land" data-region="07"><title>T33 左營：高雄／07區</title><rect x="1534.0" y="1712.0" width="72" height="76" rx="9" fill="#a16207" stroke="#a16207" stroke-width="3"/><text x="1570.0" y="1731.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">07區</text><text x="1570.0" y="1755.0" text-anchor="middle" font-size="20" font-weight="bold" fill="#ffffff">左營</text><text x="1570.0" y="1776.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">T33</text></g><g data-tile="T34" data-kind="land" data-region="07"><title>T34 高雄：高雄／07區</title><rect x="1414.0" y="1712.0" width="72" height="76" rx="9" fill="#a16207" stroke="#a16207" stroke-width="3"/><text x="1450.0" y="1731.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">07區</text><text x="1450.0" y="1755.0" text-anchor="middle" font-size="20" font-weight="bold" fill="#ffffff">高雄</text><text x="1450.0" y="1776.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">T34</text></g><g data-tile="T35" data-kind="land" data-region="07"><title>T35 鳳山：高雄／07區</title><rect x="1294.0" y="1712.0" width="72" height="76" rx="9" fill="#a16207" stroke="#a16207" stroke-width="3"/><text x="1330.0" y="1731.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">07區</text><text x="1330.0" y="1755.0" text-anchor="middle" font-size="20" font-weight="bold" fill="#ffffff">鳳山</text><text x="1330.0" y="1776.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">T35</text></g><g data-tile="T36" data-kind="land" data-region="07"><title>T36 旗津：高雄／07區</title><rect x="1174.0" y="1712.0" width="72" height="76" rx="9" fill="#a16207" stroke="#a16207" stroke-width="3"/><text x="1210.0" y="1731.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">07區</text><text x="1210.0" y="1755.0" text-anchor="middle" font-size="20" font-weight="bold" fill="#ffffff">旗津</text><text x="1210.0" y="1776.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">T36</text></g><g data-tile="T37" data-kind="land" data-region="07"><title>T37 小港：高雄／07區</title><rect x="1054.0" y="1712.0" width="72" height="76" rx="9" fill="#a16207" stroke="#a16207" stroke-width="3"/><text x="1090.0" y="1731.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">07區</text><text x="1090.0" y="1755.0" text-anchor="middle" font-size="20" font-weight="bold" fill="#ffffff">小港</text><text x="1090.0" y="1776.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">T37</text></g><g data-tile="R03" data-kind="station" data-region="07"><title>R03 高雄站：可選支付1,200，移動至任一其他官方火車站</title><rect x="934.0" y="1712.0" width="72" height="76" rx="9" fill="#facc15" stroke="#a16207" stroke-width="3"/><text x="970.0" y="1731.0" text-anchor="middle" font-size="13" fill="#172033" opacity="0.9">官方車站</text><text x="970.0" y="1755.0" text-anchor="middle" font-size="20" font-weight="bold" fill="#172033">高雄站</text><text x="970.0" y="1776.0" text-anchor="middle" font-size="13" fill="#172033" opacity="0.9">R03</text></g><g data-tile="E07" data-kind="effect" data-region="07"><title>E07 國稅局</title><rect x="814.0" y="1712.0" width="72" height="76" rx="9" fill="#7f1d1d" stroke="#7f1d1d" stroke-width="3"/><text x="850.0" y="1731.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">效果格</text><text x="850.0" y="1755.0" text-anchor="middle" font-size="20" font-weight="bold" fill="#ffffff">國稅局</text><text x="850.0" y="1776.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">E07</text></g><g data-tile="T38" data-kind="land" data-region="08"><title>T38 屏東：屏東／08區</title><rect x="694.0" y="1712.0" width="72" height="76" rx="9" fill="#0369a1" stroke="#0369a1" stroke-width="3"/><text x="730.0" y="1731.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">08區</text><text x="730.0" y="1755.0" text-anchor="middle" font-size="20" font-weight="bold" fill="#ffffff">屏東</text><text x="730.0" y="1776.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">T38</text></g><g data-tile="T39" data-kind="land" data-region="08"><title>T39 東港：屏東／08區</title><rect x="574.0" y="1712.0" width="72" height="76" rx="9" fill="#0369a1" stroke="#0369a1" stroke-width="3"/><text x="610.0" y="1731.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">08區</text><text x="610.0" y="1755.0" text-anchor="middle" font-size="20" font-weight="bold" fill="#ffffff">東港</text><text x="610.0" y="1776.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">T39</text></g><g data-tile="T40" data-kind="land" data-region="08"><title>T40 恆春：屏東／08區</title><rect x="454.0" y="1712.0" width="72" height="76" rx="9" fill="#0369a1" stroke="#0369a1" stroke-width="3"/><text x="490.0" y="1731.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">08區</text><text x="490.0" y="1755.0" text-anchor="middle" font-size="20" font-weight="bold" fill="#ffffff">恆春</text><text x="490.0" y="1776.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">T40</text></g><g data-tile="T41" data-kind="land" data-region="08"><title>T41 墾丁：屏東／08區</title><rect x="334.0" y="1712.0" width="72" height="76" rx="9" fill="#0369a1" stroke="#0369a1" stroke-width="3"/><text x="370.0" y="1731.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">08區</text><text x="370.0" y="1755.0" text-anchor="middle" font-size="20" font-weight="bold" fill="#ffffff">墾丁</text><text x="370.0" y="1776.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">T41</text></g><g data-tile="E08" data-kind="effect" data-region="08"><title>E08 新聞</title><rect x="214.0" y="1712.0" width="72" height="76" rx="9" fill="#334155" stroke="#334155" stroke-width="3"/><text x="250.0" y="1731.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">效果格</text><text x="250.0" y="1755.0" text-anchor="middle" font-size="20" font-weight="bold" fill="#ffffff">新聞</text><text x="250.0" y="1776.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">E08</text></g><g data-tile="T42" data-kind="land" data-region="09"><title>T42 太麻里：台東／09區</title><rect x="114.0" y="1592.0" width="72" height="76" rx="9" fill="#a21caf" stroke="#a21caf" stroke-width="3"/><text x="150.0" y="1611.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">09區</text><text x="150.0" y="1635.0" text-anchor="middle" font-size="20" font-weight="bold" fill="#ffffff">太麻里</text><text x="150.0" y="1656.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">T42</text></g><g data-tile="T43" data-kind="land" data-region="09"><title>T43 台東：台東／09區；綠島監獄出獄支線返回點</title><rect x="114.0" y="1514.0" width="72" height="76" rx="9" fill="#a21caf" stroke="#a21caf" stroke-width="3"/><text x="150.0" y="1533.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">09區</text><text x="150.0" y="1557.0" text-anchor="middle" font-size="20" font-weight="bold" fill="#ffffff">台東</text><text x="150.0" y="1578.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">T43</text></g><g data-tile="T44" data-kind="land" data-region="09"><title>T44 鹿野：台東／09區</title><rect x="114.0" y="1436.0" width="72" height="76" rx="9" fill="#a21caf" stroke="#a21caf" stroke-width="3"/><text x="150.0" y="1455.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">09區</text><text x="150.0" y="1479.0" text-anchor="middle" font-size="20" font-weight="bold" fill="#ffffff">鹿野</text><text x="150.0" y="1500.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">T44</text></g><g data-tile="R04" data-kind="station" data-region="09"><title>R04 台東站：可選支付1,200，移動至任一其他官方火車站</title><rect x="114.0" y="1358.0" width="72" height="76" rx="9" fill="#facc15" stroke="#a16207" stroke-width="3"/><text x="150.0" y="1377.0" text-anchor="middle" font-size="13" fill="#172033" opacity="0.9">官方車站</text><text x="150.0" y="1401.0" text-anchor="middle" font-size="20" font-weight="bold" fill="#172033">台東站</text><text x="150.0" y="1422.0" text-anchor="middle" font-size="13" fill="#172033" opacity="0.9">R04</text></g><g data-tile="E09" data-kind="effect" data-region="09"><title>E09 機場：可選支付6,000（票價提案），移動至其他機場並立即獲得額外回合</title><rect x="114.0" y="1280.0" width="72" height="76" rx="9" fill="#0891b2" stroke="#0891b2" stroke-width="3"/><text x="150.0" y="1299.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">官方機場</text><text x="150.0" y="1323.0" text-anchor="middle" font-size="20" font-weight="bold" fill="#ffffff">機場</text><text x="150.0" y="1344.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">E09</text></g><g data-tile="N01" data-kind="park" data-region="00"><title>N01 國家公園：無功能格，不可建設</title><rect x="114.0" y="1202.0" width="72" height="76" rx="9" fill="#d1fae5" stroke="#047857" stroke-width="3"/><text x="150.0" y="1218.0" text-anchor="middle" font-size="12" fill="#065f46">無功能格</text><text x="150.0" y="1238.0" text-anchor="middle" font-size="18" font-weight="bold" fill="#065f46">國家</text><text x="150.0" y="1257.0" text-anchor="middle" font-size="18" font-weight="bold" fill="#065f46">公園</text><text x="150.0" y="1272.0" text-anchor="middle" font-size="11" fill="#065f46">N01</text></g><g data-tile="N02" data-kind="park" data-region="00"><title>N02 國家公園：無功能格，不可建設</title><rect x="114.0" y="1124.0" width="72" height="76" rx="9" fill="#d1fae5" stroke="#047857" stroke-width="3"/><text x="150.0" y="1140.0" text-anchor="middle" font-size="12" fill="#065f46">無功能格</text><text x="150.0" y="1160.0" text-anchor="middle" font-size="18" font-weight="bold" fill="#065f46">國家</text><text x="150.0" y="1179.0" text-anchor="middle" font-size="18" font-weight="bold" fill="#065f46">公園</text><text x="150.0" y="1194.0" text-anchor="middle" font-size="11" fill="#065f46">N02</text></g><g data-tile="N03" data-kind="park" data-region="00"><title>N03 國家公園：無功能格，不可建設</title><rect x="114.0" y="1046.0" width="72" height="76" rx="9" fill="#d1fae5" stroke="#047857" stroke-width="3"/><text x="150.0" y="1062.0" text-anchor="middle" font-size="12" fill="#065f46">無功能格</text><text x="150.0" y="1082.0" text-anchor="middle" font-size="18" font-weight="bold" fill="#065f46">國家</text><text x="150.0" y="1101.0" text-anchor="middle" font-size="18" font-weight="bold" fill="#065f46">公園</text><text x="150.0" y="1116.0" text-anchor="middle" font-size="11" fill="#065f46">N03</text></g><g data-tile="N04" data-kind="park" data-region="00"><title>N04 國家公園：無功能格，不可建設</title><rect x="114.0" y="968.0" width="72" height="76" rx="9" fill="#d1fae5" stroke="#047857" stroke-width="3"/><text x="150.0" y="984.0" text-anchor="middle" font-size="12" fill="#065f46">無功能格</text><text x="150.0" y="1004.0" text-anchor="middle" font-size="18" font-weight="bold" fill="#065f46">國家</text><text x="150.0" y="1023.0" text-anchor="middle" font-size="18" font-weight="bold" fill="#065f46">公園</text><text x="150.0" y="1038.0" text-anchor="middle" font-size="11" fill="#065f46">N04</text></g><g data-tile="N05" data-kind="park" data-region="00"><title>N05 國家公園：無功能格，不可建設</title><rect x="114.0" y="890.0" width="72" height="76" rx="9" fill="#d1fae5" stroke="#047857" stroke-width="3"/><text x="150.0" y="906.0" text-anchor="middle" font-size="12" fill="#065f46">無功能格</text><text x="150.0" y="926.0" text-anchor="middle" font-size="18" font-weight="bold" fill="#065f46">國家</text><text x="150.0" y="945.0" text-anchor="middle" font-size="18" font-weight="bold" fill="#065f46">公園</text><text x="150.0" y="960.0" text-anchor="middle" font-size="11" fill="#065f46">N05</text></g><g data-tile="T45" data-kind="land" data-region="10"><title>T45 池上：花蓮／10區</title><rect x="114.0" y="812.0" width="72" height="76" rx="9" fill="#4338ca" stroke="#4338ca" stroke-width="3"/><text x="150.0" y="831.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">10區</text><text x="150.0" y="855.0" text-anchor="middle" font-size="20" font-weight="bold" fill="#ffffff">池上</text><text x="150.0" y="876.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">T45</text></g><g data-tile="T46" data-kind="land" data-region="10"><title>T46 玉里：花蓮／10區</title><rect x="114.0" y="734.0" width="72" height="76" rx="9" fill="#4338ca" stroke="#4338ca" stroke-width="3"/><text x="150.0" y="753.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">10區</text><text x="150.0" y="777.0" text-anchor="middle" font-size="20" font-weight="bold" fill="#ffffff">玉里</text><text x="150.0" y="798.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">T46</text></g><g data-tile="T47" data-kind="land" data-region="10"><title>T47 花蓮：花蓮／10區</title><rect x="114.0" y="656.0" width="72" height="76" rx="9" fill="#4338ca" stroke="#4338ca" stroke-width="3"/><text x="150.0" y="675.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">10區</text><text x="150.0" y="699.0" text-anchor="middle" font-size="20" font-weight="bold" fill="#ffffff">花蓮</text><text x="150.0" y="720.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">T47</text></g><g data-tile="E11" data-kind="effect" data-region="10"><title>E11 機會</title><rect x="114.0" y="578.0" width="72" height="76" rx="9" fill="#334155" stroke="#334155" stroke-width="3"/><text x="150.0" y="597.0" text-anchor="middle" font-size="13" fill="#ffffff">效果格</text><text x="150.0" y="621.0" text-anchor="middle" font-size="20" font-weight="bold" fill="#ffffff">機會</text><text x="150.0" y="642.0" text-anchor="middle" font-size="13" fill="#ffffff">E11</text></g><g data-tile="T48" data-kind="land" data-region="11"><title>T48 太魯閣：宜蘭／11區</title><rect x="114.0" y="500.0" width="72" height="76" rx="9" fill="#5b6b8c" stroke="#5b6b8c" stroke-width="3"/><text x="150.0" y="519.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">11區</text><text x="150.0" y="543.0" text-anchor="middle" font-size="20" font-weight="bold" fill="#ffffff">太魯閣</text><text x="150.0" y="564.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">T48</text></g><g data-tile="T49" data-kind="land" data-region="11"><title>T49 蘇澳：宜蘭／11區</title><rect x="114.0" y="422.0" width="72" height="76" rx="9" fill="#5b6b8c" stroke="#5b6b8c" stroke-width="3"/><text x="150.0" y="441.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">11區</text><text x="150.0" y="465.0" text-anchor="middle" font-size="20" font-weight="bold" fill="#ffffff">蘇澳</text><text x="150.0" y="486.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">T49</text></g><g data-tile="T50" data-kind="land" data-region="11"><title>T50 宜蘭：宜蘭／11區</title><rect x="114.0" y="344.0" width="72" height="76" rx="9" fill="#5b6b8c" stroke="#5b6b8c" stroke-width="3"/><text x="150.0" y="363.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">11區</text><text x="150.0" y="387.0" text-anchor="middle" font-size="20" font-weight="bold" fill="#ffffff">宜蘭</text><text x="150.0" y="408.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">T50</text></g><g data-tile="R05" data-kind="station" data-region="10"><title>R05 花蓮站：可選支付1,200，移動至任一其他官方火車站</title><rect x="114.0" y="266.0" width="72" height="76" rx="9" fill="#facc15" stroke="#a16207" stroke-width="3"/><text x="150.0" y="285.0" text-anchor="middle" font-size="13" fill="#172033" opacity="0.9">官方車站</text><text x="150.0" y="309.0" text-anchor="middle" font-size="20" font-weight="bold" fill="#172033">花蓮站</text><text x="150.0" y="330.0" text-anchor="middle" font-size="13" fill="#172033" opacity="0.9">R05</text></g><g data-tile="E10" data-kind="effect" data-region="10"><title>E10 起點</title><rect x="114.0" y="188.0" width="72" height="76" rx="9" fill="#15803d" stroke="#15803d" stroke-width="3"/><text x="150.0" y="207.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">起點</text><text x="150.0" y="231.0" text-anchor="middle" font-size="20" font-weight="bold" fill="#ffffff">起點</text><text x="150.0" y="252.0" text-anchor="middle" font-size="13" fill="#ffffff" opacity="0.9">E10</text></g><text x="950" y="425" text-anchor="middle" fill="#172b43" font-size="60" font-weight="bold">台灣環島棋盤</text><text x="950" y="490" text-anchor="middle" fill="#516378" font-size="28">方形環狀 · 順時針行進 · 主線71格</text><text x="950" y="555" text-anchor="middle" fill="#516378" font-size="25">50格建設地 ＋ 11格效果格 ＋ 5格官方火車站 ＋ 5格國家公園</text><text x="950" y="625" text-anchor="middle" fill="#172b43" font-size="28" font-weight="bold">每段連續3～6格；車站與效果格設於段間</text><rect x="390" y="715" width="510" height="76" rx="12" fill="#2563eb"/><text x="414" y="763" font-size="28" font-weight="bold" fill="white">01　大台北</text><text x="870" y="763" text-anchor="end" font-size="25" fill="white">6格建設地</text><rect x="1000" y="715" width="510" height="76" rx="12" fill="#c2410c"/><text x="1024" y="763" font-size="28" font-weight="bold" fill="white">02　桃園</text><text x="1480" y="763" text-anchor="end" font-size="25" fill="white">5格建設地</text><rect x="390" y="811" width="510" height="76" rx="12" fill="#0f766e"/><text x="414" y="859" font-size="28" font-weight="bold" fill="white">03　竹苗</text><text x="870" y="859" text-anchor="end" font-size="25" fill="white">5格建設地</text><rect x="1000" y="811" width="510" height="76" rx="12" fill="#7c3aed"/><text x="1024" y="859" font-size="28" font-weight="bold" fill="white">04　台中</text><text x="1480" y="859" text-anchor="end" font-size="25" fill="white">6格建設地</text><rect x="390" y="907" width="510" height="76" rx="12" fill="#be123c"/><text x="414" y="955" font-size="28" font-weight="bold" fill="white">05　彰雲</text><text x="870" y="955" text-anchor="end" font-size="25" fill="white">4格建設地</text><rect x="1000" y="907" width="510" height="76" rx="12" fill="#4d7c0f"/><text x="1024" y="955" font-size="28" font-weight="bold" fill="white">06　嘉南</text><text x="1480" y="955" text-anchor="end" font-size="25" fill="white">5格建設地</text><rect x="390" y="1003" width="510" height="76" rx="12" fill="#a16207"/><text x="414" y="1051" font-size="28" font-weight="bold" fill="white">07　高雄</text><text x="870" y="1051" text-anchor="end" font-size="25" fill="white">6格建設地</text><rect x="1000" y="1003" width="510" height="76" rx="12" fill="#0369a1"/><text x="1024" y="1051" font-size="28" font-weight="bold" fill="white">08　屏東</text><text x="1480" y="1051" text-anchor="end" font-size="25" fill="white">4格建設地</text><rect x="390" y="1099" width="510" height="76" rx="12" fill="#a21caf"/><text x="414" y="1147" font-size="28" font-weight="bold" fill="white">09　台東</text><text x="870" y="1147" text-anchor="end" font-size="25" fill="white">3格建設地</text><rect x="1000" y="1099" width="510" height="76" rx="12" fill="#4338ca"/><text x="1024" y="1147" font-size="28" font-weight="bold" fill="white">10　花蓮</text><text x="1480" y="1147" text-anchor="end" font-size="25" fill="white">3格建設地</text><rect x="390" y="1191" width="510" height="72" rx="12" fill="#5b6b8c"/><text x="414" y="1237" font-size="28" font-weight="bold" fill="white">11　宜蘭</text><text x="870" y="1237" text-anchor="end" font-size="25" fill="white">3格建設地</text><rect x="390" y="1270" width="1120" height="235" rx="18" fill="#fffbdf" stroke="#e5be38" stroke-width="2"/><text x="950" y="1324" text-anchor="middle" font-size="31" font-weight="bold" fill="#71500c">交通移動皆可選擇放棄</text><text x="950" y="1382" text-anchor="middle" font-size="26" fill="#71500c">官方火車站：付1,200 → 任一其他官方站；無額外回合</text><text x="950" y="1433" text-anchor="middle" font-size="26" fill="#71500c">官方機場：票價提案6,000 → 另一機場 → 額外回合＋1</text><text x="950" y="1478" text-anchor="middle" font-size="21" fill="#71500c">官方可選付費移動；他人民營先收服務費，移動可放棄</text><text x="950" y="1590" text-anchor="middle" font-size="23" fill="#64748b">黃色：官方火車站　青色：機場　深灰：新聞／機會　深紅：國稅局　淺綠：國家公園</text></svg></div><h4>綠島監獄支線</h4><p>綠島設於台東外海；入獄由事件送入，出獄依下圖返回主線。服刑天數另定。</p><div style="overflow:auto;border:1px solid #dce5ec;border-radius:12px"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" role="img" aria-labelledby="prison-title" style="display:block;width:100%;min-width:1000px;font-family:Microsoft JhengHei,sans-serif"><title id="prison-title">台東外海綠島監獄出獄支線</title><defs><marker id="prison-arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7" fill="#64748b"/></marker></defs><rect width="1200" height="300" rx="18" fill="#f2f6fa"/><text x="600" y="44" text-anchor="middle" font-size="26" font-weight="bold" fill="#243d51">綠島監獄（台東外海）出獄支線</text><path d="M165 150 H235" stroke="#64748b" stroke-width="3" marker-end="url(#prison-arrow)"/><path d="M365 150 H375" stroke="#64748b" stroke-width="3" marker-end="url(#prison-arrow)"/><path d="M505 150 H515" stroke="#64748b" stroke-width="3" marker-end="url(#prison-arrow)"/><path d="M645 150 H655" stroke="#64748b" stroke-width="3" marker-end="url(#prison-arrow)"/><path d="M785 150 H795" stroke="#64748b" stroke-width="3" marker-end="url(#prison-arrow)"/><path d="M925 150 H995" stroke="#64748b" stroke-width="3" marker-end="url(#prison-arrow)"/><g data-tile="J01" data-kind="prison"><title>J01 綠島監獄</title><rect x="40" y="105" width="120" height="90" rx="12" fill="#cbd5e1" stroke="#475569" stroke-width="2"/><text x="100" y="133" text-anchor="middle" font-size="15" fill="#243d51">J01</text><text x="100" y="164" text-anchor="middle" font-size="23" font-weight="bold" fill="#243d51">綠島監獄</text><text x="100" y="184" text-anchor="middle" font-size="12" fill="#243d51">出獄起點</text></g><g data-tile="P01" data-kind="empty"><title>P01 無效果格</title><rect x="240" y="105" width="120" height="90" rx="12" fill="#f8fafc" stroke="#a6b5c4" stroke-width="2"/><text x="300" y="133" text-anchor="middle" font-size="15" fill="#243d51">P01</text><text x="300" y="164" text-anchor="middle" font-size="23" font-weight="bold" fill="#243d51">無效果格</text><text x="300" y="184" text-anchor="middle" font-size="12" fill="#243d51">第1格</text></g><g data-tile="P02" data-kind="empty"><title>P02 無效果格</title><rect x="380" y="105" width="120" height="90" rx="12" fill="#f8fafc" stroke="#a6b5c4" stroke-width="2"/><text x="440" y="133" text-anchor="middle" font-size="15" fill="#243d51">P02</text><text x="440" y="164" text-anchor="middle" font-size="23" font-weight="bold" fill="#243d51">無效果格</text><text x="440" y="184" text-anchor="middle" font-size="12" fill="#243d51">第2格</text></g><g data-tile="P03" data-kind="empty"><title>P03 無效果格</title><rect x="520" y="105" width="120" height="90" rx="12" fill="#f8fafc" stroke="#a6b5c4" stroke-width="2"/><text x="580" y="133" text-anchor="middle" font-size="15" fill="#243d51">P03</text><text x="580" y="164" text-anchor="middle" font-size="23" font-weight="bold" fill="#243d51">無效果格</text><text x="580" y="184" text-anchor="middle" font-size="12" fill="#243d51">第3格</text></g><g data-tile="P04" data-kind="empty"><title>P04 無效果格</title><rect x="660" y="105" width="120" height="90" rx="12" fill="#f8fafc" stroke="#a6b5c4" stroke-width="2"/><text x="720" y="133" text-anchor="middle" font-size="15" fill="#243d51">P04</text><text x="720" y="164" text-anchor="middle" font-size="23" font-weight="bold" fill="#243d51">無效果格</text><text x="720" y="184" text-anchor="middle" font-size="12" fill="#243d51">第4格</text></g><g data-tile="P05" data-kind="empty"><title>P05 無效果格</title><rect x="800" y="105" width="120" height="90" rx="12" fill="#f8fafc" stroke="#a6b5c4" stroke-width="2"/><text x="860" y="133" text-anchor="middle" font-size="15" fill="#243d51">P05</text><text x="860" y="164" text-anchor="middle" font-size="23" font-weight="bold" fill="#243d51">無效果格</text><text x="860" y="184" text-anchor="middle" font-size="12" fill="#243d51">第5格</text></g><g data-rejoin="T43"><title>T43 接回台東</title><rect x="1000" y="105" width="120" height="90" rx="12" fill="#a21caf" stroke="#86198f" stroke-width="2"/><text x="1060" y="133" text-anchor="middle" font-size="15" fill="#ffffff">T43</text><text x="1060" y="164" text-anchor="middle" font-size="23" font-weight="bold" fill="#ffffff">接回台東</text><text x="1060" y="184" text-anchor="middle" font-size="12" fill="#ffffff">主線返回點</text></g><text x="600" y="245" text-anchor="middle" font-size="20" fill="#52667a">出獄後正常擲骰 → 經過5格無效果格 → 接回T43台東，剩餘步數繼續前進</text></svg></div></section>
+<h3 id="section-13">2.4 開店與區域計價</h3>
+<ul>
+<li>停在無主建設地時，可選擇支付該格建造費開設1級初階商店，取得經營權，也可以選擇不開店；一般開店採建造費計價</li>
+<li>建造費、升級費與民營服務費，依基礎數值乘所在區域繁華度；建造與升級金額取整到百元，服務費取整到十元</li>
+<li>聲望使用各商店的基礎聲望表；補油量、骰數、成功條件、候選數與移動效果依設施等級表執行</li>
+<li>官方火車站採固定1,200票價，官方機場採目前6,000票價提案；兩者使用官方交通表</li>
+<li>拍賣得標取得空地經營權；玩家之後停在該格時支付建造費開店</li>
+<li>得標空地被其他玩家停到時，不收費、沒有效果</li>
+</ul>
+<div class="table-wrap"><table><tr><th>區</th><th>區名</th><th>繁華度與1級建造費</th></tr><tr><td>01</td><td>大台北</td><td>×2.4（$28,800）</td></tr><tr><td>02</td><td>桃園</td><td>×1.4（$16,800）</td></tr><tr><td>03</td><td>竹苗</td><td>×1.3（$15,600）</td></tr><tr><td>04</td><td>台中</td><td>×1.6（$19,200）</td></tr><tr><td>05</td><td>彰雲</td><td>×0.9（$10,800）</td></tr><tr><td>06</td><td>嘉南</td><td>×1.1（$13,200）</td></tr><tr><td>07</td><td>高雄</td><td>×1.5（$18,000）</td></tr><tr><td>08</td><td>屏東</td><td>×0.9（$10,800）</td></tr><tr><td>09</td><td>台東</td><td>×0.8（$9,600）</td></tr><tr><td>10</td><td>花蓮</td><td>×1.0（$12,000）</td></tr><tr><td>11</td><td>宜蘭</td><td>×1.0（$12,000）</td></tr></table></div>
+<h3 id="section-14">2.5 綠島監獄與出獄支線</h3>
+<ul>
+<li>綠島監獄設於台東外海，採獨立支線。主線維持71格，監獄J01與5格出獄通道另計，全圖共77格</li>
+<li>入獄類事件將玩家直接送至J01綠島監獄；一般主線移動依原環狀路線行進</li>
+<li>出獄路線：J01綠島監獄 → P01 → P02 → P03 → P04 → P05 → T43台東，再沿主線前進</li>
+<li>出獄後從J01開始正常擲骰移動；通道每格計1步，走完5格後接回T43，剩餘步數沿主線繼續使用</li>
+<li>P01～P05為連續5格無效果格；各格只計移動步數，建造範圍維持T01～T50</li>
+</ul>
+<h2 id="section-15">3 初階商店</h2>
+<h3 id="section-16">3.1 全商店數值比較</h3>
+<ul>
+<li>開店費用依基礎建造費乘所在區域繁華度計算</li>
+<li>消費費指使用他人設施的費用</li>
+</ul>
+<div class="table-wrap"><table><tr><th>商店</th><th>1級消費費</th><th>2級消費費</th><th>3級消費費</th><th>1級效果</th><th>2級效果</th><th>3級效果</th></tr><tr><td>便利商店</td><td>300</td><td>900</td><td>1,800</td><td>聲望＋3</td><td>聲望＋9</td><td>聲望＋18</td></tr><tr><td>小吃攤</td><td>300</td><td>900</td><td>1,800</td><td>升級成功率2/6（33.33%）<br>骰點1～2</td><td>升級成功率3/6（50.00%）<br>骰點1～3</td><td>升級成功率4/6（66.67%）<br>骰點1～4</td></tr><tr><td>加油站</td><td>400</td><td>1,200</td><td>2,400</td><td>名下所有載具補滿油</td><td>名下所有載具補滿油</td><td>名下所有載具補滿油</td></tr><tr><td>電影院</td><td>500</td><td>1,500</td><td>3,000</td><td>影片3選1<br>取得電影卡1張</td><td>影片4選1<br>取得電影卡1張</td><td>影片5選1<br>取得電影卡1張</td></tr></table></div>
+<h3 id="section-17">3.2 各店操作與例外</h3>
+<h4 id="section-18">便利商店</h4>
+<h5 id="section-19">操作與效果</h5>
+<ul>
+<li>自有店免費仍取得同級聲望</li>
+</ul>
+<h5 id="section-20">例外與待定</h5>
+<ul>
+<li>支付不足進入破產流程</li>
+</ul>
+<h4 id="section-21">小吃攤</h4>
+<h5 id="section-22">操作與效果</h5>
+<ul>
+<li>遠端付費升級自有地產</li>
+<li>使用六面骰判定升級是否成功</li>
+</ul>
+<h5 id="section-23">例外與待定</h5>
+<ul>
+<li>先收餐費</li>
+<li>無地產可升或升級費不足，直接結束、不扣升級費、不擲骰、不因未執行升級進入破產流程</li>
+<li>有目標且費用足夠，先扣升級費再擲骰</li>
+<li>成功升級、失敗不升級</li>
+<li>目標設施不額外觸發，合併仍須回店</li>
+<li>已收餐費不退；升級費已扣且擲骰失敗時不退。無目標或升級費不足時不扣升級費</li>
+</ul>
+<h4 id="section-24">加油站</h4>
+<h5 id="section-25">例外與待定</h5>
+<ul>
+<li>擁有至少1台載具時依規則收服務費，並將名下所有載具各自補至滿油；所有載具已滿油時仍依規則收費</li>
+<li>名下沒有載具時不收費；採步行但仍擁有載具時，照常收費並補滿名下所有載具</li>
+<li>自有店免費</li>
+<li>補油最多補至油箱容量，超過剩餘容量的部分捨去</li>
+</ul>
+<h4 id="section-26">電影院</h4>
+<h5 id="section-27">操作與效果</h5>
+<ul>
+<li>從隨機提供的影片中選擇，取得對應電影卡</li>
+<li>不提供非電影類道具卡</li>
+</ul>
+<h5 id="section-28">例外與待定</h5>
+<ul>
+<li>先收費再選片</li>
+<li>片池不足、未來持卡上限的處理待定</li>
+</ul>
+<h2 id="section-29">4 二階商店</h2>
+<h3 id="section-30">4.1 一階至三階消費費總表</h3>
+<ul>
+<li>下列為使用他人設施的服務費，自有設施免服務費</li>
+<li>購車款、地產升級費另付</li>
+<li>效果中的三組數值依序對應1～2級／3～4級／5～6級</li>
+<li>超市另列1～6級聲望</li>
+
+<li>一階最高3級、二階最高6級、三階最高9級；超出各階上限的等級以「—」表示不適用。三階數值為首版提案；官方交通票價另列，不計入本表</li>
+</ul>
+<div class="table-wrap"><table><tr><th>階段</th><th>商店</th><th>1級</th><th>2級</th><th>3級</th><th>4級</th><th>5級</th><th>6級</th><th>7級</th><th>8級</th><th>9級</th></tr><tr><td>一階</td><td>便利商店</td><td>300</td><td>900</td><td>1,800</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr><tr><td>一階</td><td>小吃攤</td><td>300</td><td>900</td><td>1,800</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr><tr><td>一階</td><td>加油站</td><td>400</td><td>1,200</td><td>2,400</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr><tr><td>一階</td><td>電影院</td><td>500</td><td>1,500</td><td>3,000</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr><tr><td>二階</td><td>超市</td><td>400</td><td>1,000</td><td>2,000</td><td>2,600</td><td>4,000</td><td>5,000</td><td>—</td><td>—</td><td>—</td></tr><tr><td>二階</td><td>美食街</td><td>500</td><td>800</td><td>1,200</td><td>1,800</td><td>2,600</td><td>3,600</td><td>—</td><td>—</td><td>—</td></tr><tr><td>二階</td><td>火車站</td><td>800</td><td>1,200</td><td>1,800</td><td>2,600</td><td>3,600</td><td>4,800</td><td>—</td><td>—</td><td>—</td></tr><tr><td>二階</td><td>超級影城</td><td>800</td><td>1,200</td><td>1,800</td><td>2,600</td><td>3,600</td><td>4,800</td><td>—</td><td>—</td><td>—</td></tr><tr><td>二階</td><td>拍賣會</td><td>1,000</td><td>1,400</td><td>2,000</td><td>2,800</td><td>3,800</td><td>5,000</td><td>—</td><td>—</td><td>—</td></tr><tr><td>二階</td><td>汽車展售中心</td><td>1,000</td><td>1,500</td><td>2,200</td><td>3,000</td><td>4,000</td><td>5,200</td><td>—</td><td>—</td><td>—</td></tr><tr><td>二階</td><td>卡牌店</td><td>800</td><td>1,200</td><td>1,800</td><td>2,600</td><td>3,600</td><td>4,800</td><td>—</td><td>—</td><td>—</td></tr><tr><td>二階</td><td>速食店</td><td>2,000</td><td>2,800</td><td>4,000</td><td>5,500</td><td>7,500</td><td>10,000</td><td>—</td><td>—</td><td>—</td></tr><tr><td>二階</td><td>活動中心</td><td>1,200</td><td>1,800</td><td>2,600</td><td>3,600</td><td>4,800</td><td>6,200</td><td>—</td><td>—</td><td>—</td></tr><tr><td>二階</td><td>汽車旅館</td><td>100</td><td>150</td><td>250</td><td>400</td><td>600</td><td>900</td><td>—</td><td>—</td><td>—</td></tr><tr><td>三階</td><td>百貨公司</td><td>6,000</td><td>7,000</td><td>8,000</td><td>10,000</td><td>12,000</td><td>14,000</td><td>17,000</td><td>20,000</td><td>24,000</td></tr><tr><td>三階</td><td>觀光夜市</td><td>4,000</td><td>4,500</td><td>5,000</td><td>6,000</td><td>7,000</td><td>8,000</td><td>9,500</td><td>11,000</td><td>13,000</td></tr><tr><td>三階</td><td>機場</td><td>6,000</td><td>7,000</td><td>8,000</td><td>10,000</td><td>12,000</td><td>14,000</td><td>17,000</td><td>20,000</td><td>24,000</td></tr><tr><td>三階</td><td>主題樂園</td><td>6,000</td><td>7,000</td><td>8,000</td><td>10,000</td><td>12,000</td><td>14,000</td><td>17,000</td><td>20,000</td><td>24,000</td></tr></table></div>
+<h3 id="section-31">4.2 全商店合成與效果比較</h3>
+<div class="table-wrap"><table><tr><th>商店</th><th>合成組合</th><th>1～2級效果</th><th>3～4級效果</th><th>5～6級效果</th><th>固定數值與補充</th></tr><tr><td>超市</td><td>便利商店＋便利商店</td><td>聲望＋4／10<br>依1／2級</td><td>聲望＋20／26<br>依3／4級</td><td>聲望＋40／50<br>依5／6級</td><td>每100基礎消費費取得1聲望</td></tr><tr><td>美食街</td><td>小吃攤＋小吃攤</td><td>骰點≤2<br>成功率55.56%</td><td>骰點≤3<br>成功率75.00%</td><td>骰點≤4<br>成功率88.89%</td><td>擲2顆骰，至少1顆成功<br>每次只升1級</td></tr><tr><td>火車站</td><td>加油站＋加油站</td><td>前方3格內</td><td>前方5格內</td><td>前方7格內</td><td>單次最多額外移動1次</td></tr><tr><td>超級影城</td><td>電影院＋電影院</td><td>影片4選1</td><td>影片5選1</td><td>影片6選1</td><td>取得電影卡1張</td></tr><tr><td>拍賣會</td><td>便利商店＋小吃攤</td><td>提供3處無主地</td><td>提供5處無主地</td><td>提供7處無主地</td><td>選1處遠端拍賣</td></tr><tr><td>汽車展售中心</td><td>便利商店＋加油站</td><td>提供2款車</td><td>提供3款車</td><td>提供4款車</td><td>依性能定價30,000／45,000／60,000</td></tr><tr><td>卡牌店</td><td>便利商店＋電影院</td><td>免費整組重抽0次</td><td>免費整組重抽1次</td><td>免費整組重抽2次</td><td>交1張，換2張<br>最終只取得2張</td></tr><tr><td>速食店</td><td>小吃攤＋加油站</td><td>補油箱容量1/3<br>額外回合＋1</td><td>補油箱容量2/3<br>額外回合＋1</td><td>補至滿油<br>額外回合＋1</td><td>補油上限為滿油</td></tr><tr><td>活動中心</td><td>小吃攤＋電影院</td><td>聲望型活動＋12</td><td>聲望型活動＋20</td><td>聲望型活動＋30</td><td>活動費用另付</td></tr><tr><td>汽車旅館</td><td>加油站＋電影院</td><td>休息1天</td><td>休息2天</td><td>休息3天</td><td>自有店不強制休息</td></tr></table></div>
+<h3 id="section-32">4.3 各店操作與例外</h3>
+<h4 id="section-33">超市</h4>
+<h5 id="section-34">操作與效果</h5>
+<ul>
+<li>每100基礎消費費取得1聲望；自有店取得同等級基礎聲望</li>
+</ul>
+<h5 id="section-35">例外與待定</h5>
+<ul>
+<li>支付不足依共通破產規則</li>
+</ul>
+<h4 id="section-36">美食街</h4>
+<h5 id="section-37">操作與效果</h5>
+<ul>
+<li>擲2顆六面骰，至少1顆達標即成功</li>
+<li>每次僅升級1次，兩骰皆成功不加次數</li>
+</ul>
+<h5 id="section-38">例外與待定</h5>
+<ul>
+<li>沿用小吃攤：先收餐費，無目標或升級費不足直接結束</li>
+<li>付得起則先扣升級費再擲骰</li>
+<li>已收餐費不退；先扣升級費再擲骰，失敗不退升級費；無目標或升級費不足時不扣升級費</li>
+</ul>
+<h4 id="section-39">火車站</h4>
+<h5 id="section-40">操作與效果</h5>
+<ul>
+<li>可選擇範圍內的目的地或放棄移動</li>
+<li>抵達後依1.3結束交通移動，目的地落點效果略過</li>
+<li>單次設施效果最多提供1次額外移動；抵達後依1.3結束交通效果</li>
+<li>停在他人店仍先強制收服務費，放棄移動不免服務費</li>
+<li>自有店免服務費</li>
+</ul>
+<h5 id="section-41">例外與待定</h5>
+<ul>
+<li>無合法目的地時不移動，民營服務費仍依強制收費規則處理</li>
+<li>移動可放棄；他人民營設施已收服務費不因放棄移動而退還</li>
+</ul>
+<h4 id="section-42">超級影城</h4>
+<h5 id="section-43">操作與效果</h5>
+<ul>
+<li>從隨機提供的影片中選擇，取得對應電影卡</li>
+<li>不提供非電影類道具卡</li>
+</ul>
+<h5 id="section-44">例外與待定</h5>
+<ul>
+<li>片池不足、持卡上限處理待定</li>
+</ul>
+<h4 id="section-45">拍賣會</h4>
+<h5 id="section-46">操作與效果</h5>
+<ul>
+<li>隨機提供無主地，從中選擇標的進行遠端拍賣</li>
+<li>可拍地不足時提供全部剩餘標的</li>
+<li>收益歸店主，店主不得競標</li>
+<li>店主停在自有拍賣會時同樣觸發拍賣，由其他玩家競標，店主不得競標，收益歸店主</li>
+<li>起標價為該格建造費的一半；每次可加價1,000或5,000</li>
+<li>出價不得超過資金；選擇放棄後退出本次競標</li>
+<li>只剩一位競標者且出價已達起標價時成交，所有人放棄且無人出價則流標</li>
+<li>得標者取得空地，之後停在該格再支付建造費開店</li>
+</ul>
+<h5 id="section-47">例外與待定</h5>
+<ul>
+<li>無人出價則流標；無標的與得標付款例外仍待定。已收民營服務費不退</li>
+</ul>
+<h4 id="section-48">汽車展售中心</h4>
+<h5 id="section-49">操作與效果</h5>
+<ul>
+<li>提供車款供選購，購得後加入玩家的載具列表</li>
+<li>購車款另付，新車滿油</li>
+<li>載具獨立歸入「載具」類別，由載具列表管理；自己回合擲骰前可選擇使用的載具或改為步行</li>
+<li>只列出玩家買得起的候選車款，玩家可以選擇不購買；可選車款不足時的補足方式仍待定</li>
+</ul>
+<h5 id="section-50">例外與待定</h5>
+<ul>
+<li>品項、性能、各款售價歸檔、可選車款不足與退款處理待定；已購載具保留於載具列表供切換</li>
+<li>自有店購車仍付費</li>
+<li>載具持有上限與出售方式待定</li>
+<li>卡牌店的取得卡片依該店指定清單提供</li>
+</ul>
+<h4 id="section-51">卡牌店</h4>
+<h5 id="section-52">操作與效果</h5>
+<ul>
+<li>交出並移除1張卡，僅從卡牌店指定卡片清單隨機換2張</li>
+<li>重抽時放棄當前整組卡片，最終只保留選定的一組</li>
+<li>首次抽取及所有重抽均使用同一指定卡池，不從所有非電影卡中抽取，亦不因卡片分類自動納入其他卡</li>
+<li>電影卡不在卡牌店卡池內</li>
+<li>所有道具卡（含電影卡）皆可交給卡牌店換卡</li>
+<li>無卡可交時仍收服務費，改為從卡牌店指定卡池抽1張</li>
+</ul>
+<h5 id="section-53">例外與待定</h5>
+<ul>
+<li>卡池、重複卡、持卡上限及退款處理待定</li>
+</ul>
+<h4 id="section-54">速食店</h4>
+<h5 id="section-55">操作與效果</h5>
+<ul>
+<li>針對目前使用的載具，依商店等級補油：1～2級補油箱容量1/3、3～4級補2/3、5～6級補至滿油；使用後取得1個額外回合</li>
+</ul>
+<h5 id="section-56">例外與待定</h5>
+<ul>
+<li>目前使用的載具已滿油時仍依規則收服務費；採步行時不補油，仍依規則收服務費並取得額外回合。額外回合於本回合結束後立刻進行；額外回合中再觸發速食店不會再給額外回合（此限制只適用速食店，其他額外回合來源不設上限）</li>
+</ul>
+<h4 id="section-57">活動中心</h4>
+<h5 id="section-58">操作與效果</h5>
+<ul>
+<li>選1項專屬活動付費舉辦</li>
+</ul>
+<div class="table-wrap"><table><tr><th>活動</th><th>店鋪等級</th><th>費用</th><th>聲望</th></tr><tr><td>造勢晚會</td><td>1～2</td><td>5,000</td><td>＋12</td></tr><tr><td>造勢晚會</td><td>3～4</td><td>8,000</td><td>＋20</td></tr><tr><td>造勢晚會</td><td>5～6</td><td>12,000</td><td>＋30</td></tr><tr><td>公益義賣</td><td>1～2</td><td>2,000</td><td>＋5</td></tr><tr><td>公益義賣</td><td>3～4</td><td>3,000</td><td>＋8</td></tr><tr><td>公益義賣</td><td>5～6</td><td>5,000</td><td>＋12</td></tr></table></div>
+<h5 id="section-59">例外與待定</h5>
+<ul>
+<li>可選擇不舉辦活動；其他專屬活動、活動條件、無可辦活動與費用不足處理仍待定</li>
+</ul>
+<h4 id="section-60">汽車旅館</h4>
+<h5 id="section-61">操作與效果</h5>
+<ul>
+<li>付費住宿後，依商店等級休息：1～2級休息1天、3～4級休息2天、5～6級休息3天</li>
+</ul>
+<h5 id="section-62">例外與待定</h5>
+<ul>
+<li>自有汽車旅館不強制休息；休息期間可執行的操作範圍仍待定</li>
+</ul>
+<h2 id="section-63">5 三階商店</h2>
+<h3 id="section-64">5.1 設計範圍與共通規則</h3>
+<ul>
+<li>本章為三階商店數值提案。</li>
+<li>延續原企劃：最高9級，每次升級3,000；主要效果在第4、7級強化，百貨公司聲望依各級費用逐級增加</li>
+<li>三階可由相鄰三間初階，或相鄰二階加初階合成；合成等級取參與商店等級總和，最高9級，涵蓋原有3格</li>
+<li>自有設施免服務費；他人民營設施先強制收服務費，再提供操作，交通移動仍可放棄</li>
+</ul>
+<h3 id="section-65">5.2 合成與效果總表</h3>
+<div class="table-wrap"><table><tr><th>商店</th><th>合成方式</th><th>1～3級</th><th>4～6級</th><th>7～9級</th></tr><tr><td>百貨公司</td><td>便利商店×3；或超市＋便利商店</td><td>依各級消費費取得聲望</td><td>依各級消費費取得聲望</td><td>依各級消費費取得聲望</td></tr><tr><td>觀光夜市</td><td>小吃攤×3；或美食街＋小吃攤</td><td>3顆骰，骰點≤2<br>成功率70.37%</td><td>3顆骰，骰點≤3<br>成功率87.50%</td><td>3顆骰，骰點≤4<br>成功率96.30%</td></tr><tr><td>機場</td><td>加油站×3；或火車站＋加油站</td><td>移動到任一其他機場<br>抵達後立即額外回合＋1</td><td>同左，服務費提高</td><td>同左，服務費提高</td></tr><tr><td>主題樂園</td><td>電影院×3；或超級影城＋電影院</td><td>4張專屬卡池<br>取得2張為設計目標<br>抽卡規則待定</td><td>4張專屬卡池<br>取得2張為設計目標<br>抽卡規則待定</td><td>4張專屬卡池<br>取得2張為設計目標<br>抽卡規則待定</td></tr></table></div>
+<h3 id="section-66">5.3 百貨公司規則</h3>
+<ul>
+<li>延伸超市玩法：提高服務費，依相同比例提供更多聲望</li>
+<li>每100基礎消費費取得1聲望；自有百貨公司取得同等級基礎聲望</li>
+<li>無法支付服務費時依1.6的破產與清償規則處理</li>
+</ul>
+<div class="table-wrap"><table><tr><th>數值</th><th>1級</th><th>2級</th><th>3級</th><th>4級</th><th>5級</th><th>6級</th><th>7級</th><th>8級</th><th>9級</th></tr><tr><td>消費費</td><td>6,000</td><td>7,000</td><td>8,000</td><td>10,000</td><td>12,000</td><td>14,000</td><td>17,000</td><td>20,000</td><td>24,000</td></tr><tr><td>獲得聲望</td><td>＋60</td><td>＋70</td><td>＋80</td><td>＋100</td><td>＋120</td><td>＋140</td><td>＋170</td><td>＋200</td><td>＋240</td></tr></table></div>
+<h3 id="section-67">5.4 小吃攤、美食街與觀光夜市逐級機率表</h3>
+<ul>
+<li>沿用美食街的遠端付費升級流程，改擲3顆公平六面骰，至少1顆達標即成功</li>
+<li>一次只升級1次；多顆骰達標不增加升級次數</li>
+<li>先收餐費；無可升級目標或升級費不足時直接結束，不扣升級費、不擲骰</li>
+<li>有目標且費用足夠時，先扣升級費再擲骰；目標設施不額外觸發，合併仍須回店</li>
+<li>沿用小吃攤與美食街：已收餐費不退，擲骰失敗不退已扣升級費；無目標或升級費不足時不扣升級費</li>
+</ul>
+<div class="table-wrap"><table><tr><th>商店</th><th>階段</th><th>等級</th><th>六面骰數量</th><th>通關需求</th><th>實際成功率</th></tr><tr><td>小吃攤</td><td>初階</td><td>1</td><td>1顆</td><td>擲出1～2</td><td>33.33%</td></tr><tr><td>小吃攤</td><td>初階</td><td>2</td><td>1顆</td><td>擲出1～3</td><td>50.00%</td></tr><tr><td>小吃攤</td><td>初階</td><td>3</td><td>1顆</td><td>擲出1～4</td><td>66.67%</td></tr><tr><td>美食街</td><td>二階</td><td>1</td><td>2顆</td><td>至少1顆擲出1～2</td><td>55.56%</td></tr><tr><td>美食街</td><td>二階</td><td>2</td><td>2顆</td><td>至少1顆擲出1～2</td><td>55.56%</td></tr><tr><td>美食街</td><td>二階</td><td>3</td><td>2顆</td><td>至少1顆擲出1～3</td><td>75.00%</td></tr><tr><td>美食街</td><td>二階</td><td>4</td><td>2顆</td><td>至少1顆擲出1～3</td><td>75.00%</td></tr><tr><td>美食街</td><td>二階</td><td>5</td><td>2顆</td><td>至少1顆擲出1～4</td><td>88.89%</td></tr><tr><td>美食街</td><td>二階</td><td>6</td><td>2顆</td><td>至少1顆擲出1～4</td><td>88.89%</td></tr><tr><td>觀光夜市</td><td>三階</td><td>1</td><td>3顆</td><td>至少1顆擲出1～2</td><td>70.37%</td></tr><tr><td>觀光夜市</td><td>三階</td><td>2</td><td>3顆</td><td>至少1顆擲出1～2</td><td>70.37%</td></tr><tr><td>觀光夜市</td><td>三階</td><td>3</td><td>3顆</td><td>至少1顆擲出1～2</td><td>70.37%</td></tr><tr><td>觀光夜市</td><td>三階</td><td>4</td><td>3顆</td><td>至少1顆擲出1～3</td><td>87.50%</td></tr><tr><td>觀光夜市</td><td>三階</td><td>5</td><td>3顆</td><td>至少1顆擲出1～3</td><td>87.50%</td></tr><tr><td>觀光夜市</td><td>三階</td><td>6</td><td>3顆</td><td>至少1顆擲出1～3</td><td>87.50%</td></tr><tr><td>觀光夜市</td><td>三階</td><td>7</td><td>3顆</td><td>至少1顆擲出1～4</td><td>96.30%</td></tr><tr><td>觀光夜市</td><td>三階</td><td>8</td><td>3顆</td><td>至少1顆擲出1～4</td><td>96.30%</td></tr><tr><td>觀光夜市</td><td>三階</td><td>9</td><td>3顆</td><td>至少1顆擲出1～4</td><td>96.30%</td></tr></table></div>
+<ul>
+<li>通關代表遠端升級判定成功。每顆骰獨立且公平；成功率＝1－（單顆失敗率）的骰子顆數次方，四捨五入至小數點後2位。多顆同時達標仍只升級1次</li>
+</ul>
+<h3 id="section-68">5.5 火車站與機場規則</h3>
+<div class="table-wrap"><table><tr><th>設施</th><th>費用</th><th>可選目的地</th><th>額外回合</th></tr><tr><td>官方火車站</td><td>固定1,200</td><td>任一其他官方火車站</td><td>0（無）</td></tr><tr><td>民營二階火車站</td><td>依4.1消費費總表</td><td>前方3／5／7格內，依等級</td><td>0（無）</td></tr><tr><td><span class="asset-path">官方機場</span></td><td>固定6,000（提案）</td><td>任一其他機場</td><td>抵達後立即＋1</td></tr><tr><td>民營三階機場</td><td>依4.1消費費總表</td><td>任一其他機場</td><td>抵達後立即＋1</td></tr></table></div>
+<ul>
+<li>火車站沒有額外回合；其額外移動不等於額外回合</li>
+<li>所有交通移動均可放棄；官方設施不搭乘不收費，他人民營設施仍先收服務費</li>
+<li>選擇機場移動且抵達後，立即獲得1個額外回合；放棄移動不取得額外回合</li>
+<li>民營機場依等級提高服務費，移動與額外回合效果依本節執行</li>
+<li>搭乘抵達火車站或機場後不再觸發落點，因此不會連續轉乘，也不會在目的地再次收費；額外回合可疊加、不設上限（速食店除外），依1.3執行</li>
+</ul>
+<h3 id="section-69">5.6 主題樂園規則</h3>
+<ul>
+<li>專屬卡片為商店收購書、經營權交換書、都市更新計畫、強制拆除違建，效果見6.12</li>
+<li>取得2張卡保留為設計目標；候選卡數、重複卡、刷新機率及各級抽卡流程列為待定</li>
+<li>候選卡數與刷新機率待抽卡規則重新規劃後訂定</li>
+<li>卡牌店、主題樂園與影院依各自指定清單產出卡片；卡片可因交換或情報截取等效果在玩家間轉移</li>
+<li>收購與交換以完整商店為單位，合成店涵蓋的地格一起移轉</li>
+<li>都市更新計畫與強制拆除違建改變店鋪等級；投資額依實際已支付的建造與升級費計算</li>
+</ul>
+<h3 id="section-70">5.7 待確認範圍</h3>
+<ul>
+<li>異類三店合成組合待規劃；目前保留4條同類三階路線</li>
+<li>試玩調整各級服務費，訂定主題樂園抽卡流程。</li>
+</ul>
+<h2 id="section-71">6 全局系統</h2>
+<h3 id="section-72">6.1 遊戲時程</h3>
+<h4 id="section-73">規則</h4>
+<ul>
+<li>7月至翌年1月</li>
+<li>翌年1/1選前之夜活動花完剩餘資金，1/2選舉並最終結算</li>
+</ul>
+<h4 id="section-74">回合與選前之夜</h4>
+<ul>
+<li>所有未破產玩家各完成1次回合為1輪，每輪推進1天；選前之夜換算見下表</li>
+</ul>
+<div class="table-wrap"><table><tr><th>時程項目</th><th>正式設定</th></tr><tr><td>起始日期</td><td>7/1</td></tr><tr><td>每輪日期推進</td><td>1天</td></tr><tr><td>選前之夜</td><td>翌年1/1</td></tr><tr><td>剩餘資金換聲望</td><td>每10,000換1聲望，無條件捨去</td></tr><tr><td>選舉結算</td><td>翌年1/2</td></tr></table></div>
+<ul>
+<li>日期到達1/1進入選前之夜，依表將剩餘資金換為聲望，換算後資金歸零，再於1/2進行選舉</li>
+</ul>
+<h3 id="section-75">6.2 道具卡</h3>
+<h4 id="section-76">規則</h4>
+<ul>
+<li>電影類是描述卡片用途的概念標籤，卡片取得來源依各設施指定清單管理</li>
+<li>電影院與超級影城提供對應電影卡</li>
+<li>汽車展售中心販售的車款歸入獨立的載具列表管理</li>
+<li>所有卡牌（含電影卡）皆視為道具卡</li>
+<li>所有卡池一律依權重抽取；各卡權重及抽取細節待定</li>
+<li>卡牌店僅從事先指定的卡片清單抽取與重抽</li>
+<li>所有主動效果卡統一存放，可保留並依條件主動使用</li>
+<li>玩家資訊互相公開，包括手牌、資金、聲望、商店、載具與各車油量。</li>
+<li>載具使用與切換依6.6的載具規則操作</li>
+</ul>
+<h4 id="section-77">待定</h4>
+<ul>
+<li>已列卡片依各自效果表與使用時機執行；其他卡片、持有上限、消耗規則與卡池不足處理待定</li>
+<li>取得來源依各設施指定清單決定</li>
+</ul>
+<h3 id="section-78">6.3 城市行動</h3>
+<h4 id="section-79">規則</h4>
+<ul>
+<li>額外花費資金取得聲望</li>
+<li>部分行動影響全局</li>
+<li>公共服務為其中一項</li>
+<li>城市行動於自己回合擲骰前執行，每位玩家每回合限用1次</li>
+</ul>
+<div class="table-wrap"><table><tr><th>城市行動</th><th>費用</th><th>聲望</th><th>全局效果</th></tr><tr><td>競選宣傳</td><td>5,000</td><td>＋3</td><td>無另列效果</td></tr><tr><td>公共服務</td><td>10,000</td><td>＋8</td><td>無另列效果</td></tr><tr><td>地方建設</td><td>25,000</td><td>＋15</td><td>未來3輪，所有人經過起點多領5,000</td></tr></table></div>
+<h4 id="section-80">待定</h4>
+<ul>
+<li>已列城市行動的費用、聲望及全局效果依表執行；其他選項仍待定</li>
+</ul>
+<h3 id="section-81">6.4 市長選舉</h3>
+<h4 id="section-82">規則</h4>
+<ul>
+<li>以唯一聲望值提供競選優勢</li>
+<li>同分時先比較選前之夜換算前的剩餘資金，仍同分再比較建造與升級投資總額</li>
+</ul>
+<h4 id="section-83">待定</h4>
+<ul>
+<li>聲望換算與開票方式</li>
+<li>收費與退款依1.2及1.7執行；個別未定的操作例外仍以各商店規則為準</li>
+</ul>
+<h3 id="section-84">6.5 玩家與座位設定</h3>
+<div class="table-wrap"><table><tr><th>項目</th><th>正式設定</th></tr><tr><td>本地座位數</td><td>1～4個座位</td></tr><tr><td>實際參賽人數</td><td>至少2人、最多4人</td></tr><tr><td>座位類型</td><td>人類／電腦／不參加</td></tr></table></div>
+<ul>
+<li>參賽者輪流在同一台電腦操作；設為不參加的座位不進入遊戲</li>
+</ul>
+<h3 id="section-85">6.6 載具、移動與油量</h3>
+<ul>
+<li>每位玩家開局配給一台機車，油箱全滿；各載具的骰子數、油箱與售價集中見下表</li>
+</ul>
+<p>腳踏車由《破風》取得並加入載具列表；移動骰數與油量規格待定。</p>
+<div class="table-wrap"><table><tr><th>載具</th><th>擲骰數</th><th>油箱容量</th><th>售價</th><th>取得方式</th></tr><tr><td>機車</td><td>2</td><td>40</td><td>—</td><td>開局配給</td></tr><tr><td>轎車</td><td>3</td><td>60</td><td>$30,000</td><td>汽車展售中心</td></tr><tr><td>小貨車</td><td>2</td><td>120</td><td>$30,000</td><td>汽車展售中心</td></tr><tr><td>休旅車</td><td>3</td><td>90</td><td>$45,000</td><td>汽車展售中心</td></tr><tr><td>跑車</td><td>4</td><td>80</td><td>$60,000</td><td>汽車展售中心</td></tr><tr><td>腳踏車</td><td>待定</td><td>待定</td><td>—</td><td>電影牌《破風》</td></tr></table></div>
+<ul>
+<li>裝備有油的載具時，依該載具骰數擲骰；每走1格消耗1油，最低為0。</li><li>途中油量耗盡時，仍完成本次已確定的移動步數。移動停止後、落點效果結算前，自動解除該載具並切換為步行；原載具留在列表，油量為0。</li>
+<li>油量為0的載具不能裝備；已裝備載具在停止移動時因其他效果歸零，立即解除並切換為步行。</li><li>步行通常擲1顆六面骰，卡片指定骰數依各卡規則執行。</li><li>補油後可在自己回合擲骰前重新裝備有油的載具。</li>
+<li>補油最多補至油箱容量，超出的補油量捨去</li>
+<li>加油站以名下全部載具為補油對象，逐台補至各自油箱容量；目前使用中的載具與保留於載具列表的載具均適用</li>
+<li>載具由獨立的載具列表管理；自己回合擲骰前可裝備或切換名下有油的載具，或選擇步行。每台載具各自保留油量。</li>
+</ul>
+<h3 id="section-86">6.7 起點與國稅局效果</h3>
+<div class="table-wrap"><table><tr><th>地格／效果</th><th>數值</th></tr><tr><td>經過或停在起點E10</td><td>取得10,000</td></tr><tr><td>地方建設有效期間的起點加成</td><td>額外取得5,000</td></tr><tr><td>國稅局</td><td>繳交資金5%，百元以下捨去</td></tr></table></div>
+<ul>
+<li>起點獎金適用一般路線移動，以及卡片、事件造成的前進；交通直接移動不視為經過起點</li>
+</ul>
+<h3 id="section-87">6.8 新聞列表</h3>
+<ul><li>新聞共10項：4項數值效果、6項機制效果，以具體國際事件改編台灣商圈情境。</li><li>遊戲新聞文案採「標題＋描述」，遊戲效果依表列規則結算。</li><li>每週一觸發1則新聞；停在新聞格E01、E05、E08時亦隨機觸發1則。7/1的星期仍待定。</li></ul>
+<div class="table-wrap"><table><tr><th>國際新聞簡述</th><th>類型／範圍</th><th>遊戲新聞文案</th><th>實際效果</th></tr><tr><td>01 俄烏戰爭衝擊國際能源供應。</td><td>數值｜加油站</td><td><strong>油價拉警報</strong><br>俄烏戰事牽動能源供應，台灣加油站調漲服務費。</td><td>全部民營加油站服務費×1.5，持續2個玩家回合；補油量依原店級規則結算。</td></tr><tr><td>02 紅海商船遇襲，航商改道好望角。</td><td>數值｜建造與升級</td><td><strong>貨輪繞遠路</strong><br>紅海航線改道，貨品與建材運輸成本增加。</td><td>新建商店及付費升級費用×1.25，含遠端升級，持續2個玩家回合；以實際支付額累計商店投資。</td></tr><tr><td>03 美國公布對等關稅，台灣列入名單。</td><td>數值｜商店持有者</td><td><strong>關稅衝擊商圈</strong><br>出口環境改變，商家需投入資金調整營運。</td><td>各玩家向銀行支付1,000×自有商店數，上限5,000。合成店算1間，以揭曉時持有數計算；空地與無主店排除。</td></tr><tr><td>04 美國聯準會宣布降息。</td><td>數值｜全體玩家</td><td><strong>市場資金回流</strong><br>美國降息帶動市場信心，商圈迎來新一波資金。</td><td>每位未破產玩家向銀行取得3,000，立即結算一次。</td></tr><tr><td>05 日本恢復免簽與自由行入境。</td><td>機制｜交通聯運</td><td><strong>台日旅遊再出發</strong><br>日本重開自由行，火車站與機場推出聯運服務。</td><td>持續2個玩家回合，火車站與機場可互選為直達目的地，目的地須與出發地不同。費用依出發設施結算；從機場出發依機場規則取得額外回合，從火車站出發額外回合為0。抵達流程依1.3，交通移動可選擇放棄。</td></tr><tr><td>06 台積電日本熊本廠開幕。</td><td>機制｜遠端開店</td><td><strong>商機跨海來</strong><br>台日產業合作帶動布局熱潮，店家可遠端申請開店。</td><td>持續2個玩家回合，可在自己擲骰前，選名下一格尚無建築的空地，支付該區建造費開設1間初階商店。建成等級及立即合成依1.4、1.5；操作限制依本節共通規則。</td></tr><tr><td>07 OpenAI公開ChatGPT，生成式AI受到關注。</td><td>機制｜科技股多頭</td><td><strong>AI題材發酵</strong><br>生成式AI掀起投資話題，科技股進入利多行情。</td><td>標記全體科技股的下一次行情更新採上漲方向，該次更新結算後解除。重複觸發維持一份待結算狀態；科技股清單、漲幅及行情更新時點依6.14待細化。</td></tr><tr><td>08 WHO解除COVID-19國際公衛緊急狀態。</td><td>機制｜遠端升級</td><td><strong>商圈重新整裝</strong><br>國際疫情警報降級，商家可透過遠端申請整修升級。</td><td>持續2個玩家回合，可在自己擲骰前，選1間未滿級的自有商店，支付依現行規則計算的升級費後升1級，並記入實際投資額。操作限制依本節共通規則。</td></tr><tr><td>09 日本能登半島發生強震。</td><td>機制｜區域停業</td><td><strong>商圈安全檢查</strong><br>日本強震敲響警鐘，地方商圈展開建物安檢。</td><td>從2.2的10個地理區等機率選1區，該區商店進入停業狀態，持續2個玩家回合：落點免收民營服務費並暫停設施服務，自有店可依原規則升級與合成。</td></tr><tr><td>10 美國矽谷銀行倒閉，由主管機關接管。</td><td>機制｜股市休市</td><td><strong>金融市場緊急降溫</strong><br>海外銀行倒閉動搖信心，股票市場暫停買賣。</td><td>股市進入休市狀態，持續2個玩家回合。全體暫停股票買入與賣出，持倉保留；行情更新及卡片的行情效果依6.14結算，期限結束後恢復交易。股市交易與行情細節待細化。</td></tr></table></div>
+<h4>持續效果與結算</h4>
+<ul><li>立即效果於揭曉時結算一次；全體效果以當時未破產玩家為對象，包含休息及在獄中的玩家。</li><li>持續2回合指2個玩家回合：從生效後遇到的第一個回合結束點開始計數，第2個回合結束後解除，額外回合也計1回合。</li><li>同名持續新聞再次觸發時，期限重設為2回合，狀態維持一份；區域安檢以新抽出的地理區取代原區域。科技股多頭以表列的下次行情更新為解除時點。</li><li>不同新聞同時影響同一費用時，倍率相乘。服務費先依既有區域／設施規則計價，再乘新聞倍率，最後四捨五入至十元；建造與付費升級最後四捨五入至百元。</li><li>遠端開店與遠端升級供當回合可正常擲骰的玩家使用，於擲骰前操作。兩種新聞同時生效時，每位玩家每回合擇一執行1次；確認前須足以支付全部費用。</li><li>新聞開放的商店操作依表列流程結束；城市行動仍每回合限1次。交通與服務依生效中的新聞狀態及各設施規則結算。</li><li>新聞與機會的資金收付均與銀行結算；強制支付不足依1.6處理。全體事件完成各玩家結算後，再依1.1判定提前勝利；聲望下限為0。</li></ul>
+<h3 id="section-88">6.9 機會列表</h3>
+<ul><li>以生活開銷、鄰里互助、日常好運與小意外為主，依表列對象影響觸發玩家或全體玩家。</li><li>停在機會格E04、E06、E11時，隨機抽取下表1項並立即生效；每項結算一次。</li></ul>
+<div class="table-wrap"><table><tr><th>機會事件</th><th>影響對象</th><th>玩家文案</th><th>實際效果</th></tr><tr><td>01 統一發票中獎</td><td>觸發玩家</td><td>獲得10,000資金。</td><td>向銀行取得10,000。</td></tr><tr><td>02 二手物品售出</td><td>觸發玩家</td><td>獲得3,000資金。</td><td>向銀行取得3,000。</td></tr><tr><td>03 臨時代班支援</td><td>觸發玩家</td><td>獲得4,000資金。</td><td>向銀行取得4,000。</td></tr><tr><td>04 網購退款入帳</td><td>觸發玩家</td><td>獲得2,000資金。</td><td>向銀行取得2,000。</td></tr><tr><td>05 普發振興券</td><td>全體玩家</td><td>全體獲得5,000資金。</td><td>每位未破產玩家向銀行取得5,000。</td></tr><tr><td>06 家電臨時故障</td><td>觸發玩家</td><td>支付3,000維修費。</td><td>向銀行支付3,000。</td></tr><tr><td>07 社區聚餐</td><td>全體玩家</td><td>全體各分攤500。</td><td>每位未破產玩家向銀行支付500。</td></tr><tr><td>08 手機螢幕摔破</td><td>觸發玩家</td><td>支付2,500維修費。</td><td>向銀行支付2,500。</td></tr><tr><td>09 交通違規</td><td>觸發玩家</td><td>支付3,000罰款。</td><td>向銀行支付3,000。</td></tr><tr><td>10 忘記取消訂閱</td><td>觸發玩家</td><td>支付1,000續訂費。</td><td>向銀行支付1,000。</td></tr><tr><td>11 幫鄰居搬家</td><td>觸發玩家</td><td>獲得2聲望。</td><td>立即獲得2聲望。</td></tr><tr><td>12 拾金不昧</td><td>觸發玩家</td><td>獲得4聲望。</td><td>立即獲得4聲望。</td></tr><tr><td>13 社區大掃除</td><td>全體玩家</td><td>全體獲得2聲望。</td><td>每位未破產玩家立即獲得2聲望。</td></tr><tr><td>14 深夜製造噪音</td><td>觸發玩家</td><td>失去3聲望。</td><td>立即減少3聲望，最低0。</td></tr><tr><td>15 插隊被勸導</td><td>觸發玩家</td><td>失去2聲望。</td><td>立即減少2聲望，最低0。</td></tr><tr><td>16 放鳥朋友</td><td>觸發玩家</td><td>失去2聲望。</td><td>立即減少2聲望，最低0。</td></tr><tr><td>17 車子拋錨</td><td>觸發玩家</td><td>1台載具油量歸零；無適用載具則支付1,000交通費。</td><td>依本節油量對象規則選1台載具，油量設為0；若為已裝備載具，依6.6解除並切換為步行。名下沒有適用載具時，改向銀行支付1,000交通費。</td></tr><tr><td>18 鄰居幫忙加油</td><td>觸發玩家</td><td>1台載具補15油；無適用載具則獲得1,000。</td><td>依本節油量對象規則選1台載具，增加15油，最高至油箱容量；名下沒有適用載具時，改向銀行取得1,000。</td></tr><tr><td>19 搭順風車</td><td>觸發玩家</td><td>隨機前進2～5格；無法移動則獲得2,000。</td><td>等機率選出2、3、4、5其中1個步數，依一般路線立即前進；起點、落點與油耗依1.3及6.6結算。受狀態限制而無法移動時，改向銀行取得2,000。</td></tr><tr><td>20 腸胃炎住院</td><td>觸發玩家</td><td>支付2,000，下個原定回合休息。</td><td>先向銀行支付2,000，再標記下一個原定回合休息1次；跳過仍算當輪已行動，額外回合不抵銷這次休息。</td></tr></table></div>
+<h4>機會結算</h4>
+<ul><li>「觸發玩家」指停在機會格的玩家；「全體玩家」包含揭曉時所有未破產玩家，休息與在獄狀態仍適用。</li><li>涉及單台載具油量時，優先選目前使用且已有油量規格的載具；目前步行或使用其他載具時，自選1台已有油量規格的自有載具。替代效果依各項說明結算。</li><li>先結算資金支付，再執行同事件的後續效果；觸發玩家破產後結束其後續操作。資金與聲望的共通結算依6.8。</li></ul>
+<h3 id="section-89">6.10 電影類道具卡</h3>
+<p>電影院與超級影城提供電影牌，候選數依店級，效果見下表。</p>
+<div class="table-wrap"><table><tr><th>電影牌名稱</th><th>原作</th><th>原作情節與名場面</th><th>原作經典台詞</th></tr><tr><td>少林籃球</td><td>少林足球</td><td>原作情節：少林弟子組成足球隊，以功夫踢球挑戰強敵。<br>名場面：決賽中魔鬼隊連番強射，少林隊守門員田雞奮力抵擋；阿梅以太極卸去球勁，扭轉局勢。</td><td>「我心中的一團火是不會熄滅的！」<br>「地球是很危險的！」</td></tr><tr><td>功夫</td><td>功夫</td><td>原作情節：小混混捲入黑幫紛爭，發現隱藏在平民之中的武林高手。<br>名場面：斧頭幫闖入豬籠城寨，街坊中的隱藏高手挺身應戰；阿星後來與火雲邪神對決，使出如來神掌。</td><td>「還踢球？」<br>「包租婆，怎麼沒水了？」<br>「一支穿雲箭，千軍萬馬來相見。」</td></tr><tr><td>食神</td><td>食神</td><td>原作情節：名廚失去地位後重新學習料理，重返廚藝競賽。<br>名場面：史提芬周在食神大賽端出黯然銷魂飯；評審品嚐後落淚，簡單叉燒飯成為比賽焦點。</td><td>「只要有心，人人都是食神！」<br>「是洋蔥，我加了洋蔥。」</td></tr><tr><td>賭神</td><td>賭神</td><td>原作情節：賭術高手失憶後流落民間，逐步恢復身分並迎戰對手。<br>名場面：失憶的高進被陳刀仔等人照顧，吃巧克力、展現驚人的賭術；恢復身分後與陳金城展開決戰。</td><td>「巴拿馬總統都算同我有交情」<br>「西德製隱形液晶體顯影眼鏡」</td></tr><tr><td>那些年，我們一起追的男孩</td><td>那些年，我們一起追的女孩</td><td>原作情節：一群高中同學追求心儀的女孩，經歷青春與成長。<br>名場面：柯景騰與沈佳宜在教室裡從互相督促讀書開始相處；多年後婚禮重逢，青春追逐有了另一種結局。</td><td>「我就是笨蛋啦！」<br>「人生本來很多事就是徒勞無功的啊」</td></tr><tr><td>艋舺</td><td>艋舺</td><td>原作情節：少年加入艋舺地方幫派，在友情與江湖衝突中成長。<br>名場面：蚊子因雞腿結識志龍、和尚等人，五人結為太子幫；地方幫派勢力變動後，兄弟情誼受到考驗。</td><td>「你為什麼要逼我啊？」<br>「意義是三小，我只知道義氣」</td></tr><tr><td>總舖師</td><td>總舖師</td><td>原作情節：總舖師的女兒為挽救家業，重新學習辦桌料理。<br>名場面：小婉為挽救家業與傳承辦桌手藝，重新學習料理；最終以辦桌宴席凝聚地方人情。</td><td>「今天的總舖師是鬼頭」<br>「心若歡喜，菜就好吃」</td></tr><tr><td>周處除三害</td><td>周處除三害</td><td>原作情節：通緝犯決定除掉排名在自己之前的兩名罪犯。<br>名場面：陳桂林得知通緝排名後，決定追查排名在他之前的人；在靈修會識破尊者身分後回到現場對峙。</td><td>「我有名有姓，我叫陳桂林」<br>「我跟關聖帝君請示過」</td></tr><tr><td>玩命關頭</td><td>玩命關頭</td><td>原作情節：臥底警察接近街頭賽車團伙，調查一連串劫案。<br>名場面：臥底警察布萊恩接近唐老大與街頭車隊，參與飆車並在調查劫案時面臨友情與職責的抉擇。</td><td>「綠燈一亮我就會全力衝刺」<br>「I live my life a quarter mile at a time.」</td></tr><tr><td>華爾街之狼</td><td>華爾街之狼</td><td>原作情節：股票經紀人靠高風險手法致富，最終面臨法律追查。<br>名場面：喬丹在銷售演講中拿出一支筆，要求台下的人向他推銷；這個問題成為片尾場景。</td><td>「Sell me this pen.」<br>「I&#x27;m not leaving.」<br>「The show goes on!」</td></tr><tr><td>大賣空</td><td>大賣空</td><td>原作情節：投資人察覺房貸市場危機，以反向操作對抗華爾街。</td><td></td></tr><tr><td>侏羅紀公園</td><td>侏羅紀公園</td><td>原作情節：復活恐龍的主題公園失控，訪客必須逃離危險。<br>名場面：暴龍突破圍欄，停在遊覽車旁；孩子屏住呼吸，車內水杯因牠的腳步震動。</td><td>「Clever girl.」<br>「Life finds a way.」<br>「Welcome to Jurassic Park.」</td></tr><tr><td>九品芝麻官</td><td>九品芝麻官</td><td>原作情節：包龍星從小官一路克服困境，替蒙冤的女子伸張正義。<br>名場面：包龍星審理案件時與方唐鏡鬥嘴；方唐鏡進退公堂、挑釁包大人的橋段成為招牌場面。</td><td>「你打我呀笨蛋」<br>「我全都要」<br>「我天生神力」</td></tr><tr><td>整人專家</td><td>整人專家</td><td>原作情節：整人高手受雇捉弄目標，過程中逐漸改變立場。<br>名場面：古晶受雇接近車文杰，假扮家人進入車家並製造一連串惡作劇；後來因車家真誠相待而改變立場。</td><td>「我個名叫古晶」<br>「提高青年人內涵」<br>「刺激電影市場」</td></tr><tr><td>陣頭</td><td>陣頭</td><td>原作情節：年輕人返鄉接手家族陣頭，以創新表演挑戰傳統與競爭對手。<br>名場面：阿泰接下陣頭並與對手定下比賽，帶領團員練鼓、環島成長，嘗試以新形式表演。</td><td>「跟別人完全不一樣的陣頭」<br>「你心裡要是沒有神明」</td></tr><tr><td>角頭</td><td>角頭</td><td>原作情節：地方角頭勢力因利益與權力產生衝突，兄弟情誼受到考驗。<br>名場面：地方角頭勢力因地盤與利益發生衝突，人物在兄弟情誼、權力與地方關係之間做選擇。</td><td></td></tr><tr><td>星際效應</td><td>星際效應</td><td>原作情節：地球環境惡化，一群太空人穿越蟲洞，尋找人類的新家園。<br>名場面：庫柏一行前往米勒星球，短暫停留造成巨大的時間差；返回太空船後，他看見家人多年累積的影像訊息。</td><td>「No, it&#x27;s necessary.」<br>「Love is the one thing we&#x27;re capable of perceiving that transcends dimensions of time and space.」</td></tr><tr><td>環大西洋</td><td>環太平洋</td><td>原作情節：巨大怪獸從海底出現，人類駕駛巨型機甲獵人迎戰。<br>名場面：人類駕駛由兩名駕駛員共同操控的巨型機甲，迎戰從海底裂口出現的怪獸；香港夜戰中機甲使用貨輪作武器。</td><td>「今天我們將終結末日」<br>「Don&#x27;t chase the rabbit.」</td></tr><tr><td>海角七億</td><td>海角七號</td><td>原作情節：失意的音樂人回到恆春，與當地居民組成樂團準備演出，並送出多年前未送達的情書。<br>名場面：阿嘉將多年未送達的情書交到老友子手中，隨後在海邊向即將離開的友子表達心意。</td><td>「留下來，或者我跟妳走」<br>「我國寶咧！」<br>「千年傳統，全新感受！」</td></tr><tr><td>破風</td><td>破風</td><td>原作情節：單車隊的破風手與衝線手在公路賽中合作，也面對隊友間的競爭與成長。<br>名場面：破風手在前方領騎、替隊友減少風阻，為衝線手製造最後加速奪冠的機會。</td><td>「取是能力，捨是境界」<br>「風在前，無懼」</td></tr></table></div>
+<p>電影牌依表列時機使用，選定合法目標後結算並移除。聲望下限為0；先決定骰數，再套用指定骰點。店鋪升降級沿用原投資紀錄。</p>
+<div class="table-wrap"><table><tr><th>電影牌名稱</th><th>卡牌文案</th><th>卡牌效果</th><th>使用時機</th></tr><tr><td>少林籃球</td><td>下回合前，擋一次針對你或單店的卡牌。</td><td>至下次自己回合開始前，抵銷第一張以自己或自有單間商店為指定目標的對手卡，隨後移除防護。全區與全體效果照常結算。</td><td>自己回合擲骰前</td></tr><tr><td>功夫</td><td>一間對手商店降至1級。</td><td>指定1間對手商店降至1級，保留店種、完整占地與投資紀錄。</td><td>自己回合擲骰前</td></tr><tr><td>食神</td><td>一間自有餐飲店升至滿級。</td><td>指定1間未滿級的自有小吃攤、美食街或觀光夜市，升至該階最高等級。結算只更新等級，沿用原投資紀錄，店鋪效果與合成留待正常落點執行。</td><td>自己回合擲骰前</td></tr><tr><td>賭神</td><td>下個自己回合，所有骰子固定3點。</td><td>下個自己回合內，所有實際擲出的骰子均取3點，原骰數照常；移動、遠端升級及重擲均適用，該回合結束後解除。</td><td>自己回合擲骰前</td></tr><tr><td>那些年，我們一起追的男孩</td><td>移到一名主線對手所在格。</td><td>選1位位於主線的對手，直接移至其所在格。結算只改變位置：油量與起點獎金維持原值，目的地效果略過。目的地限主線。</td><td>自己回合擲骰前</td></tr><tr><td>艋舺</td><td>與一名對手結盟，互獲指定牌保護至下回合。</td><td>指定1位對手結盟，持續至下次自己回合開始。雙方卡片可指定的目標排除彼此及彼此商店；全區與全體效果照常執行。</td><td>自己回合擲骰前</td></tr><tr><td>總舖師</td><td>遠端合成一次自有餐飲店。</td><td>選同一地理區內相鄰的自有小吃攤系列，依既有配方遠端合成1次美食街或觀光夜市。材料等級相加、投資紀錄合計，合成後結束本次結算。</td><td>自己回合擲骰前</td></tr><tr><td>周處除三害</td><td>本回合移動改擲9顆骰子。</td><td>本回合一般移動改擲9顆六面骰，按總點數前進，落點照常結算。油耗、途中耗盡後完成本次步數，以及移動停止後切換步行，均依6.6結算。</td><td>自己回合擲骰前</td></tr><tr><td>玩命關頭</td><td>本次移動骰點總和乘2。</td><td>本次移動擲骰完成後，將最終骰點總和乘2，依一般路線前進；沿途、落點與實際行走格數的油耗照常結算。</td><td>本回合移動擲骰後</td></tr><tr><td>華爾街之狼</td><td>操作市場，讓特定股票大漲。</td><td>待定</td><td>待定</td></tr><tr><td>大賣空</td><td>操作市場，讓特定股票大跌。</td><td>待定</td><td>待定</td></tr><tr><td>侏羅紀公園</td><td>摧毀一間對手商店。</td><td>指定1間對手商店，移除整間建築及經營權；合成店完整占地一併變為無主空地，補償為0。</td><td>自己回合擲骰前</td></tr><tr><td>九品芝麻官</td><td>取消本次入獄，或立即結束服刑。</td><td>入獄前使用時，取消本次入獄並在原地接續流程；在獄中回合開始時使用，立即結束服刑，該回合可從J01依正常出獄路線擲骰移動。</td><td>入獄前，或自己在獄中的回合開始時</td></tr><tr><td>整人專家</td><td>一名對手下次移動改為等距後退。</td><td>指定1位主線對手，將其下一次主線擲骰的一般移動改為按同點數後退。落點與油耗照常，後退經過起點的獎金為0。效果在該次移動後解除；交通與卡片直達保留此效果。</td><td>自己回合擲骰前</td></tr><tr><td>陣頭</td><td>本次移動任選骰子，各重擲一次。</td><td>在本次移動擲骰後，自選任意顆骰子各重擲1次，其餘結果保留；採用重擲新結果，再套用賭神等指定點數效果。</td><td>本回合移動擲骰後</td></tr><tr><td>角頭</td><td>封鎖自有商店所在區域，阻擋對手至下回合。</td><td>選1個有自有商店的地理區，封鎖其建設地至下次自己回合開始。對手一般移動遇封鎖時停在入口前一格並觸發落點；直達目的地限封鎖區外。區內對手可正常離開。</td><td>自己回合擲骰前</td></tr><tr><td>星際效應</td><td>本回合結束後，立即再行動一回合。</td><td>本回合結束後立即取得1個額外回合，擲骰、設施與卡片依原規則執行。</td><td>自己回合擲骰前</td></tr><tr><td>環大西洋</td><td>摧毀一個區域的全部對手商店。</td><td>選1個地理區，移除該區全部對手商店的建築及經營權。合成店完整占地一併變為無主空地，補償為0；自有商店保留。</td><td>自己回合擲骰前</td></tr><tr><td>海角七億</td><td>誣陷一名對手，入獄3天。</td><td>指定1位對手，立即送至J01綠島監獄，依6.13服刑3天。判決無罪卡與九品芝麻官照常處理取消入獄或提前出獄。</td><td>自己回合擲骰前</td></tr><tr><td>破風</td><td>獲得一台腳踏車。</td><td>取得1台腳踏車並加入自有載具列表，於自己回合擲骰前切換使用。腳踏車移動規格依6.6待定欄位另定。</td><td>自己回合擲骰前</td></tr></table></div>
+<h3 id="section-90">6.11 卡牌店指定卡片清單</h3>
+<ul>
+<li>卡牌店的抽取與整組重抽，只使用商圈招待券、情報截取卡、判決無罪卡；交卡、取得張數與無卡可交的處理依4.3執行</li>
+</ul>
+<div class="table-wrap"><table><tr><th>卡片</th><th>卡牌文案</th><th>卡牌效果</th><th>使用時機</th></tr><tr><td>商圈招待券</td><td>免本次民營服務費，照常使用設施。</td><td>在本次民營服務費扣款前使用，該筆服務費歸零，設施效果照常執行。購車、建造、升級與活動等獨立費用依原規則支付。</td><td>民營服務費扣款前</td></tr><tr><td>情報截取卡</td><td>隨機取得一名對手的非電影卡1張。</td><td>選1位持有非電影道具卡的對手，從符合條件的手牌等機率抽1張，從對手手牌移出並加入自己的手牌。</td><td>自己回合擲骰前</td></tr><tr><td>判決無罪卡</td><td>取消本次入獄。</td><td>入獄事件或卡片效果揭曉後、送入J01之前使用，取消該次入獄與服刑，留在原格接續剩餘流程；海角七億同樣適用。</td><td>入獄揭曉後、送入監獄前</td></tr></table></div>
+<h3 id="section-91">6.12 主題樂園專屬卡片</h3>
+<div class="table-wrap"><table><tr><th>卡片</th><th>卡牌文案</th><th>卡牌效果</th><th>使用時機</th></tr><tr><td>商店收購書</td><td>付投資額2倍，收購腳下的對手商店。</td><td>停在對手民營商店時，向原店主支付該店投資額2倍，取得整間店的經營權。店種、等級、原投資紀錄與完整占地保留；合成店一併移轉。</td><td>停在對手商店時</td></tr><tr><td>經營權交換書</td><td>以一間自有店，交換對手同階商店。</td><td>選1間自有商店與1間對手同階商店，同時交換完整經營權；各店沿用原位置、店種、等級、投資紀錄與占地。</td><td>自己回合擲骰前</td></tr><tr><td>都市更新計畫</td><td>一個區域內的全部自有店各升1級。</td><td>選1個地理區，該區所有自有商店各升1級，最高至各階上限。合成店按整間店處理，沿用實際已支付的投資紀錄。</td><td>自己回合擲骰前</td></tr><tr><td>強制拆除違建</td><td>一個區域內的全部對手店各降1級。</td><td>選1個地理區，該區所有對手商店各降1級，最低1級；保留店種、完整占地與原投資紀錄。</td><td>自己回合擲骰前</td></tr></table></div>
+<h3 id="section-92">6.13 綠島監獄規則</h3>
+<ul>
+<li>入獄事件揭曉後、送入J01之前，可使用判決無罪卡取消本次入獄，留在原地繼續剩餘流程</li>
+<li>出獄移動依2.5的P01～P05通道返回台東；每格移動與油量計算依一般移動規則</li>
+<li>《海角七億》造成的入獄固定為3天：入獄後連續跳過3個自己的原定回合，跳過回合仍算當輪已行動；額外回合不折抵服刑天數。服刑結束後，下個原定回合由J01依2.5正常出獄移動。</li>
+<li>《海角七億》的服刑天數依本節執行；其他入獄來源、服刑天數、服刑期間操作與其他提前出獄方式待定</li>
+</ul>
+<h3 id="section-stock-market">6.14 股市系統</h3>
+<ul><li>股市規則、股票清單與分類、交易方式、行情更新時機，以及股票相關電影卡的具體效果及使用時機待定。新聞的科技股多頭與休市狀態依6.8；科技股漲幅待細化。</li></ul>
+
+<h2 id="section-93">7 待細化企劃</h2>
+<ul>
+<li>選舉：聲望換票公式與開票方式。</li>
+<li>資產：得標空地估值與破產清償例外。</li>
+<li>卡片：其他卡片的使用與消耗、持有上限、抽取權重、重複與卡池不足處理。</li>
+<li>主題樂園：候選數、刷新機率、重複卡與取得2張卡的流程。</li>
+<li>載具：持有上限、出售與車款不足處理，以及腳踏車規格。</li>
+<li>時程：7/1的星期。</li>
+<li>商店：其他三店合成組合、操作例外、城市活動與休息期間操作。</li>
+<li>監獄：其他入獄來源、刑期、服刑操作與出獄條件。</li>
+<li>股市：股票分類、交易、行情更新、科技股漲幅，以及兩張股票電影卡的效果及使用時機。</li>
+</ul>
+<h2 id="section-96">8 美術規劃與素材</h2>
+<h3 id="section-97">8.1 現有素材索引</h3>
+<ul>
+<li>素材盤點：2026/10/29，同類合併計數。</li>
+</ul>
+<div class="table-wrap"><table><tr><th>分類</th><th>已完成內容</th><th>存放位置</th></tr><tr><td>商店3D</td><td>54組：4種初階、10種二階、4種三階商店，各3段外觀；含BLEND、FBX及預覽。</td><td><span class="asset-path">04_場景/01_商店</span></td></tr><tr><td>場景3D</td><td>152組BLEND與FBX配對：含地格、道路、公共設施、五座官方火車站、公園、地標、造景、車船、飛機與綠島監獄。</td><td><span class="asset-path">04_場景/02_場景物件</span></td></tr><tr><td>卡片插畫</td><td>已有卡牌店3張、主題樂園4張與舊版電影8張圖稿，以及卡面版型。</td><td><span class="asset-path">03_2D美術/01_道具卡/平面卡通提案/index.html</span></td></tr><tr><td>新聞與機會</td><td>舊版16項圖稿與視窗提案已存在；本版採新聞10項、機會20項，共30項，插畫須依新題材逐項核對。</td><td><span class="asset-path">03_2D美術/02_機會與新聞/index.html</span></td></tr><tr><td>情境插畫</td><td>城市行動、選舉、公共設施、商店經營、交通與回合，共5類圖集。</td><td><span class="asset-path">03_2D美術/03_企劃補充插畫/index.html</span></td></tr><tr><td>商店2D</td><td>18種商店最低等級外觀圖集。</td><td><span class="asset-path">03_2D美術/05_建築插畫/index.html</span></td></tr><tr><td>UI圖示</td><td>62枚獨立剪紙切面PNG。</td><td><span class="asset-path">03_2D美術/04_UI與圖示/UI圖示_剪紙切面/index.html</span></td></tr><tr><td>UI版型</td><td>48張原始畫面提案、HTML／CSS／JS及透明HUD；依實際功能選用。</td><td><span class="asset-path">03_2D美術/04_UI與圖示/index.html</span></td></tr></table></div>
+<h3 id="section-98">8.2 待細化美術企劃</h3>
+<ul><li>角色：棋子或完整角色、角色總數、4席辨識與動作需求。</li><li>載具：遊戲用車款的外觀與既有造景車採用範圍。</li><li>視覺表現：一般及9骰移動的呈現方式；海面、地形與遠景的製作方式。</li></ul>
+<h3 id="section-99">8.3 製作原則</h3>
+<ul>
+<li>2D採平面卡通插畫與剪紙切面圖示，3D採方塊積木城市；統一素材採用範圍與畫面比例。</li>
+<li>UI僅保留實際操作、必要數值、狀態與結果；選擇、確認與結果共用視窗。</li>
+<li>2D保留逐張PNG及必要透明版本；3D保留BLEND、FBX、材質與預覽，沿用既有素材。</li>
+
+</ul>
+</main>
+<button type="button" class="toc-toggle" id="toc-toggle" aria-controls="toc-sidebar" aria-expanded="false">章節目錄</button>
+<button type="button" class="toc-backdrop" id="toc-backdrop" aria-label="關閉章節目錄" tabindex="-1"></button>
+<aside class="toc-sidebar" id="toc-sidebar" aria-labelledby="toc-title">
+<div class="toc-header"><strong id="toc-title">企劃目錄</strong><button type="button" class="toc-close" id="toc-close" aria-label="關閉章節目錄">收起</button></div>
+<nav class="outline" aria-label="企劃目錄"><a class="depth-1" href="#section-1">1 共通規則</a><a class="depth-2" href="#section-2">1.1 遊戲目標與基礎數值</a><a class="depth-2" href="#section-3">1.2 收費原則</a><a class="depth-2" href="#section-4">1.3 交通移動</a><a class="depth-2" href="#section-5">1.4 商店升級與落點流程</a><a class="depth-2" href="#section-6">1.5 商店合成</a><a class="depth-2" href="#section-7">1.6 支付不足與破產</a><a class="depth-2" href="#section-8">1.7 扣費與退款</a><a class="depth-1" href="#section-9">2 地圖配置</a><a class="depth-2" href="#section-10">2.1 格數與區段</a><a class="depth-2" href="#section-11">2.2 地格與交通設施配置</a><a class="depth-2" href="#section-12">2.3 方形環狀地圖</a><a class="depth-2" href="#section-13">2.4 開店與區域計價</a><a class="depth-2" href="#section-14">2.5 綠島監獄與出獄支線</a><a class="depth-1" href="#section-15">3 初階商店</a><a class="depth-2" href="#section-16">3.1 全商店數值比較</a><a class="depth-2" href="#section-17">3.2 各店操作與例外</a><a class="depth-1" href="#section-29">4 二階商店</a><a class="depth-2" href="#section-30">4.1 一階至三階消費費總表</a><a class="depth-2" href="#section-31">4.2 全商店合成與效果比較</a><a class="depth-2" href="#section-32">4.3 各店操作與例外</a><a class="depth-1" href="#section-63">5 三階商店</a><a class="depth-2" href="#section-64">5.1 設計範圍與共通規則</a><a class="depth-2" href="#section-65">5.2 合成與效果總表</a><a class="depth-2" href="#section-66">5.3 百貨公司規則</a><a class="depth-2" href="#section-67">5.4 小吃攤、美食街與觀光夜市逐級機率表</a><a class="depth-2" href="#section-68">5.5 火車站與機場規則</a><a class="depth-2" href="#section-69">5.6 主題樂園規則</a><a class="depth-2" href="#section-70">5.7 待確認範圍</a><a class="depth-1" href="#section-71">6 全局系統</a><a class="depth-2" href="#section-72">6.1 遊戲時程</a><a class="depth-2" href="#section-75">6.2 道具卡</a><a class="depth-2" href="#section-78">6.3 城市行動</a><a class="depth-2" href="#section-81">6.4 市長選舉</a><a class="depth-2" href="#section-84">6.5 玩家與座位設定</a><a class="depth-2" href="#section-85">6.6 載具、移動與油量</a><a class="depth-2" href="#section-86">6.7 起點與國稅局效果</a><a class="depth-2" href="#section-87">6.8 新聞列表</a><a class="depth-2" href="#section-88">6.9 機會列表</a><a class="depth-2" href="#section-89">6.10 電影類道具卡</a><a class="depth-2" href="#section-90">6.11 卡牌店指定卡片清單</a><a class="depth-2" href="#section-91">6.12 主題樂園專屬卡片</a><a class="depth-2" href="#section-92">6.13 綠島監獄規則</a><a class="depth-2" href="#section-stock-market">6.14 股市系統</a><a class="depth-1" href="#section-93">7 待細化企劃</a><a class="depth-1" href="#section-96">8 美術規劃與素材</a><a class="depth-2" href="#section-97">8.1 現有素材索引</a><a class="depth-2" href="#section-98">8.2 待細化美術企劃</a><a class="depth-2" href="#section-99">8.3 製作原則</a></nav>
+</aside>
+
+<script id="toc-sidebar-script">
+(function(){
+ const toggle=document.getElementById('toc-toggle');
+ const close=document.getElementById('toc-close');
+ const backdrop=document.getElementById('toc-backdrop');
+ const nav=document.querySelector('.toc-sidebar .outline');
+ const links=Array.from(nav.querySelectorAll('a[href^="#"]'));
+ const targets=links.map(link=>({link,heading:document.getElementById(link.hash.slice(1))})).filter(item=>item.heading);
+ const small=window.matchMedia('(max-width:1100px)');
+ let active=null;
+ let queued=false;
+ function setOpen(open,restoreFocus){
+  document.body.classList.toggle('toc-open',open);
+  toggle.setAttribute('aria-expanded',String(open));
+  if(open){(active||links[0]).focus({preventScroll:true});revealActive();}
+  else if(restoreFocus){toggle.focus({preventScroll:true});}
+ }
+ function revealActive(){
+  if(!active)return;
+  const top=active.offsetTop;
+  const bottom=top+active.offsetHeight;
+  if(top<nav.scrollTop+8)nav.scrollTop=Math.max(0,top-8);
+  else if(bottom>nav.scrollTop+nav.clientHeight-8)nav.scrollTop=bottom-nav.clientHeight+8;
+ }
+ function updateActive(){
+  queued=false;
+  let current=targets[0];
+  for(const item of targets){
+   if(item.heading.getBoundingClientRect().top<=100)current=item;
+   else break;
+  }
+  if(!current||current.link===active)return;
+  if(active)active.removeAttribute('aria-current');
+  active=current.link;
+  active.setAttribute('aria-current','location');
+  revealActive();
+ }
+ function schedule(){if(!queued){queued=true;requestAnimationFrame(updateActive);}}
+ toggle.addEventListener('click',()=>setOpen(!document.body.classList.contains('toc-open'),false));
+ close.addEventListener('click',()=>setOpen(false,true));
+ backdrop.addEventListener('click',()=>setOpen(false,true));
+ document.addEventListener('keydown',event=>{if(event.key==='Escape'&&document.body.classList.contains('toc-open'))setOpen(false,true);});
+ links.forEach(link=>link.addEventListener('click',()=>{if(small.matches)setOpen(false,false);}));
+ small.addEventListener('change',()=>{setOpen(false,false);schedule();});
+ window.addEventListener('scroll',schedule,{passive:true});
+ window.addEventListener('resize',schedule);
+ window.addEventListener('hashchange',schedule);
+ window.addEventListener('load',schedule);
+ updateActive();
+})();
+</script>
+</body></html>
