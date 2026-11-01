@@ -2,48 +2,68 @@
 
 [線上閱讀](https://ai8999ai-jpg.github.io/rich-mayor-plan/)
 
-共用主版本為本儲存庫 `main` 分支的 `index.html`。網站由 GitHub Pages 從分支根目錄發布，成功推送後自動重新部署。
+本儲存庫以企劃文件為主，採 Git 同步與推送。收到使用者「改完」或推送指示後才發布；推送成功就回報，網站由既有 GitHub Pages 背景自動更新。
 
-## 跨裝置編輯流程
+## 檔案
 
-1. 每次修改前，先讀取 GitHub 的最新 `main` 與 `index.html`，記下本次編輯的起始版本。
-2. 若雲端有更新，先把雲端修改整合進本機副本，再開始編輯；本機未推送的修改先保留並比對。
-3. 每次修改企劃內容後，自動更新標題下的「最後編輯時間」，以台灣時間（UTC+8）顯示至秒；本機 HTML、DOCX、純文字與網站發布版使用同一時間，保留單一時間欄位。完成後檢查規則、表格、章節連結、右側目錄與地圖。
-4. 推送前再次檢查雲端。若已有其他裝置推送，先整合差異並重新檢查，再推送。
-5. 成功推送 `main` 後，GitHub Pages 自動部署；確認部署成功與網站更新後再交付。
+| 路徑 | 用途 |
+| --- | --- |
+| index.html | 主企劃共用閱讀版 |
+| stock-guide.html | 股票系統圖解與完整參數 |
+| *.pdf | 已上傳的企劃規格與原始參考 |
+| sources/*.docx | 可編輯 Word 企劃副本 |
+| sources/*.txt | 純文字企劃副本 |
+| AGENTS.md | AI 編輯、同步與推送規範 |
 
-使用相同 GitHub 帳號仍需同步同一個儲存庫。各裝置的本機檔案透過讀取、合併及推送銜接。
+美術原始檔、模型、Unity 與遊戲程式不納入本倉庫。Git 只同步已加入並提交的檔案，不會自動同步桌面其他資料夾。
 
-## 使用 Git 的裝置
+## 本機位置與首次取得
 
-第一次取得文件：
+本機 Git 根目錄為 `C:/Users/User/Desktop/自己做大富翁/01_遊戲企劃/github-pages`。
+
+其他裝置第一次取得：
 
 ```sh
 git clone https://github.com/ai8999ai-jpg/rich-mayor-plan.git
 cd rich-mayor-plan
 ```
 
-開始編輯前先檢查工作目錄，妥善保留未提交修改，再同步：
+每台裝置須有 Git，以及對此儲存庫有寫入權限的 GitHub 登入；登入由 Git Credential Manager 處理。
+
+## 修改前
 
 ```sh
 git status --short
 git fetch origin
-git pull --ff-only
+git log --oneline HEAD..origin/main
 ```
 
-完成並檢查後：
+工作區乾淨且可快轉時：
 
 ```sh
+git merge --ff-only origin/main
+```
+
+也可在乾淨工作區直接使用 `git pull --ff-only`，一次完成抓取與整合。有本機草稿或分支分岔時，先保留內容、比對再合併。使用 stash 保存時先 apply 還原，確認無遺漏後才移除暫存；不要直接覆蓋本機修改。
+
+## 編輯與副本
+
+修改規則後同步相關 HTML、Word、純文字與股票說明，並更新同一批文件的台灣編輯時間。桌面父目錄的 Word／純文字與 sources 同名檔案需同步。雲端新版也必須整合回本機副本，不能用舊匯出檔覆蓋。
+
+## 收到「改完」或推送指示後
+
+先同步副本、再次 fetch 並整合雲端，檢查實際差異，再提交本次明確檔案。例如只修改主企劃與其副本時：
+
+```sh
+git fetch origin
 git diff --check
-git add index.html
+git diff --stat
+git add -- index.html sources/商店合成與市長選舉遊戲企畫書_規則定案版.docx sources/遊戲企劃_純文字版.txt
+git diff --cached --stat
 git commit -m "更新遊戲企劃"
 git push origin main
 ```
 
-推送若被拒絕，重新讀取雲端並合併，完成檢查後再次推送。保留雙方變更及提交歷史，禁止強制推送覆蓋他人內容。
+其他檔案（如股票說明、PDF、操作文件）依本次修改明確加入，不直接全選整個資料夾。GitHub 拒絕推送時重新讀取與合併，禁止強制覆蓋。推送成功即完成，不等待或驗證部署。
 
-## 使用 GitHub 連接器的裝置
-
-先讀取 `main` 的提交版本與 `index.html` 內容，保留檔案 SHA 作為更新前提。推送前重新讀取；版本改變時先合併，再使用最新且已確認的 SHA 提交。發生版本衝突時，須比對內容後再提交，不能只換 SHA 重送舊內容。
-
-詳細代理工作規則見 [AGENTS.md](AGENTS.md)。本機素材資料夾路徑保留為企劃索引。
+完整規則見 [AGENTS.md](AGENTS.md)。

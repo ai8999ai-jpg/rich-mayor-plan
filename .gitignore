@@ -1,0 +1,8 @@
+# Local temporary files and backups
+/tmp/
+/已過時/
+~$*
+*.tmp
+*.bak
+.DS_Store
+Thumbs.db
