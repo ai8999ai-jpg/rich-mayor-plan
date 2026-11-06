@@ -10,7 +10,7 @@
 </head>
 <body>
 <main>
-<header><nav><a href="index.html#section-81">返回市長選舉</a><a id="model-doc" href="election-math.html">A版數學規格</a></nav><p class="eyebrow">ELECTION LAB / v0.1</p><h1>選票箱模擬器</h1><p class="muted">最後編輯時間：<time datetime="2026-11-05T15:45:31+08:00">2026/11/05 15:45:31</time></p><p class="intro">直接設定箱數，觀看逐箱開票與多局勝率比較。</p></header>
+<header><nav><a href="index.html#section-81">返回總統選舉</a><a id="model-doc" href="election-math.html">A版數學規格</a></nav><p class="eyebrow">ELECTION LAB / v0.1</p><h1>選票箱模擬器</h1><p class="muted">最後編輯時間：<time datetime="2026-11-06T13:04:12+08:00">2026/11/06 13:04:12</time></p><p class="intro">直接設定箱數，觀看逐箱開票與多局勝率比較。</p></header>
 <div class="layout">
 <aside class="panel">
 <h2>參賽設定</h2>
@@ -208,7 +208,7 @@ function renderSingle() {
     stopAnimation();
     const winner = single.players[single.winner].name;
     const tieNames = single.tied.map(i => single.players[i].name).join('、');
-    $('outcome').textContent = single.tied.length > 1 ? tieNames + ' 最高票同票，抽籤由 ' + winner + ' 勝出。' : winner + ' 以 ' + number(single.totals[single.winner]) + '票勝出。';
+    $('outcome').textContent = single.tied.length > 1 ? tieNames + ' 最高票同票，抽籤由 ' + winner + ' 當選總統。' : winner + ' 以 ' + number(single.totals[single.winner]) + '票當選總統。';
     $('single-announcement').textContent = $('outcome').textContent;
   } else $('outcome').textContent = '依預設玩家順序揭曉，全部開完後公布勝者。';
   renderBoxDetails();

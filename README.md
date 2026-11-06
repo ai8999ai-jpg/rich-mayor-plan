@@ -1,4 +1,4 @@
-# 富翁市長遊戲企劃
+# 富翁總統遊戲企劃
 
 [線上閱讀](https://ai8999ai-jpg.github.io/rich-mayor-plan/)
 
@@ -58,7 +58,7 @@ git merge --ff-only origin/main
 git fetch origin
 git diff --check
 git diff --stat
-git add -- index.html sources/商店合成與市長選舉遊戲企畫書_規則定案版.docx sources/遊戲企劃_純文字版.txt
+git add -- index.html sources/商店合成與總統選舉遊戲企畫書_規則定案版.docx sources/遊戲企劃_純文字版.txt
 git diff --cached --stat
 git commit -m "更新遊戲企劃"
 git push origin main
