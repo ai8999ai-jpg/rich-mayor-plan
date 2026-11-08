@@ -10,11 +10,11 @@
 </head>
 <body>
 <main>
-<header><nav><a href="index.html#section-81">返回總統選舉</a><a id="model-doc" href="election-math.html">A版數學規格</a></nav><p class="eyebrow">ELECTION LAB / v0.1</p><h1>選票箱模擬器</h1><p class="muted">最後編輯時間：<time datetime="2026-11-06T13:04:12+08:00">2026/11/06 13:04:12</time></p><p class="intro">直接設定箱數，觀看逐箱開票與多局勝率比較。</p></header>
+<header><nav><a href="index.html#section-81">返回總統選舉</a><a id="model-doc" href="election-math.html">A版數學規格</a></nav><p class="eyebrow">ELECTION LAB / v0.2</p><h1>選票箱模擬器</h1><p class="muted">最後編輯時間：<time datetime="2026-11-08T21:39:46+08:00">2026/11/08 21:39:46</time></p><p class="intro">直接設定箱數，觀看逐箱開票與多局勝率比較。</p></header>
 <div class="layout">
 <aside class="panel">
 <h2>參賽設定</h2>
-<div class="field"><label for="model">數學版本</label><select id="model"><option value="A">A版 · CV約2</option><option value="B">B版 · CV約3</option><option value="C">C版 · CV約4</option></select></div><div class="field"><label for="player-count">玩家人數 · 預設順序</label><select id="player-count"><option>2</option><option selected>3</option><option>4</option></select></div>
+<div class="field"><label for="model">數學版本</label><select id="model"><option value="RA" selected>依名次A版 · 遊戲採用</option><option value="A">A版 · CV約2</option><option value="B">B版 · CV約3</option><option value="C">C版 · CV約4</option></select></div><div class="field"><label for="player-count">玩家人數 · 預設順序</label><select id="player-count"><option>2</option><option selected>3</option><option>4</option></select></div>
 <p class="muted">每位玩家直接輸入選票箱數。</p><div class="player-inputs" id="player-inputs"></div>
 <div class="field"><label for="seed">隨機種子</label><div class="seed-row"><input id="seed" value="election-001" maxlength="80"><button id="new-seed" type="button">換種子</button></div></div>
 <p class="muted">相同票箱數與種子可重現開票及批次結果。</p>
@@ -60,12 +60,12 @@
 </section>
 </div>
 </div>
-<footer>A／B／C v0.1 · 票箱範圍0～10,000 · 每批最多25,000,000次票箱抽樣 · 所有模擬均於本機瀏覽器執行。</footer>
+<footer>依名次A版（遊戲採用）與 A／B／C v0.1 · 票箱數0～10,000 · 每批最多25,000,000次票箱抽樣 · 所有模擬均於本機瀏覽器執行。</footer>
 </main>
 <script>
 'use strict';
-const MODELS = {"A": {"tiers": [[100, 399, 8000], [400, 999, 1000], [1000, 2999, 500], [3000, 5999, 300], [6000, 10000, 200]], "target": 2, "doc": "election-math.html", "mean": 664.51, "variance": 1819268.2899, "sd": 1348.8025392547272, "cv": 2.0297701152047782}, "B": {"tiers": [[100, 119, 9065], [120, 499, 100], [500, 1499, 100], [1500, 5999, 100], [6000, 10000, 635]], "target": 3, "doc": "election-math-b.html", "mean": 657.84675, "variance": 3896210.027931104, "sd": 1973.8819690982295, "cv": 3.0005194509180586}, "C": {"tiers": [[100, 119, 9713], [120, 499, 10], [500, 1499, 10], [1500, 5999, 10], [6000, 10000, 257]], "target": 4, "doc": "election-math-c.html", "mean": 317.01585, "variance": 1607199.5835654442, "sd": 1267.7537550981438, "cv": 3.999023251039794}};
-let TIERS = MODELS.A.tiers;
+const MODELS = {"RA": {"tiers": [[100, 119, 7217], [120, 499, 1200], [500, 1499, 700], [1500, 5999, 500], [6000, 9999, 365], [10000, 50000, 18]], "ranks": [{"tiers": [[100, 119, 7217], [120, 499, 1200], [500, 1499, 700], [1500, 5999, 500], [6000, 9999, 365], [10000, 50000, 18]], "mean": 719.5879, "variance": 4611271.960206923, "sd": 2147.3872403939918, "cv": 2.9841903128081944}, {"tiers": [[100, 119, 7221], [120, 499, 1200], [500, 1499, 700], [1500, 5999, 500], [6000, 9999, 350], [10000, 50000, 29]], "mean": 740.63245, "variance": 5619233.089190331, "sd": 2370.492161807402, "cv": 3.2006323268814407}, {"tiers": [[100, 119, 7222], [120, 499, 1200], [500, 1499, 700], [1500, 5999, 500], [6000, 9999, 340], [10000, 50000, 38]], "mean": 759.6439, "variance": 6455392.529226122, "sd": 2540.746451188336, "cv": 3.34465458248047}, {"tiers": [[100, 119, 7235], [120, 499, 1200], [500, 1499, 700], [1500, 5999, 500], [6000, 9999, 300], [10000, 50000, 65]], "mean": 808.78825, "variance": 8907045.24724527, "sd": 2984.4673305709466, "cv": 3.6900478346105383}], "target": "rank", "doc": "index.html#section-81", "mean": 719.5879, "variance": 4611271.960206923, "sd": 2147.3872403939918, "cv": 2.9841903128081944}, "A": {"tiers": [[100, 399, 8000], [400, 999, 1000], [1000, 2999, 500], [3000, 5999, 300], [6000, 10000, 200]], "target": 2, "doc": "election-math.html", "mean": 664.51, "variance": 1819268.2899, "sd": 1348.8025392547272, "cv": 2.0297701152047782}, "B": {"tiers": [[100, 119, 9065], [120, 499, 100], [500, 1499, 100], [1500, 5999, 100], [6000, 10000, 635]], "target": 3, "doc": "election-math-b.html", "mean": 657.84675, "variance": 3896210.027931104, "sd": 1973.8819690982295, "cv": 3.0005194509180586}, "C": {"tiers": [[100, 119, 9713], [120, 499, 10], [500, 1499, 10], [1500, 5999, 10], [6000, 10000, 257]], "target": 4, "doc": "election-math-c.html", "mean": 317.01585, "variance": 1607199.5835654442, "sd": 1267.7537550981438, "cv": 3.999023251039794}};
+let TIERS = MODELS.RA.tiers;
 const COLORS = ['#275ecd','#137b70','#ad670b','#8056b8'];
 
 const $ = id => document.getElementById(id);
@@ -96,11 +96,12 @@ function createEngine(seed) {
     do { value = uint32(); } while (value >= limit);
     return value % size;
   }
-  function box() {
-    let draw = integer(TIERS.reduce((sum,tier) => sum+tier[2],0));
+  function box(tiers) {
+    const T = tiers || TIERS;
+    let draw = integer(T.reduce((sum,tier) => sum+tier[2],0));
     let index = 0;
-    while (draw >= TIERS[index][2]) { draw -= TIERS[index][2]; index++; }
-    const [low, high] = TIERS[index];
+    while (draw >= T[index][2]) { draw -= T[index][2]; index++; }
+    const [low, high] = T[index];
     return {votes:low + integer(high - low + 1), tier:index};
   }
   function winner(totals) {
@@ -125,7 +126,13 @@ function readSettings() {
   }
   const seed = $('seed').value.trim();
   if (!seed) throw new Error('請輸入隨機種子，或按「換種子」。');
-  return {players, seed, model:$('model').value, modelStats:MODELS[$('model').value], tiers:TIERS};
+  const modelKey = $('model').value, model = MODELS[modelKey];
+  const order = players.map((p,i) => i).sort((a,b) => players[b].boxes - players[a].boxes || a - b);
+  players.forEach((p,i) => {
+    const r = model.ranks ? model.ranks[Math.min(order.indexOf(i), model.ranks.length-1)] : model;
+    p.rank = order.indexOf(i) + 1; p.tiers = r.tiers; p.cv = r.cv;
+  });
+  return {players, seed, model:modelKey, modelStats:model, tiers:TIERS};
 }
 function showError(error) { $('error').textContent = error.message; $('error').hidden = false; }
 function stopAnimation() { clearInterval(animation); animation = null; $('auto').textContent = '自動開票'; }
@@ -140,7 +147,8 @@ function invalidate() {
   stopAnimation(); stopWorker(); single = null; batch = null; revealed = 0; detailPage = 0;
   $('single-players').innerHTML = '<p class="placeholder">設定已更新，請重新產生一局。</p>';
   $('single-status').textContent = '等待產生結果';
-  $('outcome').textContent = '每箱100～10,000票，依'+$('model').value+'版分布抽樣';
+  const top = MODELS[$('model').value].tiers.reduce((m,t) => Math.max(m,t[1]),0);
+  $('outcome').textContent = '每箱100～'+number(top)+'票，依'+($('model').value==='RA'?'依名次A':$('model').value)+'版分布抽樣';
   $('reveal-progress').style.width = '0%'; $('box-details').hidden = true;
   ['next','auto','reveal','export-single'].forEach(id => $(id).disabled = true);
   $('batch-results').hidden = true; $('batch-progress').value = 0;
@@ -168,7 +176,7 @@ function generate() {
   try {
     const settings = readSettings(); stopAnimation();
     const engine = createEngine(settings.seed + (settings.model==='A'?'':'|'+settings.model) + '|single');
-    const boxes = settings.players.map(player => Array.from({length:player.boxes}, () => engine.box().votes));
+    const boxes = settings.players.map(player => Array.from({length:player.boxes}, () => engine.box(player.tiers).votes));
     const totals = boxes.map(values => values.reduce((sum,value) => sum + value,0));
     single = {...settings, boxes, totals, totalBoxes:settings.players.reduce((sum,p) => sum+p.boxes,0), ...engine.winner(totals)};
     revealed = 0; detailPage = 0;
@@ -233,7 +241,7 @@ function batchWorker() {
     const {players, seed, trials, model} = event.data;
     const engine = createEngine(seed + (model==='A'?'':'|'+model) + '|batch');
     const summaries = players.map(() => ({wins:0,mean:0,m2:0,min:Infinity,max:0,totals:[]}));
-    const tierCounts = [0,0,0,0,0];
+    const tierCounts = TIERS.map(() => 0);
     const winners = new Uint8Array(trials);
     let boxCount=0, boxMean=0, boxM2=0, ties=0;
     for (let run=0;run<trials;run++) {
@@ -241,7 +249,7 @@ function batchWorker() {
       players.forEach((player,i) => {
         let total=0;
         for (let j=0;j<player.boxes;j++) {
-          const sample=engine.box(); total+=sample.votes; tierCounts[sample.tier]++;
+          const sample=engine.box(player.tiers); total+=sample.votes; tierCounts[sample.tier]++;
           boxCount++; const delta=sample.votes-boxMean; boxMean+=delta/boxCount; boxM2+=delta*(sample.votes-boxMean);
         }
         totals.push(total);
@@ -291,11 +299,11 @@ function renderBatch() {
   $('batch-results').hidden=false;
   $('completed').textContent=number(batch.trials); $('tie-rate').textContent=(batch.ties/batch.trials*100).toFixed(2)+'%';
   $('box-cv').textContent=batch.boxMean?(batch.boxSd/batch.boxMean).toFixed(4):'—';
-  $('batch-status').textContent='已完成 '+number(batch.trials)+'局 · '+batch.model+'版 · 種子 '+batch.seed;
+  $('batch-status').textContent='已完成 '+number(batch.trials)+'局 · '+(batch.model==='RA'?'依名次A':batch.model)+'版 · 種子 '+batch.seed;
   const body=$('batch-table').querySelector('tbody');body.replaceChildren();$('legend').replaceChildren();
   batch.players.forEach((player,i)=>{
     const stat=batch.results[i];const row=document.createElement('tr');
-    [player.name,number(player.boxes),(stat.wins/batch.trials*100).toFixed(2)+'%',number(stat.mean,2),stat.cv===null?'—':stat.cv.toFixed(4),player.boxes?(batch.modelStats.cv/Math.sqrt(player.boxes)).toFixed(4):'—'].forEach(value=>addTextCell(row,value));
+    [player.name,number(player.boxes),(stat.wins/batch.trials*100).toFixed(2)+'%',number(stat.mean,2),stat.cv===null?'—':stat.cv.toFixed(4),player.boxes?(player.cv/Math.sqrt(player.boxes)).toFixed(4):'—'].forEach(value=>addTextCell(row,value));
     body.append(row);const label=document.createElement('span');const dot=document.createElement('i');dot.className='dot';dot.style.setProperty('--player-color',player.color);label.append(dot,document.createTextNode(player.name));$('legend').append(label);
   });
   const tiers=$('tier-table').querySelector('tbody');tiers.replaceChildren();
@@ -428,20 +436,33 @@ $('export-single').addEventListener('click',()=>{
 });
 $('export-batch').addEventListener('click',()=>{
   if(!batch)return;const rows=[['版本','種子','局數','玩家','箱數','勝率','平均總票數','標準差','CV','理論CV']];
-  batch.players.forEach((p,i)=>{const s=batch.results[i];rows.push([batch.model,batch.seed,batch.trials,p.name,p.boxes,s.wins/batch.trials,s.mean,s.sd,s.cv??'',p.boxes?batch.modelStats.cv/Math.sqrt(p.boxes):'']);});downloadCsv('選票箱'+batch.model+'版批次統計.csv',rows);
+  batch.players.forEach((p,i)=>{const s=batch.results[i];rows.push([batch.model,batch.seed,batch.trials,p.name,p.boxes,s.wins/batch.trials,s.mean,s.sd,s.cv??'',p.boxes?p.cv/Math.sqrt(p.boxes):'']);});downloadCsv('選票箱'+batch.model+'版批次統計.csv',rows);
 });
 new ResizeObserver(()=>{if(batch)drawCharts();}).observe($('vote-chart').parentElement);
 function updateModel() {
   const model=MODELS[$('model').value];
   TIERS=model.tiers;
+  const head=$('model-tiers').querySelector('thead tr');
   const body=$('model-tiers').querySelector('tbody');body.replaceChildren();
-  model.tiers.forEach(([low,high,weight])=>{
-    const row=document.createElement('tr');
-    [number(low)+'～'+number(high),number(weight),(weight/100).toFixed(2)+'%'].forEach(value=>addTextCell(row,value));
-    body.append(row);
-  });
-  $('model-moments').textContent='單箱平均 '+number(model.mean,5)+'票，標準差 '+number(model.sd,5)+'票，CV '+model.cv.toFixed(6)+'。';
-  $('model-doc').href=model.doc;$('model-doc').textContent=$('model').value+'版數學規格';
+  if(model.ranks){
+    head.innerHTML='<th>票數區間</th><th>第1名</th><th>第2名</th><th>第3名</th><th>第4名</th>';
+    model.tiers.forEach(([low,high],k)=>{
+      const row=document.createElement('tr');
+      [number(low)+'～'+number(high),...model.ranks.map(r=>(r.tiers[k][2]/100).toFixed(2)+'%')].forEach(value=>addTextCell(row,value));
+      body.append(row);
+    });
+    $('model-moments').textContent='名次依最終民調（票箱數多者在前，同箱數依預設順序）。單箱平均／CV：'+model.ranks.map((r,i)=>'第'+(i+1)+'名 '+number(r.mean,1)+'票／'+r.cv.toFixed(3)).join('、')+'。';
+    $('model-doc').href=model.doc;$('model-doc').textContent='企劃 6.4 總統選舉';
+  }else{
+    head.innerHTML='<th>票數區間</th><th>權重</th><th>機率</th>';
+    model.tiers.forEach(([low,high,weight])=>{
+      const row=document.createElement('tr');
+      [number(low)+'～'+number(high),number(weight),(weight/100).toFixed(2)+'%'].forEach(value=>addTextCell(row,value));
+      body.append(row);
+    });
+    $('model-moments').textContent='單箱平均 '+number(model.mean,5)+'票，標準差 '+number(model.sd,5)+'票，CV '+model.cv.toFixed(6)+'。';
+    $('model-doc').href=model.doc;$('model-doc').textContent=$('model').value+'版數學規格';
+  }
   invalidate();
 }
 $('model').addEventListener('change',updateModel);
