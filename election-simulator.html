@@ -6,31 +6,33 @@
 <title>選票箱模擬器</title>
 <style>
 :root{color-scheme:light;--ink:#182d42;--muted:#5c7181;--line:#dae4e9;--blue:#275ecd;--teal:#137b70;--gold:#ad670b;--purple:#8056b8}*{box-sizing:border-box}body{margin:0;background:#f3f6f8;color:var(--ink);font:16px/1.7 "Microsoft JhengHei",system-ui,sans-serif}main{max-width:1240px;margin:auto;padding:32px 26px 70px}header{margin:0 0 26px}nav{display:flex;gap:20px;font-size:13px}a{color:#285f82;text-underline-offset:4px}h1{font-size:34px;margin:18px 0 8px;letter-spacing:-.03em}h2{font-size:22px;margin:0 0 18px}h3{font-size:15px;margin:20px 0 10px}p{margin:8px 0}.eyebrow{color:var(--teal);font-size:12px;letter-spacing:.12em;font-weight:700}.intro,.muted{color:var(--muted)}.muted{font-size:13px}.layout{display:grid;grid-template-columns:310px minmax(0,1fr);gap:22px;align-items:start}.panel{background:white;padding:24px;border:1px solid var(--line);border-radius:14px;min-width:0}.results{display:grid;gap:22px}.field{display:grid;gap:6px;margin:14px 0}label{font-size:13px;color:#40576a}input,select,button{font:inherit}input,select{width:100%;min-width:0;border:1px solid #beced8;border-radius:7px;background:white;padding:9px 11px;color:var(--ink)}input:focus-visible,select:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #89b6ed;outline-offset:3px}.player-inputs{display:grid;gap:13px;margin:18px 0}.player-input{border-top:1px solid var(--line);padding-top:12px;display:grid;gap:8px}.player-line{display:grid;grid-template-columns:13px 1fr;gap:9px;align-items:center}.dot{width:10px;height:10px;border-radius:50%;display:inline-block;background:var(--player-color)}.boxes-line{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center}.box-count{font-size:12px;color:var(--muted);min-width:55px}.toolbar{display:flex;gap:9px;flex-wrap:wrap;align-items:center;margin:14px 0}button{border:1px solid #bfced9;background:#fff;color:#26475e;padding:9px 14px;border-radius:7px;font-size:13px;font-weight:650;cursor:pointer;min-height:41px}button.primary{background:var(--blue);border-color:var(--blue);color:#fff}button:hover:enabled{filter:brightness(.96)}button:disabled{opacity:.4;cursor:default}.seed-row{display:grid;grid-template-columns:1fr auto;gap:8px}.seed-row button{padding:8px 10px}.note{background:#eff6f3;color:#345e52;padding:12px 14px;border-radius:8px;font-size:12px;margin-top:16px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:15px 0}.stat{border:1px solid var(--line);border-radius:9px;padding:12px}.stat span{display:block;font-size:11px;color:var(--muted)}.stat strong{font-size:23px;line-height:1.5;display:block}.progress-track{height:6px;background:#e7eef2;border-radius:6px;overflow:hidden}.progress-track>div{height:100%;background:var(--teal);width:0;transition:width .12s}.single-player{margin:18px 0}.player-heading{display:flex;justify-content:space-between;gap:12px;align-items:baseline}.player-heading strong{font-size:14px}.player-heading .votes{font-size:22px;font-variant-numeric:tabular-nums}.vote-track{height:10px;background:#edf2f6;border-radius:6px;margin:7px 0}.vote-track>div{height:100%;width:0;background:var(--player-color);border-radius:6px}.player-detail{display:flex;justify-content:space-between;font-size:12px;color:var(--muted)}.outcome{padding:13px 16px;background:#edf5ff;border-left:3px solid var(--blue);border-radius:7px;margin:17px 0;font-size:14px;min-height:50px}.placeholder{color:var(--muted);font-size:14px;padding:18px 0}.batch-controls{display:flex;gap:10px;align-items:end;flex-wrap:wrap}.batch-controls .field{margin:0;flex:1;min-width:125px}.table-wrap{overflow-x:auto;margin:14px 0}table{border-collapse:collapse;width:100%;font-size:13px;font-variant-numeric:tabular-nums}th,td{text-align:right;padding:10px 9px;border-bottom:1px solid var(--line);white-space:nowrap}th{font-size:11px;color:var(--muted);background:#f5f8fa}th:first-child,td:first-child{text-align:left}.table-wrap.wide table{min-width:640px}.tier-table th,.tier-table td{padding:8px 4px;font-size:11px}.charts{margin-top:20px}.canvas-wrap{width:100%;height:220px;position:relative}canvas{width:100%;height:100%;display:block}.legend{display:flex;gap:15px;flex-wrap:wrap;font-size:12px;margin:10px 0}.legend span{display:flex;gap:6px;align-items:center}details{border-top:1px solid var(--line);margin-top:18px;padding-top:12px}summary{font-size:13px;cursor:pointer;color:#3a627b}.box-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(62px,1fr));gap:7px;margin:12px 0}.box-item{font-size:12px;text-align:center;background:#f2f6f8;border-radius:5px;padding:8px 3px;font-variant-numeric:tabular-nums}.box-item small{display:block;font-size:10px;color:var(--muted)}.pager{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:12px}.error{color:#9f3044;font-size:13px;padding:10px 0}.batch-summary{font-size:12px;color:var(--muted);margin:12px 0}.visually-hidden{position:absolute;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}.ready-badge{color:var(--teal);font-size:12px}.run-actions{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}.sample-warning{font-size:12px;color:#80632b}footer{font-size:12px;color:var(--muted);margin-top:22px}progress{width:100%;height:9px;accent-color:var(--teal)}[hidden]{display:none!important}@media(max-width:950px){.layout{grid-template-columns:260px minmax(0,1fr)}main{padding:24px 18px}.panel{padding:20px}.stats{gap:7px}.stat{padding:9px}.stat strong{font-size:20px}}@media(max-width:720px){.layout{grid-template-columns:1fr}main{padding:18px 12px 40px}h1{font-size:28px}.panel{padding:20px 17px}.player-inputs{grid-template-columns:1fr 1fr}.player-line{grid-template-columns:9px 1fr;gap:5px}.boxes-line{grid-template-columns:1fr}.box-count{font-size:11px}.stats{grid-template-columns:repeat(3,1fr)}.stat strong{font-size:19px}input,select{font-size:16px}button{min-height:44px}.batch-controls button{flex:1}.player-heading .votes{font-size:20px}nav{gap:13px;flex-wrap:wrap}.player-detail{gap:9px}.canvas-wrap{height:200px}}
+.show-mode{max-width:420px}.single-player{margin:8px -12px;padding:10px 12px;border:1px solid transparent;border-radius:10px}.vote-track>div{transition:width .35s ease}.player-name{display:flex;align-items:center;gap:8px}.lead-badge{font-size:11px;font-weight:700;color:#fff;background:var(--player-color);border-radius:10px;padding:0 8px}.box-item.big{background:#fdf1d7;font-weight:700}@media(prefers-reduced-motion:reduce){.vote-track>div{transition:none}}
 </style>
 </head>
 <body>
 <main>
-<header><nav><a href="index.html#section-81">返回總統選舉</a><a id="model-doc" href="election-math.html">A版數學規格</a></nav><p class="eyebrow">ELECTION LAB / v0.2</p><h1>選票箱模擬器</h1><p class="muted">最後編輯時間：<time datetime="2026-11-08T21:39:46+08:00">2026/11/08 21:39:46</time></p><p class="intro">直接設定箱數，觀看逐箱開票與多局勝率比較。</p></header>
+<header><nav><a href="index.html#section-81">返回總統選舉</a><a id="model-doc" href="index.html#section-81">企劃 6.4 總統選舉</a></nav><p class="eyebrow">ELECTION LAB / v0.2</p><h1>選票箱模擬器</h1><p class="muted">最後編輯時間：<time datetime="2026-11-10T16:51:03+08:00">2026/11/10 16:51:03</time></p><p class="intro">直接設定箱數，觀看逐箱開票與多局勝率比較。</p></header>
 <div class="layout">
 <aside class="panel">
 <h2>參賽設定</h2>
-<div class="field"><label for="model">數學版本</label><select id="model"><option value="RA" selected>依名次A版 · 遊戲採用</option><option value="A">A版 · CV約2</option><option value="B">B版 · CV約3</option><option value="C">C版 · CV約4</option></select></div><div class="field"><label for="player-count">玩家人數 · 預設順序</label><select id="player-count"><option>2</option><option selected>3</option><option>4</option></select></div>
+<div class="field"><label for="model">數學版本</label><select id="model"><option value="RA" selected>A版 · 遊戲採用 · 依名次分表</option><option value="B">B版 · CV約3 · 比較用</option></select></div><div class="field"><label for="player-count">玩家人數 · 預設順序</label><select id="player-count"><option>2</option><option selected>3</option><option>4</option></select></div>
 <p class="muted">每位玩家直接輸入選票箱數。</p><div class="player-inputs" id="player-inputs"></div>
 <div class="field"><label for="seed">隨機種子</label><div class="seed-row"><input id="seed" value="election-001" maxlength="80"><button id="new-seed" type="button">換種子</button></div></div>
 <p class="muted">相同票箱數與種子可重現開票及批次結果。</p>
 <div class="note">直接輸入每位玩家的選票箱數。每箱獨立抽樣，最高票同票時等機率抽籤。</div>
 <h3>每箱票數分布</h3>
-<table class="tier-table" id="model-tiers"><thead><tr><th>票數區間</th><th>權重</th><th>機率</th></tr></thead><tbody><tr><td>100～399</td><td>8,000</td><td>80%</td></tr><tr><td>400～999</td><td>1,000</td><td>10%</td></tr><tr><td>1,000～2,999</td><td>500</td><td>5%</td></tr><tr><td>3,000～5,999</td><td>300</td><td>3%</td></tr><tr><td>6,000～10,000</td><td>200</td><td>2%</td></tr></tbody></table>
+<table class="tier-table" id="model-tiers"><thead><tr><th>票數區間</th><th>權重</th><th>機率</th></tr></thead><tbody></tbody></table>
 <p class="muted" id="model-moments"></p>
 <div id="error" class="error" role="alert" hidden></div>
 </aside>
 <div class="results">
 <section class="panel" aria-labelledby="single-title">
 <div class="run-actions"><h2 id="single-title">單局開票</h2><span id="single-status" class="ready-badge">等待產生結果</span></div>
-<div class="toolbar"><button class="primary" id="generate" type="button">產生一局</button><button id="next" type="button" disabled>揭下一箱</button><button id="auto" type="button" disabled>自動開票</button><button id="reveal" type="button" disabled>全部揭曉</button></div>
+<div class="field show-mode"><label for="show-mode">開票演出 · 只改揭曉順序，票數結果不變</label><select id="show-mode"><option value="box" selected>拉鋸編排 · 同步比例逐箱開票</option><option value="script">拉鋸編排 · 每輪同步開票</option><option value="order">依玩家順序 · 原版逐箱</option></select></div>
+<div class="toolbar"><button class="primary" id="generate" type="button">產生一局</button><button id="next" type="button" disabled>揭下一步</button><button id="auto" type="button" disabled>自動開票</button><button id="reveal" type="button" disabled>全部揭曉</button></div>
 <div class="progress-track" aria-hidden="true"><div id="reveal-progress"></div></div>
-<div id="single-players"><p class="placeholder">輸入票箱數後產生一局，依預設玩家順序開票。</p></div>
-<div id="outcome" class="outcome">每箱100～10,000票，依v0.1分布抽樣</div>
+<div id="single-players"><p class="placeholder">輸入票箱數後產生一局，依所選演出方式開票。</p></div>
+<div id="outcome" class="outcome"></div>
 <details id="box-details" hidden><summary>逐箱票數</summary><div class="field"><label for="detail-player">檢視玩家</label><select id="detail-player"></select></div><div class="box-grid" id="box-grid"></div><div class="pager"><button id="prev-page" type="button">上一頁</button><span id="page-label"></span><button id="next-page" type="button">下一頁</button></div><button id="export-single" type="button" disabled>匯出本局 CSV</button></details>
 <p id="single-announcement" class="visually-hidden" aria-live="polite"></p>
 </section>
@@ -60,19 +62,22 @@
 </section>
 </div>
 </div>
-<footer>依名次A版（遊戲採用）與 A／B／C v0.1 · 票箱數0～10,000 · 每批最多25,000,000次票箱抽樣 · 所有模擬均於本機瀏覽器執行。</footer>
+<footer>A版（遊戲採用，依名次分表）與 B版 v0.1（比較用） ·票箱數0～10,000 · 每批最多25,000,000次票箱抽樣 · 所有模擬均於本機瀏覽器執行。</footer>
 </main>
 <script>
 'use strict';
-const MODELS = {"RA": {"tiers": [[100, 119, 7217], [120, 499, 1200], [500, 1499, 700], [1500, 5999, 500], [6000, 9999, 365], [10000, 50000, 18]], "ranks": [{"tiers": [[100, 119, 7217], [120, 499, 1200], [500, 1499, 700], [1500, 5999, 500], [6000, 9999, 365], [10000, 50000, 18]], "mean": 719.5879, "variance": 4611271.960206923, "sd": 2147.3872403939918, "cv": 2.9841903128081944}, {"tiers": [[100, 119, 7221], [120, 499, 1200], [500, 1499, 700], [1500, 5999, 500], [6000, 9999, 350], [10000, 50000, 29]], "mean": 740.63245, "variance": 5619233.089190331, "sd": 2370.492161807402, "cv": 3.2006323268814407}, {"tiers": [[100, 119, 7222], [120, 499, 1200], [500, 1499, 700], [1500, 5999, 500], [6000, 9999, 340], [10000, 50000, 38]], "mean": 759.6439, "variance": 6455392.529226122, "sd": 2540.746451188336, "cv": 3.34465458248047}, {"tiers": [[100, 119, 7235], [120, 499, 1200], [500, 1499, 700], [1500, 5999, 500], [6000, 9999, 300], [10000, 50000, 65]], "mean": 808.78825, "variance": 8907045.24724527, "sd": 2984.4673305709466, "cv": 3.6900478346105383}], "target": "rank", "doc": "index.html#section-81", "mean": 719.5879, "variance": 4611271.960206923, "sd": 2147.3872403939918, "cv": 2.9841903128081944}, "A": {"tiers": [[100, 399, 8000], [400, 999, 1000], [1000, 2999, 500], [3000, 5999, 300], [6000, 10000, 200]], "target": 2, "doc": "election-math.html", "mean": 664.51, "variance": 1819268.2899, "sd": 1348.8025392547272, "cv": 2.0297701152047782}, "B": {"tiers": [[100, 119, 9065], [120, 499, 100], [500, 1499, 100], [1500, 5999, 100], [6000, 10000, 635]], "target": 3, "doc": "election-math-b.html", "mean": 657.84675, "variance": 3896210.027931104, "sd": 1973.8819690982295, "cv": 3.0005194509180586}, "C": {"tiers": [[100, 119, 9713], [120, 499, 10], [500, 1499, 10], [1500, 5999, 10], [6000, 10000, 257]], "target": 4, "doc": "election-math-c.html", "mean": 317.01585, "variance": 1607199.5835654442, "sd": 1267.7537550981438, "cv": 3.999023251039794}};
+const MODELS = {"RA": {"tiers": [[100, 119, 7217], [120, 499, 1200], [500, 1499, 700], [1500, 5999, 500], [6000, 9999, 365], [10000, 50000, 18]], "ranks": [{"tiers": [[100, 119, 7217], [120, 499, 1200], [500, 1499, 700], [1500, 5999, 500], [6000, 9999, 365], [10000, 50000, 18]], "mean": 719.5879, "variance": 4611271.960206923, "sd": 2147.3872403939918, "cv": 2.9841903128081944}, {"tiers": [[100, 119, 7221], [120, 499, 1200], [500, 1499, 700], [1500, 5999, 500], [6000, 9999, 350], [10000, 50000, 29]], "mean": 740.63245, "variance": 5619233.089190331, "sd": 2370.492161807402, "cv": 3.2006323268814407}, {"tiers": [[100, 119, 7222], [120, 499, 1200], [500, 1499, 700], [1500, 5999, 500], [6000, 9999, 340], [10000, 50000, 38]], "mean": 759.6439, "variance": 6455392.529226122, "sd": 2540.746451188336, "cv": 3.34465458248047}, {"tiers": [[100, 119, 7223], [120, 499, 1200], [500, 1499, 700], [1500, 5999, 500], [6000, 9999, 330], [10000, 50000, 47]], "mean": 778.65535, "variance": 7290829.098799711, "sd": 2700.1535324495367, "cv": 3.4677133245787584}], "target": "rank", "doc": "index.html#section-81", "mean": 719.5879, "variance": 4611271.960206923, "sd": 2147.3872403939918, "cv": 2.9841903128081944}, "B": {"tiers": [[100, 119, 9065], [120, 499, 100], [500, 1499, 100], [1500, 5999, 100], [6000, 10000, 635]], "target": 3, "doc": "election-math-b.html", "mean": 657.84675, "variance": 3896210.027931104, "sd": 1973.8819690982295, "cv": 3.0005194509180586}};
 let TIERS = MODELS.RA.tiers;
 const COLORS = ['#275ecd','#137b70','#ad670b','#8056b8'];
+const modelName = key => key === 'RA' ? 'A' : key;
 
 const $ = id => document.getElementById(id);
 const number = (value, digits = 0) => value.toLocaleString('zh-TW', {maximumFractionDigits:digits, minimumFractionDigits:digits});
 let single = null;
-let revealed = 0;
-let animation = null;
+let stepIndex = 0;
+let timer = null;
+let autoOn = false;
+const ROUNDS = 10, MID_SHARE = 0.7, LEVEL_SHARE = 0.65, OVERTAKE_CHANCE = 0.5, LATE_TILT = 0.3, ROUND_MS = 900;
 let detailPage = 0;
 let worker = null;
 let workerUrl = null;
@@ -135,7 +140,7 @@ function readSettings() {
   return {players, seed, model:modelKey, modelStats:model, tiers:TIERS};
 }
 function showError(error) { $('error').textContent = error.message; $('error').hidden = false; }
-function stopAnimation() { clearInterval(animation); animation = null; $('auto').textContent = '自動開票'; }
+function stopAnimation() { clearTimeout(timer); timer = null; autoOn = false; $('auto').textContent = '自動開票'; }
 function stopWorker(message) {
   if (worker) worker.terminate();
   if (workerUrl) URL.revokeObjectURL(workerUrl);
@@ -144,11 +149,11 @@ function stopWorker(message) {
   if (message) $('batch-status').textContent = message;
 }
 function invalidate() {
-  stopAnimation(); stopWorker(); single = null; batch = null; revealed = 0; detailPage = 0;
+  stopAnimation(); stopWorker(); single = null; batch = null; stepIndex = 0; detailPage = 0;
   $('single-players').innerHTML = '<p class="placeholder">設定已更新，請重新產生一局。</p>';
   $('single-status').textContent = '等待產生結果';
   const top = MODELS[$('model').value].tiers.reduce((m,t) => Math.max(m,t[1]),0);
-  $('outcome').textContent = '每箱100～'+number(top)+'票，依'+($('model').value==='RA'?'依名次A':$('model').value)+'版分布抽樣';
+  $('outcome').textContent = '每箱100～'+number(top)+'票，依'+modelName($('model').value)+'版分布抽樣';
   $('reveal-progress').style.width = '0%'; $('box-details').hidden = true;
   ['next','auto','reveal','export-single'].forEach(id => $(id).disabled = true);
   $('batch-results').hidden = true; $('batch-progress').value = 0;
@@ -179,11 +184,12 @@ function generate() {
     const boxes = settings.players.map(player => Array.from({length:player.boxes}, () => engine.box(player.tiers).votes));
     const totals = boxes.map(values => values.reduce((sum,value) => sum + value,0));
     single = {...settings, boxes, totals, totalBoxes:settings.players.reduce((sum,p) => sum+p.boxes,0), ...engine.winner(totals)};
-    revealed = 0; detailPage = 0;
+    single.mode = $('show-mode').value; single.steps = buildScript(boxes, single.mode); single.shown = boxes.map(() => 0);
+    stepIndex = 0; detailPage = 0;
     $('single-players').replaceChildren(); $('detail-player').replaceChildren();
     single.players.forEach((player,i) => {
       const row = document.createElement('div'); row.className = 'single-player'; row.style.setProperty('--player-color',player.color);
-      row.innerHTML = '<div class="player-heading"><strong></strong><span class="votes"></span></div><div class="vote-track"><div></div></div><div class="player-detail"><span></span><span></span></div>';
+      row.innerHTML = '<div class="player-heading"><span class="player-name"><strong></strong><span class="lead-badge" hidden>領先</span></span><span class="votes"></span></div><div class="vote-track"><div></div></div><div class="player-detail"><span></span><span></span></div>';
       row.querySelector('strong').textContent = player.name;
       $('single-players').append(row);
       const option = document.createElement('option'); option.value = i; option.textContent = player.name; $('detail-player').append(option);
@@ -191,25 +197,157 @@ function generate() {
     $('box-details').hidden = false; renderSingle();
   } catch (error) { showError(error); }
 }
-function visibleCounts() {
-  let left = revealed;
-  return single.players.map(player => { const value = Math.min(player.boxes,left); left -= value; return value; });
-}
-function renderSingle() {
-  if (!single) return;
-  const counts = visibleCounts();
-  const totals = single.boxes.map((values,i) => values.slice(0,counts[i]).reduce((sum,value) => sum+value,0));
-  const largest = Math.max(1,...totals);
-  [...$('single-players').children].forEach((row,i) => {
-    row.querySelector('.votes').textContent = number(totals[i]) + '票';
-    row.querySelector('.vote-track>div').style.width = (totals[i]/largest*100) + '%';
-    const texts = row.querySelectorAll('.player-detail span');
-    texts[0].textContent = counts[i] + ' / ' + single.players[i].boxes + '箱';
-    texts[1].textContent = counts[i] ? '上一箱 ' + number(single.boxes[i][counts[i]-1]) + '票' : '尚未開票';
+// Reveal order only: box values and the winner are fixed before this runs.
+function buildScript(boxes, mode) {
+  const steps = [];
+  if (mode === 'order') {
+    boxes.forEach((values,i) => values.forEach((v,j) => steps.push({kind:'plain', items:[[i,j]]})));
+    return steps;
+  }
+  // Every round each player opens the same share of their boxes. Rounds up to `mid` keep everyone
+  // near a shared rising level and hand the lead around; the rest open what is left, smallest first.
+  const count = boxes.length, rounds = Math.min(ROUNDS, Math.max(0,...boxes.map(values => values.length)));
+  if (!rounds) return steps;
+  const mid = rounds > 1 ? Math.min(rounds-1, Math.round(rounds*MID_SHARE)) : 0;
+  const pools = boxes.map(values => values.map((v,j) => j).sort((a,b) => values[a]-values[b] || a-b));
+  const quota = (i,r) => Math.round(r/rounds*boxes[i].length) - Math.round((r-1)/rounds*boxes[i].length);
+  const sum = (i,list) => list.reduce((total,j) => total + boxes[i][j],0);
+  const finals = boxes.map((values,i) => sum(i,pools[i])).sort((a,b) => b-a);
+  const level = Math.max((finals[1] || 0)*LEVEL_SHARE, ...pools.map((pool,i) => sum(i,pool.slice(0,Math.round(mid/rounds*pool.length)))));
+  const totals = boxes.map(() => 0);
+  // Opens n boxes for player i, each time the remaining box that best keeps them on course for target.
+  const take = (i,target,n) => {
+    const items = [], pool = pools[i];
+    for (let left = n; left > 0; left--) {
+      const need = (target-totals[i])/left;
+      let low = 0, high = pool.length-1;
+      while (low < high) { const m = (low+high) >> 1; if (boxes[i][pool[m]] < need) low = m+1; else high = m; }
+      if (low > 0 && need - boxes[i][pool[low-1]] <= boxes[i][pool[low]] - need) low--;
+      const j = pool.splice(low,1)[0]; totals[i] += boxes[i][j]; items.push([i,j]);
+    }
+    return items;
+  };
+  // Deterministic coin flips from the box values, so the same election always replays the same way.
+  let state = boxes.flat().reduce((hash,value) => Math.imul(hash ^ value,16777619) >>> 0, 2166136261);
+  const chance = () => { state = (Math.imul(state,1664525) + 1013904223) >>> 0; return state/4294967296; };
+  // Box-by-box mode splits each round into ticks. On every tick all players open at once, each the
+  // same share of their boxes for the round, so progress stays level throughout. `front` (the leader
+  // going into the round) opens big boxes first and everyone else opens theirs last, so the lead
+  // holds through the round and changes at most once, when a challenger's big box lands.
+  const byBox = mode === 'box';
+  const emit = (items,round,front) => {
+    if (!items.length) return;
+    if (!byBox) { steps.push({kind:'batch', items, round}); return; }
+    const lists = boxes.map((values,i) => items.filter(item => item[0] === i).map(item => item[1])
+      .sort((a,b) => (i === front ? -1 : 1)*(values[a]-values[b]) || a-b));
+    const ticks = Math.max(...lists.map(list => list.length));
+    for (let k = 1; k <= ticks; k++) {
+      const tick = [];
+      lists.forEach((list,i) => { for (let q = Math.round((k-1)/ticks*list.length); q < Math.round(k/ticks*list.length); q++) tick.push([i,list[q]]); });
+      if (tick.length) steps.push({kind:'box', items:tick, round});
+    }
+  };
+  let leader = -1;
+  for (let r = 1; r <= mid; r++) {
+    const items = [], goal = level*r/mid, before = leader;
+    // Only some rounds stage an overtake: the next player after the leader who can reach this round's level.
+    // Box-by-box always stages one while nobody leads, so the opening is not a string of ties.
+    const staged = chance() < OVERTAKE_CHANCE || (byBox && leader < 0);
+    let challenger = -1;
+    if (staged) for (let k = 0; k < count && challenger < 0; k++) {
+      const i = ((leader < 0 ? r : leader+1) + k) % count, n = quota(i,r);
+      if (i !== leader && n && totals[i] + sum(i,pools[i].slice(-n)) >= goal) challenger = i;
+    }
+    // Without a challenger the current leader stays slightly ahead, so the lead only changes on staged rounds.
+    // Box-by-box also keeps an overtaken leader in second place, clear of the pack.
+    // Box-by-box picks the round's intended leader last, so they finish clearly above everyone else.
+    const ahead = challenger >= 0 ? challenger : byBox ? leader : -1;
+    for (let i = 0; i < count; i++) if (i !== ahead) items.push(...take(i,goal*(i !== leader ? 0.92 : challenger < 0 ? 1.08 : byBox ? 1 : 0.92),quota(i,r)));
+    if (ahead >= 0) {
+      const best = Math.max(0,...totals.filter((value,i) => i !== ahead));
+      items.push(...take(ahead,Math.max(goal*1.08,best*1.05+60),quota(ahead,r)));
+    }
+    leader = leaderOf(totals);
+    emit(items,r,before >= 0 ? before : leader);
+  }
+  // Late rounds: spread each player's remaining boxes, largest first, so every round moves.
+  // The eventual winner's share leans toward the last round, everyone else's toward the first.
+  const late = rounds - mid, ends = totals.map((value,i) => value + sum(i,pools[i]));
+  const top = ends.indexOf(Math.max(...ends));
+  const plan = pools.map((pool,i) => {
+    const slots = Array.from({length:late}, (_,k) => quota(i,mid+1+k));
+    const tilt = i === top ? LATE_TILT : -LATE_TILT;
+    const weights = slots.map((_,k) => 1 + (late > 1 ? tilt*(2*k/(late-1)-1) : 0));
+    const rest = sum(i,pool), weightSum = weights.reduce((a,b) => a+b,0);
+    const groups = slots.map(() => []), sums = slots.map(() => 0);
+    for (let n = pool.length-1; n >= 0; n--) {
+      let pick = -1;
+      for (let k = 0; k < late; k++) if (groups[k].length < slots[k] && (pick < 0 || rest*weights[k]/weightSum - sums[k] > rest*weights[pick]/weightSum - sums[pick])) pick = k;
+      groups[pick].push(pool[n]); sums[pick] += boxes[i][pool[n]];
+    }
+    return groups;
   });
-  const done = revealed >= single.totalBoxes;
-  $('reveal-progress').style.width = (done ? 100 : revealed/single.totalBoxes*100) + '%';
-  $('single-status').textContent = done ? '開票完成' : '已揭曉 ' + revealed + ' / ' + single.totalBoxes + '箱';
+  for (let k = 0; k < late; k++) emit(plan.flatMap((groups,i) => groups[k].map(j => [i,j])),mid+1+k,-1);
+  return steps;
+}
+function revealState(upTo) {
+  const n = single.players.length;
+  const state = {counts:Array(n).fill(0), totals:Array(n).fill(0), last:Array(n).fill(null), seq:single.players.map(() => []), changes:0, changed:false};
+  let leader = -1;
+  for (let s = 0; s < upTo; s++) {
+    const step = single.steps[s];
+    for (const [i,j] of step.items) {
+      const votes = single.boxes[i][j];
+      state.counts[i]++; state.totals[i] += votes; state.seq[i].push(j);
+      if (!state.last[i] || state.last[i].step !== s) state.last[i] = {step:s, kind:step.kind, votes:0, boxes:0};
+      state.last[i].votes += votes; state.last[i].boxes++;
+    }
+    // Count overtakes: the lead passing from one player to another.
+    const now = leaderOf(state.totals);
+    state.changed = now >= 0 && leader >= 0 && now !== leader;
+    if (state.changed) state.changes++;
+    if (now >= 0) leader = now;
+  }
+  return state;
+}
+function leaderOf(totals) {
+  const max = Math.max(0,...totals);
+  if (max <= 0) return -1;
+  const top = totals.flatMap((value,i) => value === max ? [i] : []);
+  return top.length === 1 ? top[0] : -1;
+}
+function setVotes(element, index, target, duration) {
+  const from = single.shown[index]; single.shown[index] = target;
+  const token = element.tween = (element.tween || 0) + 1;
+  const finish = () => { if (element.tween === token) element.textContent = number(target) + '票'; };
+  if (!duration || from === target || matchMedia('(prefers-reduced-motion: reduce)').matches) { finish(); return; }
+  const start = performance.now();
+  const frame = now => {
+    if (element.tween !== token) return;
+    const t = Math.min(1,(now-start)/duration);
+    element.textContent = number(Math.round(from + (target-from)*(1-(1-t)**3))) + '票';
+    if (t < 1) requestAnimationFrame(frame);
+  };
+  requestAnimationFrame(frame); setTimeout(finish,duration+60);
+}
+function renderSingle(opened) {
+  if (!single) return;
+  const state = revealState(stepIndex), totals = state.totals;
+  const largest = Math.max(1,...totals), leader = leaderOf(totals);
+  const openedBoxes = state.counts.reduce((sum,value) => sum+value,0);
+  [...$('single-players').children].forEach((row,i) => {
+    const player = single.players[i], last = state.last[i];
+    setVotes(row.querySelector('.votes'), i, totals[i], opened && opened.kind === 'batch' ? 400 : 0);
+    row.querySelector('.vote-track>div').style.width = (totals[i]/largest*100) + '%';
+    row.querySelector('.lead-badge').hidden = leader !== i;
+    const texts = row.querySelectorAll('.player-detail span');
+    texts[0].textContent = state.counts[i] + ' / ' + player.boxes + '箱' + (player.boxes ? ' · ' + Math.round(state.counts[i]/player.boxes*100) + '%' : '');
+    texts[1].textContent = !last ? '尚未開票' : last.kind !== 'batch' && last.boxes === 1 ? '上一箱 ' + number(last.votes) + '票' : (last.kind === 'batch' ? '本輪 ' : '本次 ') + last.boxes + '箱 +' + number(last.votes) + '票';
+  });
+  const done = stepIndex >= single.steps.length;
+  const percent = single.totalBoxes ? Math.round(openedBoxes/single.totalBoxes*100) : 100;
+  $('reveal-progress').style.width = (done ? 100 : percent) + '%';
+  $('single-status').textContent = done ? '開票完成' : '開票進度 ' + percent + '% · 已揭曉 ' + openedBoxes + ' / ' + single.totalBoxes + '箱';
   ['next','auto','reveal'].forEach(id => $(id).disabled = done);
   $('export-single').disabled = !done;
   if (done) {
@@ -218,19 +356,38 @@ function renderSingle() {
     const tieNames = single.tied.map(i => single.players[i].name).join('、');
     $('outcome').textContent = single.tied.length > 1 ? tieNames + ' 最高票同票，抽籤由 ' + winner + ' 當選總統。' : winner + ' 以 ' + number(single.totals[single.winner]) + '票當選總統。';
     $('single-announcement').textContent = $('outcome').textContent;
-  } else $('outcome').textContent = '依預設玩家順序揭曉，全部開完後公布勝者。';
+  } else if (single.mode === 'order') $('outcome').textContent = '依預設玩家順序揭曉，全部開完後公布勝者。';
+  else if (stepIndex) {
+    const sorted = [...totals].sort((a,b) => b-a), rounds = single.steps[single.steps.length-1].round;
+    const lead = leader < 0 ? '目前同票。' : state.changed ? single.players[leader].name + ' 超車領先！' : single.players[leader].name + ' 領先 ' + number(sorted[0]-(sorted[1] || 0)) + ' 票。';
+    $('outcome').textContent = '第 ' + single.steps[stepIndex-1].round + ' / ' + rounds + ' 輪：' + lead + '領先已易手 ' + state.changes + ' 次。';
+  } else $('outcome').textContent = (single.mode === 'box' ? '各玩家同時開箱，每次開出相同比例的票箱' : '每輪各玩家同步開出相同比例的票箱') + '；前中段互有領先，最後幾輪分出勝負。';
   renderBoxDetails();
 }
-function revealNext(amount = 1) { if (!single) return; revealed = Math.min(single.totalBoxes,revealed+amount); renderSingle(); }
+function advance() {
+  const step = single && single.steps[stepIndex];
+  if (!step) return;
+  stepIndex++; renderSingle(step);
+}
+function autoLoop() {
+  if (!autoOn || !single || stepIndex >= single.steps.length) return;
+  const total = single.steps.length;
+  if (single.mode === 'script') { advance(); if (autoOn) timer = setTimeout(autoLoop,ROUND_MS); return; }
+  // Box modes: large elections open several boxes per tick; box-by-box aims for about 20 seconds in all.
+  const chunk = Math.max(1,Math.ceil(total/(single.mode === 'order' ? 200 : 400)));
+  stepIndex = Math.min(total,stepIndex+chunk); renderSingle();
+  if (autoOn) timer = setTimeout(autoLoop, single.mode === 'order' ? 120 : Math.max(40,Math.min(220,Math.round(20000/Math.ceil(total/chunk)))));
+}
 function renderBoxDetails() {
   if (!single) return;
   const i = Number($('detail-player').value);
-  const count = visibleCounts()[i];
+  const seq = revealState(stepIndex).seq[i], count = seq.length;
   const pages = Math.max(1,Math.ceil(count/50)); detailPage = Math.min(detailPage,pages-1);
   $('box-grid').replaceChildren();
-  single.boxes[i].slice(detailPage*50,Math.min(count,(detailPage+1)*50)).forEach((votes,j) => {
-    const item = document.createElement('div'); item.className = 'box-item';
-    const small = document.createElement('small'); small.textContent = '#' + (detailPage*50+j+1); item.append(small,document.createTextNode(number(votes))); $('box-grid').append(item);
+  seq.slice(detailPage*50,(detailPage+1)*50).forEach(j => {
+    const votes = single.boxes[i][j];
+    const item = document.createElement('div'); item.className = 'box-item' + (votes >= 6000 ? ' big' : '');
+    const small = document.createElement('small'); small.textContent = '#' + (j+1); item.append(small,document.createTextNode(number(votes))); $('box-grid').append(item);
   });
   $('page-label').textContent = count ? (detailPage+1) + ' / ' + pages + '頁 · 已開' + count + '箱' : '尚無已開票箱';
   $('prev-page').disabled = detailPage === 0; $('next-page').disabled = detailPage >= pages-1;
@@ -299,7 +456,7 @@ function renderBatch() {
   $('batch-results').hidden=false;
   $('completed').textContent=number(batch.trials); $('tie-rate').textContent=(batch.ties/batch.trials*100).toFixed(2)+'%';
   $('box-cv').textContent=batch.boxMean?(batch.boxSd/batch.boxMean).toFixed(4):'—';
-  $('batch-status').textContent='已完成 '+number(batch.trials)+'局 · '+(batch.model==='RA'?'依名次A':batch.model)+'版 · 種子 '+batch.seed;
+  $('batch-status').textContent='已完成 '+number(batch.trials)+'局 · '+modelName(batch.model)+'版 · 種子 '+batch.seed;
   const body=$('batch-table').querySelector('tbody');body.replaceChildren();$('legend').replaceChildren();
   batch.players.forEach((player,i)=>{
     const stat=batch.results[i];const row=document.createElement('tr');
@@ -399,9 +556,10 @@ $('player-count').addEventListener('change',buildPlayers);
 $('seed').addEventListener('input',invalidate);
 $('new-seed').addEventListener('click',()=>{const data=new Uint32Array(2);crypto.getRandomValues(data);$('seed').value=Array.from(data,n=>n.toString(16)).join('-');invalidate();});
 $('generate').addEventListener('click',generate);
-$('next').addEventListener('click',()=>revealNext());
-$('reveal').addEventListener('click',()=>{if(single){revealed=single.totalBoxes;renderSingle();}});
-$('auto').addEventListener('click',()=>{if(animation){stopAnimation();return;}if(!single)return;$('auto').textContent='暫停開票';animation=setInterval(()=>revealNext(Math.max(1,Math.ceil(single.totalBoxes/200))),120);});
+$('next').addEventListener('click',()=>{if(!single)return;stopAnimation();advance();});
+$('reveal').addEventListener('click',()=>{if(single){stopAnimation();stepIndex=single.steps.length;renderSingle();}});
+$('auto').addEventListener('click',()=>{if(autoOn){stopAnimation();renderSingle();return;}if(!single)return;stopAnimation();autoOn=true;$('auto').textContent='暫停開票';autoLoop();});
+$('show-mode').addEventListener('change',()=>{if(!single)return;stopAnimation();single.mode=$('show-mode').value;single.steps=buildScript(single.boxes,single.mode);stepIndex=0;renderSingle();});
 $('detail-player').addEventListener('change',()=>{detailPage=0;renderBoxDetails();});
 $('prev-page').addEventListener('click',()=>{detailPage--;renderBoxDetails();});
 $('next-page').addEventListener('click',()=>{detailPage++;renderBoxDetails();});
@@ -423,20 +581,21 @@ $('group-next').addEventListener('click',()=>{groupPage++;renderGroups();});
 $('export-groups').addEventListener('click',()=>{
   if(!batch)return;
   const rows=[['版本','種子','每組局數','起始局','結束局','實際局數','玩家','勝場','勝率']];
-  groupedResults().forEach(g=>batch.players.forEach((p,i)=>rows.push([batch.model,batch.seed,Number($('group-size').value),g.start,g.end,g.count,p.name,g.wins[i],g.rates[i]])));
-  downloadCsv('選票箱'+batch.model+'版每'+$('group-size').value+'局勝率.csv',rows);
+  groupedResults().forEach(g=>batch.players.forEach((p,i)=>rows.push([modelName(batch.model),batch.seed,Number($('group-size').value),g.start,g.end,g.count,p.name,g.wins[i],g.rates[i]])));
+  downloadCsv('選票箱'+modelName(batch.model)+'版每'+$('group-size').value+'局勝率.csv',rows);
 });
 $('export-single').addEventListener('click',()=>{
-  if(!single||revealed<single.totalBoxes)return;
-  const rows=[['版本','種子','玩家','箱數','箱序','票數','總票數','勝者']];
+  if(!single||stepIndex<single.steps.length)return;
+  const rows=[['版本','種子','玩家','箱數','箱序','票數','總票數','勝者','揭曉步驟']];
+  const stepOf=single.boxes.map(()=>[]);single.steps.forEach((step,s)=>step.items.forEach(([i,j])=>stepOf[i][j]=s+1));
   single.players.forEach((p,i)=>{
-    if(!p.boxes)rows.push([single.model,single.seed,p.name,0,'',0,0,i===single.winner?'是':'']);
-    single.boxes[i].forEach((value,j)=>rows.push([single.model,single.seed,p.name,p.boxes,j+1,value,single.totals[i],i===single.winner?'是':'']));
-  });downloadCsv('選票箱'+single.model+'版單局.csv',rows);
+    if(!p.boxes)rows.push([modelName(single.model),single.seed,p.name,0,'',0,0,i===single.winner?'是':'','']);
+    single.boxes[i].forEach((value,j)=>rows.push([modelName(single.model),single.seed,p.name,p.boxes,j+1,value,single.totals[i],i===single.winner?'是':'',stepOf[i][j]]));
+  });downloadCsv('選票箱'+modelName(single.model)+'版單局.csv',rows);
 });
 $('export-batch').addEventListener('click',()=>{
   if(!batch)return;const rows=[['版本','種子','局數','玩家','箱數','勝率','平均總票數','標準差','CV','理論CV']];
-  batch.players.forEach((p,i)=>{const s=batch.results[i];rows.push([batch.model,batch.seed,batch.trials,p.name,p.boxes,s.wins/batch.trials,s.mean,s.sd,s.cv??'',p.boxes?p.cv/Math.sqrt(p.boxes):'']);});downloadCsv('選票箱'+batch.model+'版批次統計.csv',rows);
+  batch.players.forEach((p,i)=>{const s=batch.results[i];rows.push([modelName(batch.model),batch.seed,batch.trials,p.name,p.boxes,s.wins/batch.trials,s.mean,s.sd,s.cv??'',p.boxes?p.cv/Math.sqrt(p.boxes):'']);});downloadCsv('選票箱'+modelName(batch.model)+'版批次統計.csv',rows);
 });
 new ResizeObserver(()=>{if(batch)drawCharts();}).observe($('vote-chart').parentElement);
 function updateModel() {
