@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>選票箱模擬器</title>
+<title>舊版選票箱模擬器</title>
 <style>
 :root{color-scheme:light;--ink:#182d42;--muted:#5c7181;--line:#dae4e9;--blue:#275ecd;--teal:#137b70;--gold:#ad670b;--purple:#8056b8}*{box-sizing:border-box}body{margin:0;background:#f3f6f8;color:var(--ink);font:16px/1.7 "Microsoft JhengHei",system-ui,sans-serif}main{max-width:1240px;margin:auto;padding:32px 26px 70px}header{margin:0 0 26px}nav{display:flex;gap:20px;font-size:13px}a{color:#285f82;text-underline-offset:4px}h1{font-size:34px;margin:18px 0 8px;letter-spacing:-.03em}h2{font-size:22px;margin:0 0 18px}h3{font-size:15px;margin:20px 0 10px}p{margin:8px 0}.eyebrow{color:var(--teal);font-size:12px;letter-spacing:.12em;font-weight:700}.intro,.muted{color:var(--muted)}.muted{font-size:13px}.layout{display:grid;grid-template-columns:310px minmax(0,1fr);gap:22px;align-items:start}.panel{background:white;padding:24px;border:1px solid var(--line);border-radius:14px;min-width:0}.results{display:grid;gap:22px}.field{display:grid;gap:6px;margin:14px 0}label{font-size:13px;color:#40576a}input,select,button{font:inherit}input,select{width:100%;min-width:0;border:1px solid #beced8;border-radius:7px;background:white;padding:9px 11px;color:var(--ink)}input:focus-visible,select:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #89b6ed;outline-offset:3px}.player-inputs{display:grid;gap:13px;margin:18px 0}.player-input{border-top:1px solid var(--line);padding-top:12px;display:grid;gap:8px}.player-line{display:grid;grid-template-columns:13px 1fr;gap:9px;align-items:center}.dot{width:10px;height:10px;border-radius:50%;display:inline-block;background:var(--player-color)}.boxes-line{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center}.box-count{font-size:12px;color:var(--muted);min-width:55px}.toolbar{display:flex;gap:9px;flex-wrap:wrap;align-items:center;margin:14px 0}button{border:1px solid #bfced9;background:#fff;color:#26475e;padding:9px 14px;border-radius:7px;font-size:13px;font-weight:650;cursor:pointer;min-height:41px}button.primary{background:var(--blue);border-color:var(--blue);color:#fff}button:hover:enabled{filter:brightness(.96)}button:disabled{opacity:.4;cursor:default}.seed-row{display:grid;grid-template-columns:1fr auto;gap:8px}.seed-row button{padding:8px 10px}.note{background:#eff6f3;color:#345e52;padding:12px 14px;border-radius:8px;font-size:12px;margin-top:16px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:15px 0}.stat{border:1px solid var(--line);border-radius:9px;padding:12px}.stat span{display:block;font-size:11px;color:var(--muted)}.stat strong{font-size:23px;line-height:1.5;display:block}.progress-track{height:6px;background:#e7eef2;border-radius:6px;overflow:hidden}.progress-track>div{height:100%;background:var(--teal);width:0;transition:width .12s}.single-player{margin:18px 0}.player-heading{display:flex;justify-content:space-between;gap:12px;align-items:baseline}.player-heading strong{font-size:14px}.player-heading .votes{font-size:22px;font-variant-numeric:tabular-nums}.vote-track{height:10px;background:#edf2f6;border-radius:6px;margin:7px 0}.vote-track>div{height:100%;width:0;background:var(--player-color);border-radius:6px}.player-detail{display:flex;justify-content:space-between;font-size:12px;color:var(--muted)}.outcome{padding:13px 16px;background:#edf5ff;border-left:3px solid var(--blue);border-radius:7px;margin:17px 0;font-size:14px;min-height:50px}.placeholder{color:var(--muted);font-size:14px;padding:18px 0}.batch-controls{display:flex;gap:10px;align-items:end;flex-wrap:wrap}.batch-controls .field{margin:0;flex:1;min-width:125px}.table-wrap{overflow-x:auto;margin:14px 0}table{border-collapse:collapse;width:100%;font-size:13px;font-variant-numeric:tabular-nums}th,td{text-align:right;padding:10px 9px;border-bottom:1px solid var(--line);white-space:nowrap}th{font-size:11px;color:var(--muted);background:#f5f8fa}th:first-child,td:first-child{text-align:left}.table-wrap.wide table{min-width:640px}.tier-table th,.tier-table td{padding:8px 4px;font-size:11px}.charts{margin-top:20px}.canvas-wrap{width:100%;height:220px;position:relative}canvas{width:100%;height:100%;display:block}.legend{display:flex;gap:15px;flex-wrap:wrap;font-size:12px;margin:10px 0}.legend span{display:flex;gap:6px;align-items:center}details{border-top:1px solid var(--line);margin-top:18px;padding-top:12px}summary{font-size:13px;cursor:pointer;color:#3a627b}.box-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(62px,1fr));gap:7px;margin:12px 0}.box-item{font-size:12px;text-align:center;background:#f2f6f8;border-radius:5px;padding:8px 3px;font-variant-numeric:tabular-nums}.box-item small{display:block;font-size:10px;color:var(--muted)}.pager{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:12px}.error{color:#9f3044;font-size:13px;padding:10px 0}.batch-summary{font-size:12px;color:var(--muted);margin:12px 0}.visually-hidden{position:absolute;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}.ready-badge{color:var(--teal);font-size:12px}.run-actions{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}.sample-warning{font-size:12px;color:#80632b}footer{font-size:12px;color:var(--muted);margin-top:22px}progress{width:100%;height:9px;accent-color:var(--teal)}[hidden]{display:none!important}@media(max-width:950px){.layout{grid-template-columns:260px minmax(0,1fr)}main{padding:24px 18px}.panel{padding:20px}.stats{gap:7px}.stat{padding:9px}.stat strong{font-size:20px}}@media(max-width:720px){.layout{grid-template-columns:1fr}main{padding:18px 12px 40px}h1{font-size:28px}.panel{padding:20px 17px}.player-inputs{grid-template-columns:1fr 1fr}.player-line{grid-template-columns:9px 1fr;gap:5px}.boxes-line{grid-template-columns:1fr}.box-count{font-size:11px}.stats{grid-template-columns:repeat(3,1fr)}.stat strong{font-size:19px}input,select{font-size:16px}button{min-height:44px}.batch-controls button{flex:1}.player-heading .votes{font-size:20px}nav{gap:13px;flex-wrap:wrap}.player-detail{gap:9px}.canvas-wrap{height:200px}}
 .show-mode{max-width:420px}.single-player{margin:8px -12px;padding:10px 12px;border:1px solid transparent;border-radius:10px}.vote-track>div{transition:width .35s ease}.player-name{display:flex;align-items:center;gap:8px}.lead-badge{font-size:11px;font-weight:700;color:#fff;background:var(--player-color);border-radius:10px;padding:0 8px}.box-item.big{background:#fdf1d7;font-weight:700}@media(prefers-reduced-motion:reduce){.vote-track>div{transition:none}}
@@ -11,15 +11,15 @@
 </head>
 <body>
 <main>
-<header><nav><a href="index.html#section-81">返回總統選舉</a><a id="model-doc" href="index.html#section-81">企劃 6.4 總統選舉</a></nav><p class="eyebrow">ELECTION LAB / v0.2</p><h1>選票箱模擬器</h1><p class="muted">最後編輯時間：<time datetime="2026-11-10T16:51:03+08:00">2026/11/10 16:51:03</time></p><p class="intro">直接設定箱數，觀看逐箱開票與多局勝率比較。</p></header>
+<header><nav><a href="index.html#section-81">返回總統選舉</a><a id="model-doc" href="index.html#section-81">企劃 6.4 總統選舉</a></nav><p class="eyebrow">ELECTION LAB / v0.2</p><h1>舊版選票箱模擬器</h1><p class="muted">最後編輯時間：<time datetime="2026-11-22T16:03:27+08:00">2026/11/22 16:03:27</time></p><p class="intro">直接設定箱數，觀看逐箱開票與多局勝率比較。</p></header>
 <div class="layout">
 <aside class="panel">
 <h2>參賽設定</h2>
-<div class="field"><label for="model">數學版本</label><select id="model"><option value="RA" selected>A版 · 遊戲採用 · 依名次分表</option><option value="B">B版 · CV約3 · 比較用</option></select></div><div class="field"><label for="player-count">玩家人數 · 預設順序</label><select id="player-count"><option>2</option><option selected>3</option><option>4</option></select></div>
-<p class="muted">每位玩家直接輸入選票箱數。</p><div class="player-inputs" id="player-inputs"></div>
+<div class="field"><label for="model">數學版本</label><select id="model"><option value="RA" selected>A版 · 歷史規則 · 依名次分表</option><option value="B">B版 · CV約3 · 比較用</option></select></div><div class="field"><label for="player-count">玩家人數 · 預設順序</label><select id="player-count"><option>2</option><option selected>3</option><option>4</option></select></div>
+<p class="muted">A 版可輸入最終支持度或票箱數，每 15 支持度換 1 箱。B 版直接設定箱數。</p><div class="player-inputs" id="player-inputs"></div>
 <div class="field"><label for="seed">隨機種子</label><div class="seed-row"><input id="seed" value="election-001" maxlength="80"><button id="new-seed" type="button">換種子</button></div></div>
-<p class="muted">相同票箱數與種子可重現開票及批次結果。</p>
-<div class="note">直接輸入每位玩家的選票箱數。每箱獨立抽樣，最高票同票時等機率抽籤。</div>
+<p class="muted">相同設定與種子可重現開票及批次結果。</p>
+<div class="note">每箱獨立抽樣，最高票同票時等機率抽籤。</div>
 <h3>每箱票數分布</h3>
 <table class="tier-table" id="model-tiers"><thead><tr><th>票數區間</th><th>權重</th><th>機率</th></tr></thead><tbody></tbody></table>
 <p class="muted" id="model-moments"></p>
@@ -62,7 +62,7 @@
 </section>
 </div>
 </div>
-<footer>A版（遊戲採用，依名次分表）與 B版 v0.1（比較用） ·票箱數0～10,000 · 每批最多25,000,000次票箱抽樣 · 所有模擬均於本機瀏覽器執行。</footer>
+<footer>A版（歷史規則，依名次分表）與 B版 v0.1（比較用） ·票箱數0～10,000 · 每批最多25,000,000次票箱抽樣 · 所有模擬均於本機瀏覽器執行。</footer>
 </main>
 <script>
 'use strict';
@@ -127,15 +127,22 @@ function readSettings() {
     if ($('boxes-' + i).value.trim() === '' || !Number.isSafeInteger(inputBoxes) || inputBoxes < 0 || inputBoxes > 10000) {
       throw new Error('玩家' + (i + 1) + '的票箱數請輸入0～10,000的整數。');
     }
-    players.push({name:$('name-' + i).value.trim() || '玩家' + (i + 1), boxes:inputBoxes, color:COLORS[i]});
+    const rep = Number($('rep-' + i).value);
+    if ($('model').value === 'RA' && ($('rep-' + i).value.trim() === '' ||
+        !Number.isSafeInteger(rep) || rep < 0 || Math.floor(rep / 15) !== inputBoxes)) {
+      throw new Error('玩家' + (i + 1) + '的最終支持度請輸入 0～150,014 的整數。');
+    }
+    players.push({rep, name:$('name-' + i).value.trim() || '玩家' + (i + 1), boxes:inputBoxes, color:COLORS[i]});
   }
   const seed = $('seed').value.trim();
   if (!seed) throw new Error('請輸入隨機種子，或按「換種子」。');
   const modelKey = $('model').value, model = MODELS[modelKey];
-  const order = players.map((p,i) => i).sort((a,b) => players[b].boxes - players[a].boxes || a - b);
-  players.forEach((p,i) => {
-    const r = model.ranks ? model.ranks[Math.min(order.indexOf(i), model.ranks.length-1)] : model;
-    p.rank = order.indexOf(i) + 1; p.tiers = r.tiers; p.cv = r.cv;
+  players.forEach(p => {
+    const higher = players.filter(other => other.rep > p.rep).length;
+    const distribution = model.ranks ? model.ranks[higher] : model;
+    p.rank = higher + 1;
+    p.tiers = distribution.tiers;
+    p.cv = distribution.cv;
   });
   return {players, seed, model:modelKey, modelStats:model, tiers:TIERS};
 }
@@ -158,21 +165,32 @@ function invalidate() {
   ['next','auto','reveal','export-single'].forEach(id => $(id).disabled = true);
   $('batch-results').hidden = true; $('batch-progress').value = 0;
   $('batch-status').textContent = '設定已更新，請重新執行模擬。';
-  document.querySelectorAll('.boxes-input').forEach(input => {
-    const value = Number(input.value);
-    input.closest('.player-input').querySelector('.box-count').textContent = Number.isFinite(value) && value >= 0 ? value + '箱' : '—';
+  const inputs = [...document.querySelectorAll('.player-input')];
+  const polls = inputs.map((row,i) => $('rep-' + i).valueAsNumber);
+  inputs.forEach((row,i) => {
+    row.querySelector('.box-count').textContent = $('model').value === 'RA' && polls.every(Number.isSafeInteger)
+      ? '第 ' + (1 + polls.filter(rep => rep > polls[i]).length) + ' 名表' : '';
   });
 }
 function buildPlayers() {
-  const previous = [...document.querySelectorAll('.player-input')].map((row,i) => ({name:$('name-' + i).value, inputBoxes:$('boxes-' + i).value}));
+  const previous = [...document.querySelectorAll('.player-input')].map((row,i) => ({name:$('name-' + i).value, inputBoxes:$('boxes-' + i).value, rep:$('rep-' + i).value}));
   $('player-inputs').replaceChildren();
   const count = Number($('player-count').value);
   for (let i = 0; i < count; i++) {
     const row = document.createElement('div'); row.className = 'player-input'; row.style.setProperty('--player-color',COLORS[i]);
-    row.innerHTML = '<div class="player-line"><span class="dot" aria-hidden="true"></span><input id="name-' + i + '" maxlength="24" aria-label="玩家' + (i+1) + '名稱"></div><div class="boxes-line"><input class="boxes-input" id="boxes-' + i + '" type="number" min="0" max="10000" step="1" aria-label="玩家' + (i+1) + '票箱數"><span class="box-count"></span></div>';
+    row.innerHTML = '<div class="player-line"><span class="dot" aria-hidden="true"></span><input id="name-' + i + '" maxlength="24" aria-label="玩家' + (i+1) + '名稱"></div><label class="poll-field">最終支持度<input id="rep-' + i + '" type="number" min="0" max="150014" step="1"></label><div class="boxes-line"><label>票箱數<input class="boxes-input" id="boxes-' + i + '" type="number" min="0" max="10000" step="1" aria-label="玩家' + (i+1) + '票箱數"></label><span class="box-count"></span></div>';
     $('player-inputs').append(row);
     $('name-' + i).value = previous[i]?.name || '玩家' + (i + 1);
     $('boxes-' + i).value = previous[i]?.inputBoxes ?? [10,15,20,10][i];
+    const boxes = $('boxes-' + i), rep = $('rep-' + i);
+    rep.value = previous[i]?.rep ?? Number(boxes.value) * 15;
+    row.querySelector('.poll-field').hidden = $('model').value !== 'RA';
+    rep.addEventListener('input', () => {
+      boxes.value = rep.validity.valid && rep.value !== '' ? Math.floor(Number(rep.value) / 15) : '';
+    });
+    boxes.addEventListener('input', () => {
+      rep.value = boxes.validity.valid && boxes.value !== '' ? Number(boxes.value) * 15 + (Number(rep.value) % 15 || 0) : '';
+    });
     row.addEventListener('input',invalidate);
   }
   invalidate();
@@ -464,7 +482,8 @@ function renderBatch() {
     body.append(row);const label=document.createElement('span');const dot=document.createElement('i');dot.className='dot';dot.style.setProperty('--player-color',player.color);label.append(dot,document.createTextNode(player.name));$('legend').append(label);
   });
   const tiers=$('tier-table').querySelector('tbody');tiers.replaceChildren();
-  batch.tiers.forEach(([low,high,weight],i)=>{const row=document.createElement('tr');[number(low)+'～'+number(high),batch.boxCount?(batch.tierCounts[i]/batch.boxCount*100).toFixed(2)+'%':'—',(weight/100)+'%'].forEach(value=>addTextCell(row,value));tiers.append(row);});
+  const boxWeight = batch.players.reduce((total,p) => total + p.boxes, 0);
+  batch.tiers.forEach(([low,high],i)=>{const row=document.createElement('tr');[number(low)+'～'+number(high),batch.boxCount?(batch.tierCounts[i]/batch.boxCount*100).toFixed(2)+'%':'—',boxWeight ? (batch.players.reduce((sum,p) => sum + p.boxes * p.tiers[i][2], 0) / boxWeight / 100).toFixed(2)+'%' : '—'].forEach(value=>addTextCell(row,value));tiers.append(row);});
   const margin=1.96/(2*Math.sqrt(batch.trials+1.96**2))*100;
   $('sampling-note').textContent='勝率的95% Wilson區間最大半寬約 '+margin.toFixed(2)+' 個百分點。';
   renderGroups();
@@ -586,19 +605,20 @@ $('export-groups').addEventListener('click',()=>{
 });
 $('export-single').addEventListener('click',()=>{
   if(!single||stepIndex<single.steps.length)return;
-  const rows=[['版本','種子','玩家','箱數','箱序','票數','總票數','勝者','揭曉步驟']];
+  const rows=[['版本','種子','玩家','最終支持度','箱數','箱序','票數','總票數','勝者','揭曉步驟']];
   const stepOf=single.boxes.map(()=>[]);single.steps.forEach((step,s)=>step.items.forEach(([i,j])=>stepOf[i][j]=s+1));
   single.players.forEach((p,i)=>{
-    if(!p.boxes)rows.push([modelName(single.model),single.seed,p.name,0,'',0,0,i===single.winner?'是':'','']);
-    single.boxes[i].forEach((value,j)=>rows.push([modelName(single.model),single.seed,p.name,p.boxes,j+1,value,single.totals[i],i===single.winner?'是':'',stepOf[i][j]]));
+    if(!p.boxes)rows.push([modelName(single.model),single.seed,p.name,p.rep,0,'',0,0,i===single.winner?'是':'','']);
+    single.boxes[i].forEach((value,j)=>rows.push([modelName(single.model),single.seed,p.name,p.rep,p.boxes,j+1,value,single.totals[i],i===single.winner?'是':'',stepOf[i][j]]));
   });downloadCsv('選票箱'+modelName(single.model)+'版單局.csv',rows);
 });
 $('export-batch').addEventListener('click',()=>{
-  if(!batch)return;const rows=[['版本','種子','局數','玩家','箱數','勝率','平均總票數','標準差','CV','理論CV']];
-  batch.players.forEach((p,i)=>{const s=batch.results[i];rows.push([modelName(batch.model),batch.seed,batch.trials,p.name,p.boxes,s.wins/batch.trials,s.mean,s.sd,s.cv??'',p.boxes?p.cv/Math.sqrt(p.boxes):'']);});downloadCsv('選票箱'+modelName(batch.model)+'版批次統計.csv',rows);
+  if(!batch)return;const rows=[['版本','種子','局數','玩家','最終支持度','箱數','勝率','平均總票數','標準差','CV','理論CV']];
+  batch.players.forEach((p,i)=>{const s=batch.results[i];rows.push([modelName(batch.model),batch.seed,batch.trials,p.name,p.rep,p.boxes,s.wins/batch.trials,s.mean,s.sd,s.cv??'',p.boxes?p.cv/Math.sqrt(p.boxes):'']);});downloadCsv('選票箱'+modelName(batch.model)+'版批次統計.csv',rows);
 });
 new ResizeObserver(()=>{if(batch)drawCharts();}).observe($('vote-chart').parentElement);
 function updateModel() {
+  document.querySelectorAll('.poll-field').forEach(field => field.hidden = $('model').value !== 'RA');
   const model=MODELS[$('model').value];
   TIERS=model.tiers;
   const head=$('model-tiers').querySelector('thead tr');
@@ -610,7 +630,7 @@ function updateModel() {
       [number(low)+'～'+number(high),...model.ranks.map(r=>(r.tiers[k][2]/100).toFixed(2)+'%')].forEach(value=>addTextCell(row,value));
       body.append(row);
     });
-    $('model-moments').textContent='名次依最終民調（票箱數多者在前，同箱數依預設順序）。單箱平均／CV：'+model.ranks.map((r,i)=>'第'+(i+1)+'名 '+number(r.mean,1)+'票／'+r.cv.toFixed(3)).join('、')+'。';
+    $('model-moments').textContent='名次依最終支持度（同支持度並列跳號，如第 1、1、3 名）。單箱平均／CV：'+model.ranks.map((r,i)=>'第'+(i+1)+'名 '+number(r.mean,1)+'票／'+r.cv.toFixed(3)).join('、')+'。';
     $('model-doc').href=model.doc;$('model-doc').textContent='企劃 6.4 總統選舉';
   }else{
     head.innerHTML='<th>票數區間</th><th>權重</th><th>機率</th>';
